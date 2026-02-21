@@ -6,156 +6,110 @@
     <title>BigscreenFR — Programmation</title>
     <style>
         :root {
-            --bg:        #0d1117;
-            --bg2:       #161b22;
-            --bg3:       #21262d;
-            --border:    #30363d;
-            --accent:    #1E90FF;
-            --accent2:   #58a6ff;
-            --text:      #e6edf3;
-            --text2:     #8b949e;
-            --green:     #3fb950;
-            --orange:    #d29922;
-            --red:       #f85149;
-            --purple:    #bc8cff;
-            --radius:    12px;
+            --bg:      #0d1117;
+            --bg2:     #161b22;
+            --bg3:     #21262d;
+            --border:  #30363d;
+            --accent:  #1E90FF;
+            --accent2: #58a6ff;
+            --text:    #e6edf3;
+            --text2:   #8b949e;
+            --green:   #3fb950;
+            --purple:  #bc8cff;
+            --gold:    #d29922;
+            --radius:  12px;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            min-height: 100vh;
-        }
+        body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
 
         /* ── HEADER ── */
-        header {
-            background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 50%, #0d1117 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 2rem 1rem;
-            text-align: center;
-        }
+        header { background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 50%, #0d1117 100%); border-bottom: 1px solid var(--border); padding: 2rem 1rem; text-align: center; }
         header h1 { font-size: 2.2rem; color: var(--accent2); letter-spacing: 1px; }
         header p  { color: var(--text2); margin-top: .4rem; font-size: .95rem; }
-        .stats-bar {
-            display: flex; justify-content: center; gap: 2rem;
-            margin-top: 1.2rem; flex-wrap: wrap;
-        }
+        .stats-bar { display: flex; justify-content: center; gap: 2rem; margin-top: 1.2rem; flex-wrap: wrap; }
         .stat { text-align: center; }
         .stat-num { font-size: 1.6rem; font-weight: 700; color: var(--accent2); }
         .stat-label { font-size: .8rem; color: var(--text2); }
 
         /* ── NAV ── */
-        nav {
-            display: flex; justify-content: center; gap: .5rem;
-            padding: .8rem; background: var(--bg2);
-            border-bottom: 1px solid var(--border);
-            flex-wrap: wrap; position: sticky; top: 0; z-index: 100;
-        }
-        nav a {
-            color: var(--text2); text-decoration: none;
-            padding: .4rem 1rem; border-radius: 20px;
-            font-size: .9rem; transition: all .2s;
-        }
+        nav { display: flex; justify-content: center; gap: .5rem; padding: .8rem; background: var(--bg2); border-bottom: 1px solid var(--border); flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        nav a { color: var(--text2); text-decoration: none; padding: .4rem 1rem; border-radius: 20px; font-size: .9rem; transition: all .2s; }
         nav a:hover { background: var(--bg3); color: var(--text); }
 
         /* ── MAIN ── */
         main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
         section { margin-bottom: 3rem; }
-        section h2 {
-            font-size: 1.4rem; margin-bottom: 1.2rem;
-            padding-bottom: .6rem; border-bottom: 2px solid var(--border);
-            color: var(--accent2);
-        }
+        section h2 { font-size: 1.4rem; margin-bottom: 1.2rem; padding-bottom: .6rem; border-bottom: 2px solid var(--border); color: var(--accent2); }
 
         /* ── RECHERCHE ── */
-        .search-box {
-            display: flex; gap: .5rem; margin-bottom: 1.5rem;
-        }
-        #search {
-            flex: 1; padding: .6rem 1rem;
-            background: var(--bg2); border: 1px solid var(--border);
-            border-radius: var(--radius); color: var(--text); font-size: 1rem;
-            outline: none;
-        }
+        #search { width: 100%; padding: .7rem 1rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-size: 1rem; outline: none; margin-bottom: 1.5rem; }
         #search:focus { border-color: var(--accent); }
 
         /* ── CARTES FILMS ── */
         .cards { display: flex; flex-direction: column; gap: 1.2rem; }
-        .card {
-            display: flex; gap: 1.2rem;
-            background: var(--bg2); border: 1px solid var(--border);
-            border-radius: var(--radius); overflow: hidden;
-            transition: border-color .2s, transform .2s;
-        }
+        .card { display: flex; gap: 1.2rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color .2s, transform .2s; }
         .card:hover { border-color: var(--accent); transform: translateY(-2px); }
         .card.passee { opacity: .65; }
         .card.passee:hover { opacity: .85; }
         .card-poster { flex-shrink: 0; width: 120px; }
         .affiche { width: 120px; height: 180px; object-fit: cover; display: block; }
-        .affiche-placeholder {
-            width: 120px; height: 180px;
-            background: var(--bg3); display: flex;
-            align-items: center; justify-content: center; font-size: 2.5rem;
-        }
+        .affiche-placeholder { width: 120px; height: 180px; background: var(--bg3); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
         .card-body { flex: 1; padding: 1rem; }
         .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; flex-wrap: wrap; margin-bottom: .6rem; }
         .card-titre { font-size: 1.2rem; font-weight: 700; color: var(--text); }
         .badges { display: flex; gap: .4rem; flex-wrap: wrap; }
-
-        /* ── BADGES ── */
-        .badge {
-            padding: .2rem .6rem; border-radius: 20px;
-            font-size: .75rem; font-weight: 600; white-space: nowrap;
-        }
-        .badge-3d      { background: #1a3a5c; color: #58a6ff; border: 1px solid #1E90FF; }
-        .badge-2d      { background: #2d1f52; color: #bc8cff; border: 1px solid #8b5cf6; }
-        .badge-avenir  { background: #1a3a1a; color: var(--green); border: 1px solid var(--green); }
-        .badge-passee  { background: #2d2d2d; color: var(--text2); border: 1px solid var(--border); }
-
-        /* ── HORAIRES ── */
+        .badge { padding: .2rem .6rem; border-radius: 20px; font-size: .75rem; font-weight: 600; white-space: nowrap; }
+        .badge-3d     { background: #1a3a5c; color: #58a6ff; border: 1px solid var(--accent); }
+        .badge-2d     { background: #2d1f52; color: var(--purple); border: 1px solid #8b5cf6; }
+        .badge-avenir { background: #1a3a1a; color: var(--green); border: 1px solid var(--green); }
+        .badge-passee { background: #2d2d2d; color: var(--text2); border: 1px solid var(--border); }
         .horaires { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: .6rem; }
         .horaire-bloc { display: flex; align-items: center; gap: .4rem; }
-        .flag { font-size: 1.1rem; }
         .heure { font-size: 1rem; font-weight: 600; color: var(--accent2); }
         .decalage { font-size: .8rem; color: var(--text2); }
         .meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem; font-size: .85rem; color: var(--text2); }
         .resume { font-size: .875rem; color: var(--text2); line-height: 1.5; margin-top: .4rem; }
 
-        /* ── CALENDRIER ── */
-        .cals { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        /* ── CALENDRIER — cases adaptatives ── */
+        .cals { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
         .cal-titre { font-size: 1.1rem; font-weight: 700; text-align: center; margin-bottom: .8rem; color: var(--accent2); }
-        .calendrier { width: 100%; border-collapse: collapse; background: var(--bg2); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-        .calendrier th { padding: .5rem; text-align: center; font-size: .8rem; color: var(--text2); background: var(--bg3); border-bottom: 1px solid var(--border); }
-        .calendrier td.jour { padding: .4rem; vertical-align: top; min-height: 60px; border: 1px solid var(--border); font-size: .8rem; }
-        .calendrier td.vide { background: var(--bg); }
+        .calendrier { width: 100%; border-collapse: collapse; background: var(--bg2); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); table-layout: fixed; }
+        .calendrier th { padding: .5rem .2rem; text-align: center; font-size: .75rem; color: var(--text2); background: var(--bg3); border-bottom: 1px solid var(--border); width: 14.28%; }
+        .calendrier td.jour { padding: .3rem; vertical-align: top; border: 1px solid var(--border); word-break: break-word; }
+        .calendrier td.vide { background: var(--bg); border: 1px solid var(--border); }
         .calendrier td.has-seance { background: #0d1f35; }
-        .num-jour { display: block; font-weight: 600; color: var(--text2); margin-bottom: .2rem; }
+        .num-jour { display: block; font-weight: 600; font-size: .75rem; color: var(--text2); margin-bottom: .2rem; }
         .cal-event {
-            display: block; font-size: .7rem; padding: .15rem .3rem;
+            display: block; font-size: .68rem; padding: .2rem .3rem;
             border-radius: 4px; margin-bottom: .2rem; text-decoration: none;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            white-space: normal; word-break: break-word; line-height: 1.3;
         }
+        .cal-titre-film { display: block; font-weight: 600; margin-top: .1rem; }
         .cal-3d { background: #1a3a5c; color: #58a6ff; }
-        .cal-2d { background: #2d1f52; color: #bc8cff; }
-        .cal-event:hover { opacity: .85; }
+        .cal-2d { background: #2d1f52; color: var(--purple); }
+        .cal-event:hover { opacity: .8; }
+
+        /* ── COMPTEUR DIFFUSEURS ── */
+        .diffuseurs-grid { display: flex; flex-direction: column; gap: .8rem; }
+        .diffuseur-card { display: flex; align-items: center; gap: 1rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: .8rem 1rem; }
+        .diff-rank { font-size: 1.5rem; min-width: 2rem; text-align: center; }
+        .diff-info { flex: 1; }
+        .diff-nom { font-weight: 600; margin-bottom: .3rem; }
+        .diff-barre-wrap { background: var(--bg3); border-radius: 10px; height: 6px; margin-bottom: .3rem; overflow: hidden; }
+        .diff-barre { background: var(--accent); height: 100%; border-radius: 10px; transition: width .5s; }
+        .diff-stats { font-size: .8rem; color: var(--text2); }
 
         /* ── FOOTER ── */
-        footer {
-            text-align: center; padding: 2rem;
-            color: var(--text2); font-size: .85rem;
-            border-top: 1px solid var(--border); margin-top: 2rem;
-        }
-
+        footer { text-align: center; padding: 2rem; color: var(--text2); font-size: .85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
         .vide-msg { color: var(--text2); font-style: italic; padding: 1rem 0; }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
             .card { flex-direction: column; }
             .card-poster { width: 100%; }
             .affiche { width: 100%; height: 200px; }
             .affiche-placeholder { width: 100%; }
             header h1 { font-size: 1.5rem; }
+            .cals { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -163,10 +117,10 @@
 
 <header>
     <h1>🎬  BigscreenFR</h1>
-    <p>Programmation officielle des diffusions • Mis à jour le 21/02/2026 à 05:40</p>
+    <p>Programmation officielle des diffusions • Mis à jour le 21/02/2026 à 06:18</p>
     <div class="stats-bar">
         <div class="stat"><div class="stat-num">5</div><div class="stat-label">À venir</div></div>
-        <div class="stat"><div class="stat-num">5</div><div class="stat-label">Total diffusées</div></div>
+        <div class="stat"><div class="stat-num">5</div><div class="stat-label">Total diffusions</div></div>
         <div class="stat"><div class="stat-num">5</div><div class="stat-label">Films uniques</div></div>
     </div>
 </header>
@@ -175,51 +129,69 @@
     <a href="#calendrier">📅 Calendrier</a>
     <a href="#a-venir">🎬 À venir</a>
     <a href="#historique">📼 Historique</a>
+    <a href="#diffuseurs">📡 Diffuseurs</a>
 </nav>
 
 <main>
 
-    <!-- RECHERCHE -->
-    <section>
-        <div class="search-box">
-            <input type="text" id="search" placeholder="🔍  Rechercher un film, un diffuseur, une salle…" oninput="filtrer()">
-        </div>
-    </section>
+    <input type="text" id="search" placeholder="🔍  Rechercher un film, un diffuseur, une salle…" oninput="filtrer()">
 
     <!-- CALENDRIER -->
     <section id="calendrier">
         <h2>📅  Calendrier des diffusions</h2>
         <div class="cals">
-            <div><div class="cal-titre">Février 2026</div><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour"><span class="num-jour">1</span></td></tr><tr><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour"><span class="num-jour">6</span></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td></tr><tr><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td></tr><tr><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td></tr><tr><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour has-seance"><span class="num-jour">25</span><a href="#seance-4" class="cal-event cal-3d" title="Saw">🥽 21:00 Saw</a></td><td class="jour has-seance"><span class="num-jour">26</span><a href="#seance-1" class="cal-event cal-3d" title="Danse avec les loups">🥽 21:00 Danse avec les lou</a></td><td class="jour has-seance"><span class="num-jour">27</span><a href="#seance-3" class="cal-event cal-3d" title="Barbaque">🥽 21:00 Barbaque</a><a href="#seance-5" class="cal-event cal-3d" title="Terminator">🥽 21:00 Terminator</a></td><td class="jour"><span class="num-jour">28</span></td><td class="vide"></td></tr></tbody></table></div>
-            <div><div class="cal-titre">Mars 2026</div><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour"><span class="num-jour">1</span></td></tr><tr><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour has-seance"><span class="num-jour">6</span><a href="#seance-2" class="cal-event cal-3d" title="Kangourou Jack">🥽 21:00 Kangourou Jack</a></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td></tr><tr><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td></tr><tr><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td></tr><tr><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour"><span class="num-jour">25</span></td><td class="jour"><span class="num-jour">26</span></td><td class="jour"><span class="num-jour">27</span></td><td class="jour"><span class="num-jour">28</span></td><td class="jour"><span class="num-jour">29</span></td></tr><tr><td class="jour"><span class="num-jour">30</span></td><td class="jour"><span class="num-jour">31</span></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td></tr></tbody></table></div>
+            <div><div class="cal-titre">Février 2026</div><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour"><span class="num-jour">1</span></td></tr><tr><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour"><span class="num-jour">6</span></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td></tr><tr><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td></tr><tr><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td></tr><tr><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour has-seance"><span class="num-jour">25</span><a href="#seance-4" class="cal-event cal-3d" title="Saw">🥽 21:00<br><span class="cal-titre-film">Saw</span></a></td><td class="jour has-seance"><span class="num-jour">26</span><a href="#seance-1" class="cal-event cal-3d" title="Danse avec les loups">🥽 21:00<br><span class="cal-titre-film">Danse avec les loups</span></a></td><td class="jour has-seance"><span class="num-jour">27</span><a href="#seance-3" class="cal-event cal-3d" title="Barbaque">🥽 21:00<br><span class="cal-titre-film">Barbaque</span></a><a href="#seance-5" class="cal-event cal-3d" title="Terminator">🥽 21:00<br><span class="cal-titre-film">Terminator</span></a></td><td class="jour"><span class="num-jour">28</span></td><td class="vide"></td></tr></tbody></table></div>
+            <div><div class="cal-titre">Mars 2026</div><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour"><span class="num-jour">1</span></td></tr><tr><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour has-seance"><span class="num-jour">6</span><a href="#seance-2" class="cal-event cal-3d" title="Kangourou Jack">🥽 21:00<br><span class="cal-titre-film">Kangourou Jack</span></a></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td></tr><tr><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td></tr><tr><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td></tr><tr><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour"><span class="num-jour">25</span></td><td class="jour"><span class="num-jour">26</span></td><td class="jour"><span class="num-jour">27</span></td><td class="jour"><span class="num-jour">28</span></td><td class="jour"><span class="num-jour">29</span></td></tr><tr><td class="jour"><span class="num-jour">30</span></td><td class="jour"><span class="num-jour">31</span></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td></tr></tbody></table></div>
         </div>
     </section>
 
-    <!-- À VENIR -->
+    <!-- À VENIR — trié chronologiquement -->
     <section id="a-venir">
-        <h2>🎬  Prochaines diffusions  <small style="font-size:.9rem;color:var(--text2)">(5 séance(s))</small></h2>
+        <h2>🎬  Prochaines diffusions <small style="font-size:.9rem;color:var(--text2)">(5 séance(s))</small></h2>
         <div class="cards" id="cards-avenir">
-            
-    <div class="card" id="seance-2">
-        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/afVqdaKm7nnrXdovgFSksUoeOzA.jpg" alt="Affiche Kangourou Jack" class="affiche" loading="lazy"></div>
+    <div class="card" id="seance-4">
+        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/3fhUaMnlY72GGuBlzEeKA4brZAb.jpg" alt="Affiche Saw" class="affiche" loading="lazy"></div>
         <div class="card-body">
             <div class="card-header-row">
-                <h3 class="card-titre">Kangourou Jack</h3>
+                <h3 class="card-titre">Saw</h3>
                 <div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-avenir">À venir</span></div>
             </div>
             <div class="horaires">
                 <div class="horaire-bloc">
                     <span class="flag">🇫🇷</span>
-                    <span class="heure">06/03/2026  21:00</span>
+                    <span class="heure">25/02/2026  21:00</span>
                 </div>
                 <div class="horaire-bloc">
                     <span class="flag">🍁</span>
-                    <span class="heure">06/03/2026  15:00</span>
+                    <span class="heure">25/02/2026  15:00</span>
                     <span class="decalage">(−6h)</span>
                 </div>
             </div>
-            <div class="meta"><span class="salle">🏠 DREAD</span> <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> <span class="note">⭐ 5.3/10</span></div>
-            <p class="resume">Charlie et Louis galèrent depuis des années avec l'espoir qu'un jour la vie leur sourira. Ce dernier a l'art d'attirer les ennuis et passe pour un loser auprès de son beau-père, le mafioso Sal Maggio. Charlie, quant à lui, aspire à une vie tranquille, mais Sal le "taxe" chaque mois de tous ses bénéf…</p>
+            <div class="meta"><span class="salle">🏠 DREAD</span> <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> <span class="note">⭐ 7.4/10</span></div>
+            <p class="resume">Deux hommes se réveillent enchaînés au mur d’une salle de bains. Ils ignorent où ils sont et ne se connaissent pas. Ils savent juste que l’un doit absolument tuer l’autre, sinon dans moins de huit heures, ils seront exécutés tous les deux… Voici l’une des situations imaginées par un machiavélique ma…</p>
+        </div>
+    </div>
+
+    <div class="card" id="seance-1">
+        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/nCL2HaETYWQymaClIQk92xtBva0.jpg" alt="Affiche Danse avec les loups" class="affiche" loading="lazy"></div>
+        <div class="card-body">
+            <div class="card-header-row">
+                <h3 class="card-titre">Danse avec les loups</h3>
+                <div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-avenir">À venir</span></div>
+            </div>
+            <div class="horaires">
+                <div class="horaire-bloc">
+                    <span class="flag">🇫🇷</span>
+                    <span class="heure">26/02/2026  21:00</span>
+                </div>
+                <div class="horaire-bloc">
+                    <span class="flag">🍁</span>
+                    <span class="heure">26/02/2026  15:00</span>
+                    <span class="decalage">(−6h)</span>
+                </div>
+            </div>
+            <div class="meta"><span class="salle">🏠 DREAD</span> <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> <span class="note">⭐ 7.8/10</span></div>
+            <p class="resume">Durant la guerre de Sécession, le lieutenant John Dunbar, envoyé à un poste de reconnaissance dans les plaines du Dakota, rencontre le peuple sioux. Il se lie d'amitié avec la population indienne, au point d'intégrer une tribu et de s'éprendre de l'une des leurs.</p>
         </div>
     </div>
 
@@ -269,76 +241,65 @@
         </div>
     </div>
 
-    <div class="card" id="seance-1">
-        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/nCL2HaETYWQymaClIQk92xtBva0.jpg" alt="Affiche Danse avec les loups" class="affiche" loading="lazy"></div>
+    <div class="card" id="seance-2">
+        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/afVqdaKm7nnrXdovgFSksUoeOzA.jpg" alt="Affiche Kangourou Jack" class="affiche" loading="lazy"></div>
         <div class="card-body">
             <div class="card-header-row">
-                <h3 class="card-titre">Danse avec les loups</h3>
+                <h3 class="card-titre">Kangourou Jack</h3>
                 <div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-avenir">À venir</span></div>
             </div>
             <div class="horaires">
                 <div class="horaire-bloc">
                     <span class="flag">🇫🇷</span>
-                    <span class="heure">26/02/2026  21:00</span>
+                    <span class="heure">06/03/2026  21:00</span>
                 </div>
                 <div class="horaire-bloc">
                     <span class="flag">🍁</span>
-                    <span class="heure">26/02/2026  15:00</span>
+                    <span class="heure">06/03/2026  15:00</span>
                     <span class="decalage">(−6h)</span>
                 </div>
             </div>
-            <div class="meta"><span class="salle">🏠 DREAD</span> <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> <span class="note">⭐ 7.8/10</span></div>
-            <p class="resume">Durant la guerre de Sécession, le lieutenant John Dunbar, envoyé à un poste de reconnaissance dans les plaines du Dakota, rencontre le peuple sioux. Il se lie d'amitié avec la population indienne, au point d'intégrer une tribu et de s'éprendre de l'une des leurs.</p>
+            <div class="meta"><span class="salle">🏠 DREAD</span> <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> <span class="note">⭐ 5.3/10</span></div>
+            <p class="resume">Charlie et Louis galèrent depuis des années avec l'espoir qu'un jour la vie leur sourira. Ce dernier a l'art d'attirer les ennuis et passe pour un loser auprès de son beau-père, le mafioso Sal Maggio. Charlie, quant à lui, aspire à une vie tranquille, mais Sal le "taxe" chaque mois de tous ses bénéf…</p>
         </div>
-    </div>
-
-    <div class="card" id="seance-4">
-        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/3fhUaMnlY72GGuBlzEeKA4brZAb.jpg" alt="Affiche Saw" class="affiche" loading="lazy"></div>
-        <div class="card-body">
-            <div class="card-header-row">
-                <h3 class="card-titre">Saw</h3>
-                <div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-avenir">À venir</span></div>
-            </div>
-            <div class="horaires">
-                <div class="horaire-bloc">
-                    <span class="flag">🇫🇷</span>
-                    <span class="heure">25/02/2026  21:00</span>
-                </div>
-                <div class="horaire-bloc">
-                    <span class="flag">🍁</span>
-                    <span class="heure">25/02/2026  15:00</span>
-                    <span class="decalage">(−6h)</span>
-                </div>
-            </div>
-            <div class="meta"><span class="salle">🏠 DREAD</span> <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> <span class="note">⭐ 7.4/10</span></div>
-            <p class="resume">Deux hommes se réveillent enchaînés au mur d’une salle de bains. Ils ignorent où ils sont et ne se connaissent pas. Ils savent juste que l’un doit absolument tuer l’autre, sinon dans moins de huit heures, ils seront exécutés tous les deux… Voici l’une des situations imaginées par un machiavélique ma…</p>
-        </div>
-    </div>
-        </div>
+    </div></div>
     </section>
 
     <!-- HISTORIQUE -->
     <section id="historique">
-        <h2>📼  Historique complet  <small style="font-size:.9rem;color:var(--text2)">(0 diffusion(s))</small></h2>
-        <div class="cards" id="cards-histo">
-            <p class="vide-msg">Aucune séance dans l'historique.</p>
-        </div>
+        <h2>📼  Historique complet <small style="font-size:.9rem;color:var(--text2)">(0 diffusion(s))</small></h2>
+        <div class="cards" id="cards-histo"><p class="vide-msg">Aucune séance dans l'historique.</p></div>
+    </section>
+
+    <!-- COMPTEUR DIFFUSEURS -->
+    <section id="diffuseurs">
+        <h2>📡  Classement des diffuseurs</h2>
+        <div class="diffuseurs-grid">
+        <div class="diffuseur-card">
+            <div class="diff-rank">🥇</div>
+            <div class="diff-info">
+                <div class="diff-nom">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</div>
+                <div class="diff-barre-wrap">
+                    <div class="diff-barre" style="width:100%"></div>
+                </div>
+                <div class="diff-stats">5 diffusions  •  100%</div>
+            </div>
+        </div></div>
     </section>
 
 </main>
 
 <footer>
-    <p>BigscreenFR • Site généré automatiquement par le bot Discord • 21/02/2026 à 05:40</p>
+    <p>BigscreenFR • Site généré automatiquement par le bot Discord • 21/02/2026 à 06:18</p>
 </footer>
 
 <script>
 function filtrer() {
     const q = document.getElementById('search').value.toLowerCase();
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+    document.querySelectorAll('.card').forEach(c => {
+        c.style.display = c.textContent.toLowerCase().includes(q) ? '' : 'none';
     });
 }
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
         e.preventDefault();
