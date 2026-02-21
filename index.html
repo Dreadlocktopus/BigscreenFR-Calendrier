@@ -3,26 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bigscreen 3D Cinéma — Programmation</title>
+    <title>BigscreenFR Calendrier</title>
     <style>
         :root {
-            --bg:      #0d1117;
-            --bg2:     #161b22;
-            --bg3:     #21262d;
-            --border:  #30363d;
-            --accent:  #1E90FF;
-            --accent2: #58a6ff;
-            --text:    #e6edf3;
-            --text2:   #8b949e;
-            --green:   #3fb950;
-            --purple:  #bc8cff;
-            --gold:    #d29922;
-            --radius:  12px;
+            --bg:      #0d1117; --bg2: #161b22; --bg3: #21262d;
+            --border:  #30363d; --accent: #1E90FF; --accent2: #58a6ff;
+            --text:    #e6edf3; --text2: #8b949e;
+            --green:   #3fb950; --purple: #bc8cff; --radius: 12px;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
 
-        /* ── HEADER ── */
         header { background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 50%, #0d1117 100%); border-bottom: 1px solid var(--border); padding: 2rem 1rem; text-align: center; }
         header h1 { font-size: 2.2rem; color: var(--accent2); letter-spacing: 1px; }
         header p  { color: var(--text2); margin-top: .4rem; font-size: .95rem; }
@@ -31,26 +22,22 @@
         .stat-num { font-size: 1.6rem; font-weight: 700; color: var(--accent2); }
         .stat-label { font-size: .8rem; color: var(--text2); }
 
-        /* ── NAV ── */
         nav { display: flex; justify-content: center; gap: .5rem; padding: .8rem; background: var(--bg2); border-bottom: 1px solid var(--border); flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
         nav a { color: var(--text2); text-decoration: none; padding: .4rem 1rem; border-radius: 20px; font-size: .9rem; transition: all .2s; }
         nav a:hover { background: var(--bg3); color: var(--text); }
 
-        /* ── MAIN ── */
         main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
         section { margin-bottom: 3rem; }
         section h2 { font-size: 1.4rem; margin-bottom: 1.2rem; padding-bottom: .6rem; border-bottom: 2px solid var(--border); color: var(--accent2); }
 
-        /* ── RECHERCHE ── */
         #search { width: 100%; padding: .7rem 1rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-size: 1rem; outline: none; margin-bottom: 1.5rem; }
         #search:focus { border-color: var(--accent); }
 
-        /* ── CARTES FILMS ── */
+        /* ── CARTES ── */
         .cards { display: flex; flex-direction: column; gap: 1.2rem; }
         .card { display: flex; gap: 1.2rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color .2s, transform .2s; }
         .card:hover { border-color: var(--accent); transform: translateY(-2px); }
         .card.passee { opacity: .65; }
-        .card.passee:hover { opacity: .85; }
         .card-poster { flex-shrink: 0; width: 120px; }
         .affiche { width: 120px; height: 180px; object-fit: cover; display: block; }
         .affiche-placeholder { width: 120px; height: 180px; background: var(--bg3); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
@@ -64,42 +51,82 @@
         .badge-avenir { background: #1a3a1a; color: var(--green); border: 1px solid var(--green); }
         .badge-passee { background: #2d2d2d; color: var(--text2); border: 1px solid var(--border); }
         .horaires { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: .6rem; }
-        .horaire-bloc { display: flex; align-items: center; gap: .4rem; }
-        .heure { font-size: 1rem; font-weight: 600; color: var(--accent2); }
+        .horaire-bloc { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+        .flag { font-size: 1.1rem; }
+        .heure { font-size: .95rem; font-weight: 600; color: var(--accent2); }
         .decalage { font-size: .8rem; color: var(--text2); }
         .meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem; font-size: .85rem; color: var(--text2); }
         .resume { font-size: .875rem; color: var(--text2); line-height: 1.5; margin-top: .4rem; }
 
-        /* ── CALENDRIER — cases adaptatives ── */
-        .cals { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
-        .cal-titre { font-size: 1.1rem; font-weight: 700; text-align: center; margin-bottom: .8rem; color: var(--accent2); }
+        /* ── CALENDRIER navigation ── */
+        .cal-wrap { display: none; }
+        .cal-nav {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: .8rem; gap: .5rem;
+        }
+        .cal-mois-titre { font-size: 1.1rem; font-weight: 700; color: var(--accent2); text-align: center; flex: 1; }
+        .cal-nav-btn {
+            background: var(--bg3); border: 1px solid var(--border); color: var(--accent2);
+            padding: .4rem 1rem; border-radius: 8px; cursor: pointer; font-size: .9rem;
+            transition: background .2s; white-space: nowrap; display: flex; align-items: center; gap: .35rem;
+        }
+        .cal-nav-btn:hover { background: var(--bg2); border-color: var(--accent); }
+
+        /* Sélecteur de vue */
+        .vue-selector {
+            display: flex; gap: .5rem; margin-bottom: 1rem; flex-wrap: wrap;
+        }
+        .vue-btn {
+            background: var(--bg3); border: 1px solid var(--border); color: var(--text2);
+            padding: .3rem .85rem; border-radius: 20px; cursor: pointer; font-size: .82rem;
+            transition: all .2s;
+        }
+        .vue-btn:hover { border-color: var(--accent); color: var(--text); }
+        .vue-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+
+        /* Vue mois */
         .calendrier { width: 100%; border-collapse: collapse; background: var(--bg2); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); table-layout: fixed; }
         .calendrier th { padding: .5rem .2rem; text-align: center; font-size: .75rem; color: var(--text2); background: var(--bg3); border-bottom: 1px solid var(--border); width: 14.28%; }
         .calendrier td.jour { padding: .3rem; vertical-align: top; border: 1px solid var(--border); word-break: break-word; }
         .calendrier td.vide { background: var(--bg); border: 1px solid var(--border); }
         .calendrier td.has-seance { background: #0d1f35; }
         .num-jour { display: block; font-weight: 600; font-size: .75rem; color: var(--text2); margin-bottom: .2rem; }
-        .cal-event {
-            display: block; font-size: .68rem; padding: .2rem .3rem;
-            border-radius: 4px; margin-bottom: .2rem; text-decoration: none;
-            white-space: normal; word-break: break-word; line-height: 1.3;
-        }
+        .cal-event { display: block; font-size: .68rem; padding: .2rem .3rem; border-radius: 4px; margin-bottom: .2rem; text-decoration: none; white-space: normal; word-break: break-word; line-height: 1.3; }
         .cal-titre-film { display: block; font-weight: 600; margin-top: .1rem; }
         .cal-3d { background: #1a3a5c; color: #58a6ff; }
         .cal-2d { background: #2d1f52; color: var(--purple); }
         .cal-event:hover { opacity: .8; }
 
-        /* ── COMPTEUR DIFFUSEURS ── */
+        /* Vue semaine et jour */
+        .semaine-bloc, .jour-bloc {
+            background: var(--bg2); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: .8rem 1rem; margin-bottom: .8rem;
+        }
+        .semaine-titre, .jour-titre {
+            font-size: .9rem; font-weight: 700; color: var(--accent2);
+            margin-bottom: .6rem; padding-bottom: .4rem; border-bottom: 1px solid var(--border);
+        }
+        .semaine-event {
+            display: flex; align-items: center; gap: .6rem;
+            padding: .4rem .6rem; border-radius: 8px; text-decoration: none;
+            font-size: .85rem; color: var(--text); margin-bottom: .4rem;
+            transition: opacity .2s;
+        }
+        .semaine-event:hover { opacity: .8; }
+        .semaine-event.cal-3d { background: #1a3a5c55; border-left: 3px solid #58a6ff; }
+        .semaine-event.cal-2d { background: #2d1f5255; border-left: 3px solid var(--purple); }
+        .semaine-date { font-size: .78rem; color: var(--text2); min-width: 110px; }
+
+        /* ── DIFFUSEURS ── */
         .diffuseurs-grid { display: flex; flex-direction: column; gap: .8rem; }
         .diffuseur-card { display: flex; align-items: center; gap: 1rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: .8rem 1rem; }
         .diff-rank { font-size: 1.5rem; min-width: 2rem; text-align: center; }
         .diff-info { flex: 1; }
         .diff-nom { font-weight: 600; margin-bottom: .3rem; }
         .diff-barre-wrap { background: var(--bg3); border-radius: 10px; height: 6px; margin-bottom: .3rem; overflow: hidden; }
-        .diff-barre { background: var(--accent); height: 100%; border-radius: 10px; transition: width .5s; }
+        .diff-barre { background: var(--accent); height: 100%; border-radius: 10px; }
         .diff-stats { font-size: .8rem; color: var(--text2); }
 
-        /* ── FOOTER ── */
         footer { text-align: center; padding: 2rem; color: var(--text2); font-size: .85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
         .vide-msg { color: var(--text2); font-style: italic; padding: 1rem 0; }
 
@@ -107,21 +134,20 @@
             .card { flex-direction: column; }
             .card-poster { width: 100%; }
             .affiche { width: 100%; height: 200px; }
-            .affiche-placeholder { width: 100%; }
             header h1 { font-size: 1.5rem; }
-            .cals { grid-template-columns: 1fr; }
+            .cal-nav-btn { font-size: .78rem; padding: .3rem .6rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🎬  Bigscreen 3D Cinéma</h1>
-    <p>Programmation officielle des diffusions • Mis à jour le 21/02/2026 à 07:40</p>
+    <h1>🎬  BigscreenFR Calendrier</h1>
+    <p>Programmation officielle des diffusions • Mis à jour le samedi 21 février 2026  —  08:06</p>
     <div class="stats-bar">
-        <div class="stat"><div class="stat-num">1</div><div class="stat-label">À venir</div></div>
-        <div class="stat"><div class="stat-num">2</div><div class="stat-label">Total diffusions</div></div>
-        <div class="stat"><div class="stat-num">2</div><div class="stat-label">Films uniques</div></div>
+        <div class="stat"><div class="stat-num">2</div><div class="stat-label">À venir</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Total diffusions</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Films uniques</div></div>
     </div>
 </header>
 
@@ -136,19 +162,56 @@
 
     <input type="text" id="search" placeholder="🔍  Rechercher un film, un diffuseur, une salle…" oninput="filtrer()">
 
-    <!-- CALENDRIER -->
     <section id="calendrier">
         <h2>📅  Calendrier des diffusions</h2>
-        <div class="cals">
-            <div><div class="cal-titre">Février 2026</div><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour has-seance"><span class="num-jour">1</span><a href="#seance-2" class="cal-event cal-3d" title="Avatar">🥽 21:00<br><span class="cal-titre-film">Avatar</span></a></td></tr><tr><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour"><span class="num-jour">6</span></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td></tr><tr><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td></tr><tr><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td></tr><tr><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour"><span class="num-jour">25</span></td><td class="jour"><span class="num-jour">26</span></td><td class="jour has-seance"><span class="num-jour">27</span><a href="#seance-1" class="cal-event cal-3d" title="Camping">🥽 21:00<br><span class="cal-titre-film">Camping</span></a></td><td class="jour"><span class="num-jour">28</span></td><td class="vide"></td></tr></tbody></table></div>
-            <div><div class="cal-titre">Mars 2026</div><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour"><span class="num-jour">1</span></td></tr><tr><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour"><span class="num-jour">6</span></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td></tr><tr><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td></tr><tr><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td></tr><tr><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour"><span class="num-jour">25</span></td><td class="jour"><span class="num-jour">26</span></td><td class="jour"><span class="num-jour">27</span></td><td class="jour"><span class="num-jour">28</span></td><td class="jour"><span class="num-jour">29</span></td></tr><tr><td class="jour"><span class="num-jour">30</span></td><td class="jour"><span class="num-jour">31</span></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td></tr></tbody></table></div>
-        </div>
+        <div class="cal-wrap" id="cal-2026-02" style="display:block"><div class="cal-nav"><button class="cal-nav-btn" onclick="changerMois(2026,1)">&#9664; Janvier</button><span class="cal-mois-titre">Février 2026</span><button class="cal-nav-btn" onclick="changerMois(2026,3)">Mars &#9654;</button></div><div class="vue-selector">
+            <button class="vue-btn active" onclick="setVue('cal-2026-02','mois',this)">📅 Mois</button>
+            <button class="vue-btn" onclick="setVue('cal-2026-02','semaine',this)">📆 Semaine</button>
+            <button class="vue-btn" onclick="setVue('cal-2026-02','jour',this)">📋 Jour</button>
+        </div><div class="vue vue-mois"><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour has-seance"><span class="num-jour">1</span><a href="#seance-2" class="cal-event cal-3d" title="Avatar">🥽 21:00<br><span class="cal-titre-film">Avatar</span></a></td></tr><tr><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour"><span class="num-jour">6</span></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td></tr><tr><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td></tr><tr><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour has-seance"><span class="num-jour">22</span><a href="#seance-3" class="cal-event cal-3d" title="Interstellar">🥽 21:02<br><span class="cal-titre-film">Interstellar</span></a></td></tr><tr><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour"><span class="num-jour">25</span></td><td class="jour"><span class="num-jour">26</span></td><td class="jour has-seance"><span class="num-jour">27</span><a href="#seance-1" class="cal-event cal-3d" title="Camping">🥽 21:00<br><span class="cal-titre-film">Camping</span></a></td><td class="jour"><span class="num-jour">28</span></td><td class="vide"></td></tr></tbody></table></div><div class="vue vue-semaine" style="display:none"><div class="semaine-bloc"><div class="semaine-titre">Semaine 5 — du 26/01 au 01/02</div><a href="#seance-2" class="semaine-event cal-3d"><span class="semaine-date">Dim 01/02 à 21:00</span> 🥽 <strong>Avatar</strong></a></div><div class="semaine-bloc"><div class="semaine-titre">Semaine 8 — du 16/02 au 22/02</div><a href="#seance-3" class="semaine-event cal-3d"><span class="semaine-date">Dim 22/02 à 21:02</span> 🥽 <strong>Interstellar</strong></a></div><div class="semaine-bloc"><div class="semaine-titre">Semaine 9 — du 23/02 au 01/03</div><a href="#seance-1" class="semaine-event cal-3d"><span class="semaine-date">Ven 27/02 à 21:00</span> 🥽 <strong>Camping</strong></a></div></div><div class="vue vue-jour" style="display:none"><div class="jour-bloc"><div class="jour-titre">Dim 1 Février</div><a href="#seance-2" class="semaine-event cal-3d"><span class="semaine-date">21:00</span> 🥽 <strong>Avatar</strong></a></div><div class="jour-bloc"><div class="jour-titre">Dim 22 Février</div><a href="#seance-3" class="semaine-event cal-3d"><span class="semaine-date">21:02</span> 🥽 <strong>Interstellar</strong></a></div><div class="jour-bloc"><div class="jour-titre">Ven 27 Février</div><a href="#seance-1" class="semaine-event cal-3d"><span class="semaine-date">21:00</span> 🥽 <strong>Camping</strong></a></div></div></div>
+<div class="cal-wrap" id="cal-2026-03" style="display:none"><div class="cal-nav"><button class="cal-nav-btn" onclick="changerMois(2026,2)">&#9664; Février</button><span class="cal-mois-titre">Mars 2026</span><button class="cal-nav-btn" onclick="changerMois(2026,4)">Avril &#9654;</button></div><div class="vue-selector">
+            <button class="vue-btn active" onclick="setVue('cal-2026-03','mois',this)">📅 Mois</button>
+            <button class="vue-btn" onclick="setVue('cal-2026-03','semaine',this)">📆 Semaine</button>
+            <button class="vue-btn" onclick="setVue('cal-2026-03','jour',this)">📋 Jour</button>
+        </div><div class="vue vue-mois"><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour"><span class="num-jour">1</span></td></tr><tr><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour"><span class="num-jour">6</span></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td></tr><tr><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td></tr><tr><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td></tr><tr><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour"><span class="num-jour">25</span></td><td class="jour"><span class="num-jour">26</span></td><td class="jour"><span class="num-jour">27</span></td><td class="jour"><span class="num-jour">28</span></td><td class="jour"><span class="num-jour">29</span></td></tr><tr><td class="jour"><span class="num-jour">30</span></td><td class="jour"><span class="num-jour">31</span></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td></tr></tbody></table></div><div class="vue vue-semaine" style="display:none"><p class="vide-msg">Aucune séance ce mois.</p></div><div class="vue vue-jour" style="display:none"><p class="vide-msg">Aucune séance ce mois.</p></div></div>
+<div class="cal-wrap" id="cal-2026-04" style="display:none"><div class="cal-nav"><button class="cal-nav-btn" onclick="changerMois(2026,3)">&#9664; Mars</button><span class="cal-mois-titre">Avril 2026</span><button class="cal-nav-btn" onclick="changerMois(2026,5)">Mai &#9654;</button></div><div class="vue-selector">
+            <button class="vue-btn active" onclick="setVue('cal-2026-04','mois',this)">📅 Mois</button>
+            <button class="vue-btn" onclick="setVue('cal-2026-04','semaine',this)">📆 Semaine</button>
+            <button class="vue-btn" onclick="setVue('cal-2026-04','jour',this)">📋 Jour</button>
+        </div><div class="vue vue-mois"><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="jour"><span class="num-jour">1</span></td><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td></tr><tr><td class="jour"><span class="num-jour">6</span></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td></tr><tr><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td></tr><tr><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td><td class="jour"><span class="num-jour">25</span></td><td class="jour"><span class="num-jour">26</span></td></tr><tr><td class="jour"><span class="num-jour">27</span></td><td class="jour"><span class="num-jour">28</span></td><td class="jour"><span class="num-jour">29</span></td><td class="jour"><span class="num-jour">30</span></td><td class="vide"></td><td class="vide"></td><td class="vide"></td></tr></tbody></table></div><div class="vue vue-semaine" style="display:none"><p class="vide-msg">Aucune séance ce mois.</p></div><div class="vue vue-jour" style="display:none"><p class="vide-msg">Aucune séance ce mois.</p></div></div>
+<div class="cal-wrap" id="cal-2026-05" style="display:none"><div class="cal-nav"><button class="cal-nav-btn" onclick="changerMois(2026,4)">&#9664; Avril</button><span class="cal-mois-titre">Mai 2026</span><button class="cal-nav-btn" onclick="changerMois(2026,6)">Juin &#9654;</button></div><div class="vue-selector">
+            <button class="vue-btn active" onclick="setVue('cal-2026-05','mois',this)">📅 Mois</button>
+            <button class="vue-btn" onclick="setVue('cal-2026-05','semaine',this)">📆 Semaine</button>
+            <button class="vue-btn" onclick="setVue('cal-2026-05','jour',this)">📋 Jour</button>
+        </div><div class="vue vue-mois"><table class="calendrier"><thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead><tbody><tr><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="vide"></td><td class="jour"><span class="num-jour">1</span></td><td class="jour"><span class="num-jour">2</span></td><td class="jour"><span class="num-jour">3</span></td></tr><tr><td class="jour"><span class="num-jour">4</span></td><td class="jour"><span class="num-jour">5</span></td><td class="jour"><span class="num-jour">6</span></td><td class="jour"><span class="num-jour">7</span></td><td class="jour"><span class="num-jour">8</span></td><td class="jour"><span class="num-jour">9</span></td><td class="jour"><span class="num-jour">10</span></td></tr><tr><td class="jour"><span class="num-jour">11</span></td><td class="jour"><span class="num-jour">12</span></td><td class="jour"><span class="num-jour">13</span></td><td class="jour"><span class="num-jour">14</span></td><td class="jour"><span class="num-jour">15</span></td><td class="jour"><span class="num-jour">16</span></td><td class="jour"><span class="num-jour">17</span></td></tr><tr><td class="jour"><span class="num-jour">18</span></td><td class="jour"><span class="num-jour">19</span></td><td class="jour"><span class="num-jour">20</span></td><td class="jour"><span class="num-jour">21</span></td><td class="jour"><span class="num-jour">22</span></td><td class="jour"><span class="num-jour">23</span></td><td class="jour"><span class="num-jour">24</span></td></tr><tr><td class="jour"><span class="num-jour">25</span></td><td class="jour"><span class="num-jour">26</span></td><td class="jour"><span class="num-jour">27</span></td><td class="jour"><span class="num-jour">28</span></td><td class="jour"><span class="num-jour">29</span></td><td class="jour"><span class="num-jour">30</span></td><td class="jour"><span class="num-jour">31</span></td></tr></tbody></table></div><div class="vue vue-semaine" style="display:none"><p class="vide-msg">Aucune séance ce mois.</p></div><div class="vue vue-jour" style="display:none"><p class="vide-msg">Aucune séance ce mois.</p></div></div>
     </section>
 
-    <!-- À VENIR — trié chronologiquement -->
     <section id="a-venir">
-        <h2>🎬  Prochaines diffusions <small style="font-size:.9rem;color:var(--text2)">(1 séance(s))</small></h2>
+        <h2>🎬  Prochaines diffusions <small style="font-size:.9rem;color:var(--text2)">(2 séance(s))</small></h2>
         <div class="cards" id="cards-avenir">
+    <div class="card" id="seance-3">
+        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/1pnigkWWy8W032o9TKDneBa3eVK.jpg" alt="Affiche Interstellar" class="affiche" loading="lazy"></div>
+        <div class="card-body">
+            <div class="card-header-row">
+                <h3 class="card-titre">Interstellar</h3>
+                <div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-avenir">À venir</span></div>
+            </div>
+            <div class="horaires">
+                <div class="horaire-bloc">
+                    <span class="flag" title="France">🇫🇷</span>
+                    <span class="heure">dimanche 22 février 2026  —  21:02</span>
+                </div>
+                <div class="horaire-bloc">
+                    <span class="flag" title="Canada / Québec">🇨🇦</span>
+                    <span class="heure">dimanche 22 février 2026  —  15:02</span>
+                    <span class="decalage">(−6h)</span>
+                </div>
+            </div>
+            <div class="meta"><span class="salle">🏠 DREAD</span> <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> <span class="note">⭐ 8.5/10</span></div>
+            <p class="resume">Dans un futur proche, face à une Terre exsangue, un groupe d’explorateurs utilise un vaisseau interstellaire pour franchir un trou de ver permettant de parcourir des distances jusque‐là infranchissables. Leur but : trouver un nouveau foyer pour l’humanité.</p>
+        </div>
+    </div>
+
     <div class="card" id="seance-1">
         <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/7flI2OwTuWKQdZiWRZ6tw6ijvEB.jpg" alt="Affiche Camping" class="affiche" loading="lazy"></div>
         <div class="card-body">
@@ -158,12 +221,12 @@
             </div>
             <div class="horaires">
                 <div class="horaire-bloc">
-                    <span class="flag">🇫🇷</span>
-                    <span class="heure">27/02/2026  21:00</span>
+                    <span class="flag" title="France">🇫🇷</span>
+                    <span class="heure">vendredi 27 février 2026  —  21:00</span>
                 </div>
                 <div class="horaire-bloc">
-                    <span class="flag">🍁</span>
-                    <span class="heure">27/02/2026  15:00</span>
+                    <span class="flag" title="Canada / Québec">🇨🇦</span>
+                    <span class="heure">vendredi 27 février 2026  —  15:00</span>
                     <span class="decalage">(−6h)</span>
                 </div>
             </div>
@@ -173,7 +236,6 @@
     </div></div>
     </section>
 
-    <!-- HISTORIQUE -->
     <section id="historique">
         <h2>📼  Historique complet <small style="font-size:.9rem;color:var(--text2)">(1 diffusion(s))</small></h2>
         <div class="cards" id="cards-histo">
@@ -186,12 +248,12 @@
             </div>
             <div class="horaires">
                 <div class="horaire-bloc">
-                    <span class="flag">🇫🇷</span>
-                    <span class="heure">01/02/2026  21:00</span>
+                    <span class="flag" title="France">🇫🇷</span>
+                    <span class="heure">dimanche 1 février 2026  —  21:00</span>
                 </div>
                 <div class="horaire-bloc">
-                    <span class="flag">🍁</span>
-                    <span class="heure">01/02/2026  15:00</span>
+                    <span class="flag" title="Canada / Québec">🇨🇦</span>
+                    <span class="heure">dimanche 1 février 2026  —  15:00</span>
                     <span class="decalage">(−6h)</span>
                 </div>
             </div>
@@ -201,7 +263,6 @@
     </div></div>
     </section>
 
-    <!-- COMPTEUR DIFFUSEURS -->
     <section id="diffuseurs">
         <h2>📡  Classement des diffuseurs</h2>
         <div class="diffuseurs-grid">
@@ -209,10 +270,8 @@
             <div class="diff-rank">🥇</div>
             <div class="diff-info">
                 <div class="diff-nom">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</div>
-                <div class="diff-barre-wrap">
-                    <div class="diff-barre" style="width:100%"></div>
-                </div>
-                <div class="diff-stats">2 diffusions  •  100%</div>
+                <div class="diff-barre-wrap"><div class="diff-barre" style="width:100%"></div></div>
+                <div class="diff-stats">3 diffusions  •  100%</div>
             </div>
         </div></div>
     </section>
@@ -220,10 +279,33 @@
 </main>
 
 <footer>
-    <p>Bigscreen 3D Cinéma • Site généré automatiquement par le bot Discord • 21/02/2026 à 07:40</p>
+    <p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • samedi 21 février 2026  —  08:06</p>
 </footer>
 
 <script>
+function changerMois(annee, mois) {
+    document.querySelectorAll('.cal-wrap').forEach(el => el.style.display = 'none');
+    const id = 'cal-' + annee + '-' + String(mois).padStart(2, '0');
+    const cible = document.getElementById(id);
+    if (cible) {
+        cible.style.display = 'block';
+        cible.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function setVue(calId, vue, btn) {
+    const cal = document.getElementById(calId);
+    if (!cal) return;
+    // Désactive tous les boutons de ce calendrier
+    cal.querySelectorAll('.vue-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // Cache toutes les vues
+    cal.querySelectorAll('.vue').forEach(v => v.style.display = 'none');
+    // Affiche la vue demandée
+    const cible = cal.querySelector('.vue-' + vue);
+    if (cible) cible.style.display = 'block';
+}
+
 function filtrer() {
     const q = document.getElementById('search').value.toLowerCase();
     document.querySelectorAll('.card').forEach(c => {
