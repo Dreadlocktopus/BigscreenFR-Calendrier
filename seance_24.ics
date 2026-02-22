@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-24@bigscreenfr
+DTSTAMP:20260222T214313Z
+DTSTART:20260223T200000Z
+DTEND:20260223T220000Z
+SUMMARY:L'Exorciste — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Regan\, une adolescente\, présente depuis quelque temps d’étranges symptômes. Après avoir épuisé les solutions médicales\, la mère de Regan consulte un prêtre-psychiatre qui est rapidement convaincu q
+LOCATION:
+END:VEVENT
+END:VCALENDAR
