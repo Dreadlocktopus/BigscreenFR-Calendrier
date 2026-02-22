@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-6@bigscreenfr
+DTSTAMP:20260222T144357Z
+DTSTART:20260225T200000Z
+DTEND:20260225T220000Z
+SUMMARY:Love Actually — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:L'amour est partout\, imprévisible\, inexplicable\, insurmontable. Il frappe quand il veut et souvent\, ça fait pas mal de dégâts... Pour le nouveau Premier Ministre britannique\, il va prendre la jol
+LOCATION:YEAH
+END:VEVENT
+END:VCALENDAR
