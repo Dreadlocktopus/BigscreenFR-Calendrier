@@ -87,11 +87,9 @@ section h2{font-size:1.4rem;margin-bottom:1.2rem;padding-bottom:.6rem;border-bot
 .semaine-event:hover{opacity:.8;}
 .semaine-event.cal-3d{background:#1a3a5c55;border-left:3px solid #58a6ff;}.semaine-event.cal-2d{background:#2d1f5255;border-left:3px solid var(--purple);}
 .semaine-date{font-size:.78rem;color:var(--text2);min-width:130px;}
-.diffuseurs-grid{display:flex;flex-direction:column;gap:.8rem;}
-.diffuseur-card{display:flex;align-items:center;gap:1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:.8rem 1rem;}
-.diff-rank{font-size:1.5rem;min-width:2rem;text-align:center;}.diff-info{flex:1;}.diff-nom{font-weight:600;margin-bottom:.3rem;}
-.diff-barre-wrap{background:var(--bg3);border-radius:10px;height:6px;margin-bottom:.3rem;overflow:hidden;}
-.diff-barre{background:var(--accent);height:100%;border-radius:10px;}
+.diffuseurs-grid{display:flex;flex-wrap:wrap;gap:1rem;}
+.diffuseur-card{display:flex;align-items:center;gap:.8rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:.8rem 1.2rem;}
+.diff-avatar{font-size:1.6rem;}.diff-info{flex:1;}.diff-nom{font-weight:600;margin-bottom:.2rem;}
 .diff-stats{font-size:.8rem;color:var(--text2);}
 .graphs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .graph-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;}
@@ -104,12 +102,11 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  16:03</p>
+  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  16:30</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">6</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">Total</div></div>
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">Titres uniques</div></div>
-    <div class="stat"><div class="stat-num">7.5</div><div class="stat-label">Note moy.</div></div>
   </div>
 </header>
 <nav>
@@ -226,8 +223,8 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 </div></div>
   </section>
   <section id="diffuseurs">
-    <h2>📡  Classement des diffuseurs</h2>
-    <div class="diffuseurs-grid"><div class="diffuseur-card"><div class="diff-rank">🥇</div><div class="diff-info"><div class="diff-nom">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</div><div class="diff-barre-wrap"><div class="diff-barre" style="width:42%"></div></div><div class="diff-stats">3 diffusions  •  42%</div></div></div><div class="diffuseur-card"><div class="diff-rank">🥈</div><div class="diff-info"><div class="diff-nom">📡 Statik</div><div class="diff-barre-wrap"><div class="diff-barre" style="width:28%"></div></div><div class="diff-stats">2 diffusions  •  28%</div></div></div><div class="diffuseur-card"><div class="diff-rank">🥉</div><div class="diff-info"><div class="diff-nom">📡 nicolas.dumont</div><div class="diff-barre-wrap"><div class="diff-barre" style="width:14%"></div></div><div class="diff-stats">1 diffusion  •  14%</div></div></div><div class="diffuseur-card"><div class="diff-rank">#4</div><div class="diff-info"><div class="diff-nom">📡 Zaz</div><div class="diff-barre-wrap"><div class="diff-barre" style="width:14%"></div></div><div class="diff-stats">1 diffusion  •  14%</div></div></div></div>
+    <h2>🎙️  Notre équipe de diffuseurs</h2>
+    <div class="diffuseurs-grid"><div class="diffuseur-card"><div class="diff-avatar">📡</div><div class="diff-info"><div class="diff-nom">nicolas.dumont</div><div class="diff-stats">1 diffusion</div></div></div><div class="diffuseur-card"><div class="diff-avatar">📡</div><div class="diff-info"><div class="diff-nom">Statik</div><div class="diff-stats">2 diffusions</div></div></div><div class="diffuseur-card"><div class="diff-avatar">📡</div><div class="diff-info"><div class="diff-nom">Zaz</div><div class="diff-stats">1 diffusion</div></div></div><div class="diffuseur-card"><div class="diff-avatar">📡</div><div class="diff-info"><div class="diff-nom">🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</div><div class="diff-stats">3 diffusions</div></div></div></div>
   </section>
   <section id="graphiques">
     <h2>📊  Statistiques & Graphiques</h2>
@@ -238,7 +235,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  16:03</p></footer>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  16:30</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
