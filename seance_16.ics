@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-16@bigscreenfr
+DTSTAMP:20260222T180513Z
+DTSTART:20260222T220000Z
+DTEND:20260223T000000Z
+SUMMARY:Kaamelott — S01 Intégrale — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Kaamelott est achevé\, la cour est établie\, les choses sérieuses peuvent commencer. Une grande Table Ronde est construite\, autour de laquelle les chevaliers se réuniront pour organiser la Quête du G
+LOCATION:TEST
+END:VEVENT
+END:VCALENDAR
