@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-4@bigscreenfr
-DTSTAMP:20260222T144354Z
+DTSTAMP:20260222T144530Z
 DTSTART:20260321T200000Z
 DTEND:20260321T220000Z
 SUMMARY:One Piece — S172 Ép. 1-36780 — 3D (Statik)
@@ -16,7 +16,7 @@ LOCATION:Test
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-5@bigscreenfr
-DTSTAMP:20260222T144354Z
+DTSTAMP:20260222T144530Z
 DTSTART:20260227T200000Z
 DTEND:20260227T220000Z
 SUMMARY:Titanic — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -25,7 +25,7 @@ LOCATION:Iceberg
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-1@bigscreenfr
-DTSTAMP:20260222T144354Z
+DTSTAMP:20260222T144530Z
 DTSTART:20260225T200000Z
 DTEND:20260225T220000Z
 SUMMARY:Roman Frayssinet  —  Roman Frayssinet — 2D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -34,11 +34,20 @@ LOCATION:Salle de Beta Test
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-6@bigscreenfr
-DTSTAMP:20260222T144354Z
+DTSTAMP:20260222T144530Z
 DTSTART:20260225T200000Z
 DTEND:20260225T220000Z
 SUMMARY:Love Actually — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
 DESCRIPTION:L'amour est partout\, imprévisible\, inexplicable\, insurmontable. Il frappe quand il veut et souvent\, ça fait pas mal de dégâts... Pour le nouveau Premier Ministre britannique\, il va prendre la jol
 LOCATION:YEAH
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-7@bigscreenfr
+DTSTAMP:20260222T144530Z
+DTSTART:20260225T200000Z
+DTEND:20260225T220000Z
+SUMMARY:Beetlejuice Beetlejuice — 3D (nicolas.dumont)
+DESCRIPTION:À la suite d'une tragédie familiale inattendue\, trois générations de la famille Deetz rentrent dans leur maison à Winter River\, toujours hantée par Beetlejuice. Là-bas\, Lydia voit sa vie prendre un
+LOCATION:BigscreenFr  Beetlejuice Beetlejuice
 END:VEVENT
 END:VCALENDAR
