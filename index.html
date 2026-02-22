@@ -106,13 +106,99 @@ section h2{font-size:1.4rem;margin-bottom:1.2rem;padding-bottom:.6rem;border-bot
 .graph-card h3{font-size:1rem;color:var(--accent2);margin-bottom:1rem;}.graph-card.full{grid-column:1/-1;}
 footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem;}
 .vide-msg{color:var(--text2);font-style:italic;padding:1rem 0;}
-@media(max-width:700px){.card{flex-direction:column;}.card-poster,.affiche{width:100%;}.affiche{height:220px;}.graphs-grid{grid-template-columns:1fr;}}
+
+/* ── RESPONSIVE TABLETTE (≤900px) ───────────────────────────── */
+@media(max-width:900px){
+  header h1{font-size:1.7rem;}
+  .graphs-grid{grid-template-columns:1fr;}
+  .graph-card.full{grid-column:1;}
+  .modal{max-width:98vw;}
+  .modal-poster{max-height:320px;}
+}
+
+/* ── RESPONSIVE MOBILE (≤600px) ─────────────────────────────── */
+@media(max-width:600px){
+  /* Header */
+  header{padding:1.2rem .8rem;}
+  header h1{font-size:1.35rem;letter-spacing:0;}
+  header p{font-size:.78rem;}
+  .stats-bar{gap:1rem;margin-top:.8rem;}
+  .stat-num{font-size:1.2rem;}
+  .stat-label{font-size:.72rem;}
+
+  /* Nav */
+  nav{padding:.5rem .4rem;gap:.3rem;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  nav::-webkit-scrollbar{display:none;}
+  nav a{padding:.35rem .7rem;font-size:.78rem;white-space:nowrap;flex-shrink:0;}
+
+  /* Main */
+  main{padding:1rem .6rem;}
+  section{margin-bottom:2rem;}
+  section h2{font-size:1.1rem;}
+
+  /* Toolbar & agenda buttons */
+  .toolbar{flex-direction:column;gap:.5rem;}
+  #search{width:100%;min-width:unset;}
+  .btn-ical-global{width:100%;justify-content:center;padding:.55rem;font-size:.82rem;}
+
+  /* Filtres */
+  .filtres{overflow-x:auto;flex-wrap:nowrap;padding-bottom:.4rem;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .filtres::-webkit-scrollbar{display:none;}
+  .filtre-btn{flex-shrink:0;font-size:.78rem;padding:.3rem .65rem;}
+
+  /* Cartes séances */
+  .card{flex-direction:column;}
+  .card-poster{width:100%;height:auto;max-height:200px;overflow:hidden;}
+  .affiche{width:100%;height:200px;object-fit:cover;}
+  .affiche-placeholder{width:100%;height:130px;}
+  .card-body{padding:.75rem;gap:.35rem;}
+  .card-titre{font-size:1rem;}
+  .badges{gap:.3rem;}
+  .badge{font-size:.7rem;padding:.15rem .45rem;}
+  .horaires{flex-direction:column;gap:.3rem;}
+  .card-actions{gap:.4rem;flex-wrap:wrap;}
+  .btn-ical{font-size:.73rem;padding:.3rem .55rem;}
+
+  /* Calendrier */
+  #calendrier-container{padding:.6rem;}
+  .cal-nav-btn{padding:.35rem .6rem;font-size:.82rem;}
+  .cal-mois-titre{font-size:.95rem;}
+  .vue-selector{gap:.3rem;}
+  .vue-btn{font-size:.75rem;padding:.25rem .6rem;}
+  #cal-table th{font-size:.62rem;padding:.3rem .1rem;}
+  #cal-table td.jour{padding:.2rem;min-height:44px;}
+  .num-jour{font-size:.65rem;}
+  .cal-event{font-size:.6rem;padding:.15rem .2rem;}
+  .cal-titre-film{font-size:.6rem;}
+  .semaine-date{min-width:90px;font-size:.72rem;}
+  .semaine-event{font-size:.78rem;gap:.4rem;}
+
+  /* Modale */
+  .modal-overlay{padding:.3rem;align-items:flex-end;}
+  .modal{border-radius:var(--radius) var(--radius) 0 0;max-height:95vh;width:100%;}
+  .modal-poster{max-height:220px;border-radius:var(--radius) var(--radius) 0 0;}
+  .modal-body{padding:1rem .9rem;}
+  .modal-titre{font-size:1.15rem;margin-bottom:.6rem;}
+  .modal-meta{gap:.5rem;}
+  .modal-actions{flex-direction:column;gap:.5rem;}
+  .modal-ical,.modal-webcal,.modal-gcal,.modal-voir-plus{width:100%;justify-content:center;padding:.55rem 1rem;font-size:.85rem;}
+  .modal-trailer{margin:.6rem 0;}
+
+  /* Diffuseurs */
+  .diffuseurs-grid{gap:.6rem;}
+  .diffuseur-card{padding:.6rem .9rem;}
+
+  /* Graphiques */
+  .graphs-grid{grid-template-columns:1fr;gap:1rem;}
+  .graph-card{padding:.9rem;}
+  .graph-card h3{font-size:.9rem;margin-bottom:.7rem;}
+}
 </style>
 </head>
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  16:50</p>
+  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  17:19</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">8</div><div class="stat-label">Total</div></div>
@@ -257,7 +343,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  16:50</p></footer>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  17:19</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
