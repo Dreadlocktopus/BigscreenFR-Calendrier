@@ -228,7 +228,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  23:44</p>
+  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  23:48</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">14</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">24</div><div class="stat-label">Total</div></div>
@@ -551,7 +551,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  23:44</p></footer>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  23:48</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
@@ -637,7 +637,7 @@ function vMois(seances){
   const pd=new Date(aA,mA-1,1).getDay(),dec=pd===0?6:pd-1,nb=new Date(aA,mA,0).getDate();
   let h='<table id="cal-table"><thead><tr>';JOURS_FR.forEach(j=>h+=`<th>${j}</th>`);h+='</tr></thead><tbody><tr>';
   let c=0,j=1;for(let i=0;i<dec;i++){h+='<td class="vide"></td>';c++;}
-  while(j<=nb){const ss=pJ[j]||[];h+=`<td class="jour${ss.length?' has-seance':''}""><span class="num-jour">${j}</span>`;
+  while(j<=nb){const ss=pJ[j]||[];h+=`<td class="jour${ss.length?' has-seance':''}"><span class="num-jour">${j}</span>`;
     ss.forEach(s=>{const ic=s.fmt==='3D'?'🥽':'📽️';h+=`<span class="cal-event cal-${s.fmt.toLowerCase()}" onclick="ouvrirDetail(${s.id})">${ic} ${s.heureFR}<br><span class="cal-titre-film">${s.titre}</span></span>`;});
     h+='</td>';c++;if(c%7===0&&j<nb)h+='</tr><tr>';j++;}
   const r=7-(c%7);if(r<7)for(let i=0;i<r;i++)h+='<td class="vide"></td>';h+='</tr></tbody></table>';
@@ -757,7 +757,7 @@ function rendreSectionLive() {
 function _renderCarousel(seances, titre) {
   var html = '<div class="prochains-container">';
   if (titre) html += '<div class="prochains-titre">' + titre + '</div>';
-  html += '<button class="carousel-btn prev" onclick="_carouselNav(-1)" aria-label="Précédent">&#9664;</button>'
+  html += '<button class="carousel-btn prev" id="carousel-prev" onclick="_carouselNav(-1)" aria-label="Précédent">&#9664;</button>'
         + '<div class="prochains-carousel"><div class="prochains-inner" id="carousel-inner">';
   seances.forEach(function(s) {
     var ic = s.fmt === '3D' ? '🥽' : '📽️';
@@ -774,7 +774,7 @@ function _renderCarousel(seances, titre) {
       + '</div></div>';
   });
   html += '</div></div>'
-        + '<button class="carousel-btn next" onclick="_carouselNav(1)" aria-label="Suivant">&#9654;</button>'
+        + '<button class="carousel-btn next" id="carousel-next" onclick="_carouselNav(1)" aria-label="Suivant">&#9654;</button>'
         + '</div>';
   return html;
 }
@@ -828,7 +828,7 @@ function _scheduleLiveRefresh() {
   const now     = new Date();
   const msToNextHour = (60 - now.getMinutes()) * 60 * 1000 - now.getSeconds() * 1000;
   setTimeout(() => {
-    rendreSection Live();
+    rendreSectionLive();
     setInterval(rendreSectionLive, 60 * 60 * 1000);
   }, msToNextHour);
 }
