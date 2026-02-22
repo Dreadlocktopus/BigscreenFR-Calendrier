@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-10@bigscreenfr
+DTSTAMP:20260222T162140Z
+DTSTART:20260322T172500Z
+DTEND:20260322T192500Z
+SUMMARY:Wayne's World — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Wayne Campbell a transformé la cave de ses parents en studio TV. Il anime chaque nuit avec son copain Garth : Wayne’s World\, une émission musicale hyper-fauchée et déjantée. Ces deux adolescents prol
+LOCATION:TEST FONCTION RAPPEL
+END:VEVENT
+END:VCALENDAR
