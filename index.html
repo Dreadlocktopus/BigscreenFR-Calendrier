@@ -2,8 +2,12 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="generated-at" content="1771802734">
 <title>BigscreenFR Calendrier</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js?v=1771802734"></script>
 <style>
 :root{--bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--border:#30363d;--accent:#1E90FF;--accent2:#58a6ff;--text:#e6edf3;--text2:#8b949e;--green:#3fb950;--purple:#bc8cff;--radius:12px;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -106,6 +110,50 @@ section h2{font-size:1.4rem;margin-bottom:1.2rem;padding-bottom:.6rem;border-bot
 .graph-card h3{font-size:1rem;color:var(--accent2);margin-bottom:1rem;}.graph-card.full{grid-column:1/-1;}
 footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem;}
 .vide-msg{color:var(--text2);font-style:italic;padding:1rem 0;}
+/* ── HISTORIQUE ACCORDÉON ───────────────────────────────────────── */
+.histo-toggle{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.4rem;cursor:pointer;transition:border-color .2s;width:100%;text-align:left;}
+.histo-toggle:hover{border-color:var(--accent);}
+.histo-toggle-label{display:flex;align-items:center;gap:.8rem;font-size:1rem;font-weight:600;color:var(--text);}
+.histo-toggle-count{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:.2rem .7rem;border-radius:20px;font-size:.8rem;}
+.histo-toggle-arrow{color:var(--accent2);font-size:1.1rem;transition:transform .3s;}
+.histo-toggle.open .histo-toggle-arrow{transform:rotate(90deg);}
+.histo-panel{display:none;margin-top:.8rem;}
+.histo-panel.open{display:block;}
+.histo-search{width:100%;padding:.6rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:.9rem;outline:none;margin-bottom:1rem;}
+.histo-search:focus{border-color:var(--accent);}
+.histo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem;}
+.histo-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s;}
+.histo-item:hover{border-color:var(--accent);transform:translateY(-2px);}
+.histo-affiche{width:100%;height:200px;object-fit:cover;display:block;}
+.histo-affiche-ph{width:100%;height:200px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.histo-info{padding:.6rem .7rem;}
+.histo-titre{font-size:.82rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.3rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.histo-meta{display:flex;flex-wrap:wrap;gap:.3rem;}
+.histo-badge-nb{background:#1a3a1a;color:var(--green);border:1px solid var(--green);padding:.15rem .5rem;border-radius:12px;font-size:.72rem;font-weight:600;}
+.histo-badge-type{background:var(--bg3);color:var(--text2);border:1px solid var(--border);padding:.15rem .5rem;border-radius:12px;font-size:.72rem;}
+/* modale historique */
+.histo-modal-overlay{display:none;position:fixed;inset:0;background:#000d;z-index:1100;align-items:center;justify-content:center;padding:1rem;}
+.histo-modal-overlay.open{display:flex;}
+.histo-modal{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);max-width:680px;width:100%;max-height:88vh;overflow-y:auto;position:relative;}
+.histo-modal-close{position:absolute;top:.8rem;right:1rem;background:none;border:none;color:var(--text2);font-size:1.4rem;cursor:pointer;z-index:10;padding:.2rem .5rem;}
+.histo-modal-close:hover{color:var(--text);}
+.histo-modal-header{display:flex;gap:1rem;padding:1.2rem;border-bottom:1px solid var(--border);}
+.histo-modal-poster{width:80px;height:120px;object-fit:cover;border-radius:8px;flex-shrink:0;}
+.histo-modal-poster-ph{width:80px;height:120px;background:var(--bg3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.histo-modal-info{flex:1;}
+.histo-modal-titre{font-size:1.2rem;font-weight:700;margin-bottom:.5rem;}
+.histo-modal-stats{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem;}
+.histo-modal-resume{font-size:.85rem;color:var(--text2);line-height:1.5;}
+.histo-diffusions{padding:1rem 1.2rem;}
+.histo-diffusions h4{font-size:.9rem;color:var(--accent2);margin-bottom:.7rem;border-bottom:1px solid var(--border);padding-bottom:.4rem;}
+.histo-diff-row{display:flex;align-items:center;gap:.8rem;padding:.5rem .6rem;border-radius:8px;margin-bottom:.3rem;background:var(--bg3);font-size:.84rem;}
+.histo-diff-row:hover{background:var(--bg);}
+.histo-diff-date{color:var(--text2);min-width:130px;font-size:.8rem;}
+.histo-diff-fmt{padding:.15rem .5rem;border-radius:10px;font-size:.72rem;font-weight:600;}
+.histo-diff-fmt.d3{background:#1a3a5c;color:#58a6ff;border:1px solid var(--accent);}
+.histo-diff-fmt.d2{background:#2d1f52;color:var(--purple);border:1px solid #8b5cf6;}
+.histo-diff-salle{color:var(--text2);font-size:.8rem;}
+.histo-diff-diff{color:var(--text2);font-size:.8rem;}
 /* ── SECTION LIVE ────────────────────────────────────────────── */
 #live{margin-bottom:2rem;}
 #live-titre{font-size:1.15rem;font-weight:700;color:var(--accent2);margin-bottom:.8rem;}
@@ -222,13 +270,18 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
   .graphs-grid{grid-template-columns:1fr;gap:1rem;}
   .graph-card{padding:.9rem;}
   .graph-card h3{font-size:.9rem;margin-bottom:.7rem;}
+  /* Historique */
+  .histo-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.7rem;}
+  .histo-affiche,.histo-affiche-ph{height:160px;}
+  .histo-modal-header{flex-direction:column;}
+  .histo-modal-poster,.histo-modal-poster-ph{width:100%;height:160px;border-radius:var(--radius) var(--radius) 0 0;}
 }
 </style>
 </head>
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le lundi 23 février 2026  —  00:00</p>
+  <p>Programmation officielle • Mis à jour le lundi 23 février 2026  —  00:25</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">14</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">24</div><div class="stat-label">Total</div></div>
@@ -248,7 +301,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <main>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Rechercher…" oninput="filtrer()">
-    <a class="btn-ical-global" href="bigscreenfr.ics" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
+    <a class="btn-ical-global" href="bigscreenfr.ics?v=1771802734" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
     <a class="btn-ical-global btn-gcal" href="https://calendar.google.com/calendar/r?cid=webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics" target="_blank" rel="noopener">🗓️ Google Agenda</a>
     <a class="btn-ical-global btn-webcal" href="webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics">🍎 Apple Agenda</a>
   </div>
@@ -426,107 +479,18 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 </div></div>
   </section>
   <section id="historique">
-    <h2>📼  Historique <small style="font-size:.9rem;color:var(--text2)">(10 diffusion(s))</small></h2>
-    <div class="cards" id="cards-histo">
-<div class="card doc passee" id="seance-13" data-type="doc">
-  <div class="card-poster" onclick="ouvrirDetail(13)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/lcU9hLWx52rllsk2BFPF5JqGc1v.jpg" alt="Brotherhood of Lions" class="affiche" loading="lazy" onclick="ouvrirDetail(13)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(13)" style="cursor:pointer">Brotherhood of Lions</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎙️ Doc</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  23:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  17:00</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 ICI</span><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span><span class="note">⭐ 10.0/10</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_13.ics" download="seance_13.ics">📅 iCal</a><a class="btn-ical btn-voir-plus" href="https://www.themoviedb.org/tv/271693" target="_blank" rel="noopener">🔗 Voir plus</a></div>
-  </div>
-</div>
-
-<div class="card serie passee" id="seance-16" data-type="serie">
-  <div class="card-poster" onclick="ouvrirDetail(16)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/qRqS7gUwnHN7D55HWAKZTi634Sc.jpg" alt="Kaamelott — S01 Intégrale" class="affiche" loading="lazy" onclick="ouvrirDetail(16)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(16)" style="cursor:pointer">Kaamelott — S01 Intégrale</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  23:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  17:00</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 TEST</span><span class="serie-info">📺 S01 Ép. intégrale</span><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span><span class="note">⭐ 8.5/10</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_16.ics" download="seance_16.ics">📅 iCal</a><a class="btn-ical btn-trailer" onclick="ouvrirDetail(16)">🎬 Bande annonce</a><a class="btn-ical btn-voir-plus" href="https://www.themoviedb.org/tv/11466" target="_blank" rel="noopener">🔗 Voir plus</a></div>
-  </div>
-</div>
-
-<div class="card film passee" id="seance-23" data-type="film">
-  <div class="card-poster" onclick="ouvrirDetail(23)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/wjbZUa5FMx403pSh1QJAslPkGN8.jpg" alt="Mad Heidi" class="affiche" loading="lazy" onclick="ouvrirDetail(23)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(23)" style="cursor:pointer">Mad Heidi</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  23:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  17:00</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span><span class="note">⭐ 5.7/10</span><span class="duree">⏱️ 1h32</span><span class="date-sortie">📅 2022</span><span class="classification">🟠 -12 ans</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_23.ics" download="seance_23.ics">📅 iCal</a><a class="btn-ical btn-trailer" onclick="ouvrirDetail(23)">🎬 Bande annonce</a><a class="btn-ical btn-voir-plus" href="https://www.themoviedb.org/movie/566805" target="_blank" rel="noopener">🔗 Voir plus</a></div>
-  </div>
-</div>
-
-<div class="card film passee" id="seance-8" data-type="film">
-  <div class="card-poster" onclick="ouvrirDetail(8)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/832ngDVXhOVp6HBnuMMeeWTrGXN.jpg" alt="Ready Player One" class="affiche" loading="lazy" onclick="ouvrirDetail(8)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(8)" style="cursor:pointer">Ready Player One</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  21:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  15:00</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 Cinéma</span><span class="diffuseur">📡 Statik</span><span class="note">⭐ 7.6/10</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_8.ics" download="seance_8.ics">📅 iCal</a></div>
-  </div>
-</div>
-
-<div class="card film passee" id="seance-22" data-type="film">
-  <div class="card-poster" onclick="ouvrirDetail(22)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/kLxUuhkffi4EST735RcT3jszjd7.jpg" alt="Grève party" class="affiche" loading="lazy" onclick="ouvrirDetail(22)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(22)" style="cursor:pointer">Grève party</h3><div class="badges"><span class="badge badge-2d">📽️ 2D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  21:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  15:00</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 Grève Party</span><span class="diffuseur">📡 Oagern</span><span class="note">⭐ 4.8/10</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_22.ics" download="seance_22.ics">📅 iCal</a><a class="btn-ical btn-voir-plus" href="https://www.themoviedb.org/movie/170028" target="_blank" rel="noopener">🔗 Voir plus</a></div>
-  </div>
-</div>
-
-<div class="card film passee" id="seance-10" data-type="film">
-  <div class="card-poster" onclick="ouvrirDetail(10)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/R8Q9qIl51SHtcX5oWSBbz4YhQV.jpg" alt="Wayne's World" class="affiche" loading="lazy" onclick="ouvrirDetail(10)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(10)" style="cursor:pointer">Wayne's World</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  18:25</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  12:25</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 TEST FONCTION RAPPEL</span><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span><span class="note">⭐ 6.7/10</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_10.ics" download="seance_10.ics">📅 iCal</a><a class="btn-ical btn-trailer" onclick="ouvrirDetail(10)">🎬 Bande annonce</a><a class="btn-ical btn-voir-plus" href="https://www.themoviedb.org/movie/8872" target="_blank" rel="noopener">🔗 Voir plus</a></div>
-  </div>
-</div>
-
-<div class="card film passee" id="seance-12" data-type="film">
-  <div class="card-poster" onclick="ouvrirDetail(12)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/qsGU6myn85MfqpNAxzJtxJ3VgrM.jpg" alt="RRRrrrr!!!" class="affiche" loading="lazy" onclick="ouvrirDetail(12)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(12)" style="cursor:pointer">RRRrrrr!!!</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  17:35</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  11:35</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 TEST DIFF DEMARRAGE</span><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span><span class="note">⭐ 6.3/10</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_12.ics" download="seance_12.ics">📅 iCal</a><a class="btn-ical btn-trailer" onclick="ouvrirDetail(12)">🎬 Bande annonce</a><a class="btn-ical btn-voir-plus" href="https://www.themoviedb.org/movie/21778" target="_blank" rel="noopener">🔗 Voir plus</a></div>
-  </div>
-</div>
-
-<div class="card film passee" id="seance-11" data-type="film">
-  <div class="card-poster" onclick="ouvrirDetail(11)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/qsGU6myn85MfqpNAxzJtxJ3VgrM.jpg" alt="RRRrrrr!!!" class="affiche" loading="lazy" onclick="ouvrirDetail(11)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(11)" style="cursor:pointer">RRRrrrr!!!</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  17:32</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  11:32</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 ICI</span><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span><span class="note">⭐ 6.3/10</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_11.ics" download="seance_11.ics">📅 iCal</a><a class="btn-ical btn-trailer" onclick="ouvrirDetail(11)">🎬 Bande annonce</a><a class="btn-ical btn-voir-plus" href="https://www.themoviedb.org/movie/21778" target="_blank" rel="noopener">🔗 Voir plus</a></div>
-  </div>
-</div>
-
-<div class="card spectacle passee" id="seance-3" data-type="spectacle">
-  <div class="card-poster" onclick="ouvrirDetail(3)" style="cursor:pointer"><div class="affiche-placeholder">🎬</div></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(3)" style="cursor:pointer">Moi sous la douche, concert 2026  —  Moi même</h3><div class="badges"><span class="badge badge-2d">📽️ 2D</span> <span class="badge badge-type">🎭 Spectacle</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  07:28</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  01:28</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 Séquence en full no vision avec audio dolby douche avec résonnance puissance 4</span><span class="diffuseur">📡 Zaz</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_3.ics" download="seance_3.ics">📅 iCal</a></div>
-  </div>
-</div>
-
-<div class="card film passee" id="seance-15" data-type="film">
-  <div class="card-poster" onclick="ouvrirDetail(15)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/wjbZUa5FMx403pSh1QJAslPkGN8.jpg" alt="Mad Heidi" class="affiche" loading="lazy" onclick="ouvrirDetail(15)"></div>
-  <div class="card-body">
-    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(15)" style="cursor:pointer">Mad Heidi</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-passee">Diffusée</span></div></div>
-    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">jeudi 22 janvier 2026  —  21:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">jeudi 22 janvier 2026  —  15:00</span><span class="decalage"> (−6h)</span></div></div>
-    <div class="meta"><span class="salle">🏠 Le Valhalla de Frag</span><span class="diffuseur">📡 FragThor</span><span class="note">⭐ 5.7/10</span></div>
-    <div class="card-actions"><a class="btn-ical" href="seance_15.ics" download="seance_15.ics">📅 iCal</a><a class="btn-ical btn-trailer" onclick="ouvrirDetail(15)">🎬 Bande annonce</a><a class="btn-ical btn-voir-plus" href="https://www.themoviedb.org/movie/566805" target="_blank" rel="noopener">🔗 Voir plus</a></div>
-  </div>
-</div></div>
+    <h2>📼  Historique</h2>
+    <button class="histo-toggle" id="histo-toggle" onclick="toggleHistorique()">
+      <span class="histo-toggle-label">
+        📼 Consulter l'historique des diffusions
+        <span class="histo-toggle-count">10 diffusion(s) • 8 titre(s) unique(s)</span>
+      </span>
+      <span class="histo-toggle-arrow">▶</span>
+    </button>
+    <div class="histo-panel" id="histo-panel">
+      <input class="histo-search" id="histo-search" type="text" placeholder="🔍  Rechercher un titre…" oninput="filtrerHistorique()">
+      <div class="histo-grid" id="histo-grid"></div>
+    </div>
   </section>
   <section id="diffuseurs">
     <h2>🎙️  Notre équipe de diffuseurs</h2>
@@ -551,10 +515,13 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • lundi 23 février 2026  —  00:00</p></footer>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • lundi 23 février 2026  —  00:25</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
+</div>
+<div class="histo-modal-overlay" id="histo-modal-overlay" onclick="fermerHistoModal(event)">
+  <div class="histo-modal"><button class="histo-modal-close" onclick="fermerHistoModal(null,true)">✕</button><div id="histo-modal-inner"></div></div>
 </div>
 
 <script>
@@ -590,7 +557,7 @@ function ouvrirDetail(id){
   const s=SEANCES.find(x=>x.id===id);if(!s)return;
   const ic=s.fmt==='3D'?'🥽':'📽️';
   const tm={movie:'🎬 Film',tv:'📺 Série',anime:'🍥 Animé',documentaire:'🎙️ Doc',concert:'🎤 Concert',spectacle:'🎭 Spectacle'};
-  const iu=`seance_${s.id}.ics`;
+  const iu=`seance_${s.id}.ics?v=1771802734`;
   const wu=`webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/${iu}`;
   let h='';
   if(s.affiche) h+=`<img src="${s.affiche}" class="modal-poster" alt="${s.titre}">`;
@@ -832,6 +799,132 @@ function _scheduleLiveRefresh() {
     setInterval(rendreSectionLive, 60 * 60 * 1000);
   }, msToNextHour);
 }
+
+// ═══════════════════════════════════════════════════════════════════════
+//  HISTORIQUE — accordéon + catalogue par titre
+// ═══════════════════════════════════════════════════════════════════════
+
+const PASSEES = SEANCES.filter(s => s.passee);
+
+function _groupParTitre(liste) {
+  const map = {};
+  liste.forEach(s => {
+    const k = s.titre.toLowerCase().trim();
+    if (!map[k]) map[k] = { titre:s.titre, type:s.type, affiche:s.affiche, resume:s.resume, note:s.note, diffusions:[] };
+    map[k].diffusions.push(s);
+    // Garder la meilleure affiche dispo
+    if (!map[k].affiche && s.affiche) map[k].affiche = s.affiche;
+  });
+  // Trier les diffusions par date décroissante
+  Object.values(map).forEach(g => g.diffusions.sort((a,b) => {
+    const da = new Date(a.annee,a.mois-1,a.jour);
+    const db = new Date(b.annee,b.mois-1,b.jour);
+    return db - da;
+  }));
+  // Retourner trié par titre
+  return Object.values(map).sort((a,b) => a.titre.localeCompare(b.titre,'fr'));
+}
+
+const TYPE_LABEL = {movie:'🎬 Film',tv:'📺 Série',anime:'🍥 Animé',documentaire:'🎙️ Doc',concert:'🎤 Concert',spectacle:'🎭 Spectacle'};
+
+function toggleHistorique() {
+  const btn   = document.getElementById('histo-toggle');
+  const panel = document.getElementById('histo-panel');
+  const open  = btn.classList.toggle('open');
+  panel.classList.toggle('open', open);
+  if (open && !document.getElementById('histo-grid').children.length) {
+    _rendreHistoGrille(PASSEES);
+  }
+}
+
+let _histoFiltreQuery = '';
+function filtrerHistorique() {
+  _histoFiltreQuery = document.getElementById('histo-search').value.toLowerCase().trim();
+  const filtrees = _histoFiltreQuery
+    ? PASSEES.filter(s => s.titre.toLowerCase().includes(_histoFiltreQuery))
+    : PASSEES;
+  _rendreHistoGrille(filtrees);
+}
+
+function _rendreHistoGrille(liste) {
+  const groupes = _groupParTitre(liste);
+  const grid = document.getElementById('histo-grid');
+  if (!groupes.length) {
+    grid.innerHTML = '<p class="vide-msg">Aucun résultat.</p>';
+    return;
+  }
+  grid.innerHTML = groupes.map(g => {
+    const nb = g.diffusions.length;
+    const affHtml = g.affiche
+      ? `<img src="${g.affiche}" class="histo-affiche" alt="${g.titre.replace(/"/g,'')}" loading="lazy">`
+      : `<div class="histo-affiche-ph">🎬</div>`;
+    return `<div class="histo-item" onclick="ouvrirHistoModal('${encodeURIComponent(g.titre)}')">
+      ${affHtml}
+      <div class="histo-info">
+        <div class="histo-titre">${g.titre}</div>
+        <div class="histo-meta">
+          <span class="histo-badge-nb">✕${nb} diffusion${nb>1?'s':''}</span>
+          <span class="histo-badge-type">${TYPE_LABEL[g.type]||'🎬'}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function ouvrirHistoModal(titrEnc) {
+  const titre = decodeURIComponent(titrEnc);
+  const groupes = _groupParTitre(PASSEES);
+  const g = groupes.find(x => x.titre === titre);
+  if (!g) return;
+
+  const nb = g.diffusions.length;
+  const affHtml = g.affiche
+    ? `<img src="${g.affiche}" class="histo-modal-poster" alt="${g.titre.replace(/"/g,'')}">`
+    : `<div class="histo-modal-poster-ph">🎬</div>`;
+  const noteHtml = g.note ? `<span class="badge" style="background:#1a3a1a;color:#3fb950;border:1px solid #3fb950">⭐ ${g.note}/10</span>` : '';
+
+  const diffRows = g.diffusions.map(s => {
+    const fmtCls = s.fmt === '3D' ? 'd3' : 'd2';
+    const ic = s.fmt === '3D' ? '🥽' : '📽️';
+    const date = `${String(s.jour).padStart(2,'0')}/${String(s.mois).padStart(2,'0')}/${s.annee} à ${s.heureFR}`;
+    const salle = s.salle ? `<span class="histo-diff-salle">🏠 ${s.salle}</span>` : '';
+    const diff  = s.diffuseur ? `<span class="histo-diff-diff">📡 ${s.diffuseur}</span>` : '';
+    return `<div class="histo-diff-row">
+      <span class="histo-diff-date">🗓️ ${date}</span>
+      <span class="histo-diff-fmt ${fmtCls}">${ic} ${s.fmt}</span>
+      ${salle}${diff}
+    </div>`;
+  }).join('');
+
+  document.getElementById('histo-modal-inner').innerHTML = `
+    <div class="histo-modal-header">
+      ${affHtml}
+      <div class="histo-modal-info">
+        <div class="histo-modal-titre">${g.titre}</div>
+        <div class="histo-modal-stats">
+          <span class="histo-badge-nb">✕${nb} diffusion${nb>1?'s':''}</span>
+          <span class="histo-badge-type">${TYPE_LABEL[g.type]||'🎬'}</span>
+          ${noteHtml}
+        </div>
+        ${g.resume ? `<div class="histo-modal-resume">${g.resume.substring(0,280)}${g.resume.length>280?'…':''}</div>` : ''}
+      </div>
+    </div>
+    <div class="histo-diffusions">
+      <h4>📅 Historique des diffusions (${nb})</h4>
+      ${diffRows}
+    </div>`;
+
+  document.getElementById('histo-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function fermerHistoModal(e, force) {
+  if (force || !e || e.target === document.getElementById('histo-modal-overlay')) {
+    document.getElementById('histo-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { fermerDetail(null,true); fermerHistoModal(null,true); } });
 
 rendreMois();appFiltres();rendreSectionLive();_scheduleLiveRefresh();
 </script>
