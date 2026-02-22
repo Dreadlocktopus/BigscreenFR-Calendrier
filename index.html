@@ -1,586 +1,305 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BigscreenFR Calendrier</title>
-    <style>
-        :root {
-            --bg:      #0d1117; --bg2: #161b22; --bg3: #21262d;
-            --border:  #30363d; --accent: #1E90FF; --accent2: #58a6ff;
-            --text:    #e6edf3; --text2: #8b949e;
-            --green:   #3fb950; --purple: #bc8cff; --radius: 12px;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
-
-        header { background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 50%, #0d1117 100%); border-bottom: 1px solid var(--border); padding: 2rem 1rem; text-align: center; }
-        header h1 { font-size: 2.2rem; color: var(--accent2); letter-spacing: 1px; }
-        header p  { color: var(--text2); margin-top: .4rem; font-size: .95rem; }
-        .stats-bar { display: flex; justify-content: center; gap: 2rem; margin-top: 1.2rem; flex-wrap: wrap; }
-        .stat { text-align: center; }
-        .stat-num { font-size: 1.6rem; font-weight: 700; color: var(--accent2); }
-        .stat-label { font-size: .8rem; color: var(--text2); }
-
-        nav { display: flex; justify-content: center; gap: .5rem; padding: .8rem; background: var(--bg2); border-bottom: 1px solid var(--border); flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
-        nav a { color: var(--text2); text-decoration: none; padding: .4rem 1rem; border-radius: 20px; font-size: .9rem; transition: all .2s; }
-        nav a:hover { background: var(--bg3); color: var(--text); }
-
-        main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
-        section { margin-bottom: 3rem; }
-        section h2 { font-size: 1.4rem; margin-bottom: 1.2rem; padding-bottom: .6rem; border-bottom: 2px solid var(--border); color: var(--accent2); }
-
-        #search { width: 100%; padding: .7rem 1rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-size: 1rem; outline: none; margin-bottom: 1.5rem; }
-        #search:focus { border-color: var(--accent); }
-
-        /* ── CARTES ── */
-        .cards { display: flex; flex-direction: column; gap: 1.2rem; }
-        .card { display: flex; gap: 1.2rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color .2s, transform .2s; }
-        .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-        .card.passee { opacity: .65; }
-        .card-poster { flex-shrink: 0; width: 120px; }
-        .affiche { width: 120px; height: 180px; object-fit: cover; display: block; }
-        .affiche-placeholder { width: 120px; height: 180px; background: var(--bg3); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
-        .card-body { flex: 1; padding: 1rem; }
-        .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; flex-wrap: wrap; margin-bottom: .6rem; }
-        .card-titre { font-size: 1.2rem; font-weight: 700; color: var(--text); }
-        .badges { display: flex; gap: .4rem; flex-wrap: wrap; }
-        .badge { padding: .2rem .6rem; border-radius: 20px; font-size: .75rem; font-weight: 600; white-space: nowrap; }
-        .badge-3d     { background: #1a3a5c; color: #58a6ff; border: 1px solid var(--accent); }
-        .badge-2d     { background: #2d1f52; color: var(--purple); border: 1px solid #8b5cf6; }
-        .badge-avenir { background: #1a3a1a; color: var(--green); border: 1px solid var(--green); }
-        .badge-passee { background: #2d2d2d; color: var(--text2); border: 1px solid var(--border); }
-        .horaires { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: .6rem; }
-        .horaire-bloc { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
-        .flag { font-size: 1.1rem; }
-        .heure { font-size: .95rem; font-weight: 600; color: var(--accent2); }
-        .decalage { font-size: .8rem; color: var(--text2); }
-        .meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem; font-size: .85rem; color: var(--text2); }
-        .resume { font-size: .875rem; color: var(--text2); line-height: 1.5; margin-top: .4rem; }
-        .serie-info { background: #1a2a3a; color: #58a6ff; border: 1px solid #2a4a6a; padding: .15rem .5rem; border-radius: 12px; font-size: .8rem; font-weight: 600; }
-
-        /* ── CALENDRIER ── */
-        #calendrier-container { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
-
-        .cal-nav {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: .8rem; gap: .5rem;
-        }
-        .cal-mois-titre { font-size: 1.15rem; font-weight: 700; color: var(--accent2); text-align: center; flex: 1; }
-        .cal-nav-btn {
-            background: var(--bg3); border: 1px solid var(--border); color: var(--accent2);
-            padding: .45rem 1.1rem; border-radius: 8px; cursor: pointer; font-size: .95rem;
-            transition: background .2s, border-color .2s; white-space: nowrap;
-            display: flex; align-items: center; gap: .4rem; font-weight: 600;
-        }
-        .cal-nav-btn:hover { background: var(--bg); border-color: var(--accent); }
-
-        /* Sélecteur de vue */
-        .vue-selector { display: flex; gap: .5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-        .vue-btn {
-            background: var(--bg3); border: 1px solid var(--border); color: var(--text2);
-            padding: .3rem .85rem; border-radius: 20px; cursor: pointer; font-size: .82rem;
-            transition: all .2s;
-        }
-        .vue-btn:hover { border-color: var(--accent); color: var(--text); }
-        .vue-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
-
-        /* Vue mois */
-        #cal-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-        #cal-table th { padding: .5rem .2rem; text-align: center; font-size: .75rem; color: var(--text2); background: var(--bg3); border-bottom: 1px solid var(--border); }
-        #cal-table td.jour { padding: .3rem; vertical-align: top; border: 1px solid var(--border); word-break: break-word; min-height: 60px; }
-        #cal-table td.vide { background: var(--bg); border: 1px solid var(--border); }
-        #cal-table td.has-seance { background: #0d1f35; }
-        .num-jour { display: block; font-weight: 600; font-size: .75rem; color: var(--text2); margin-bottom: .2rem; }
-        .cal-event { display: block; font-size: .68rem; padding: .2rem .3rem; border-radius: 4px; margin-bottom: .2rem; text-decoration: none; white-space: normal; word-break: break-word; line-height: 1.3; }
-        .cal-titre-film { display: block; font-weight: 600; margin-top: .1rem; }
-        .cal-3d { background: #1a3a5c; color: #58a6ff; }
-        .cal-2d { background: #2d1f52; color: var(--purple); }
-        .cal-event:hover { opacity: .8; }
-
-        /* Vue semaine et jour */
-        .semaine-bloc, .jour-bloc {
-            background: var(--bg3); border: 1px solid var(--border);
-            border-radius: 8px; padding: .8rem 1rem; margin-bottom: .8rem;
-        }
-        .semaine-titre, .jour-titre {
-            font-size: .9rem; font-weight: 700; color: var(--accent2);
-            margin-bottom: .6rem; padding-bottom: .4rem; border-bottom: 1px solid var(--border);
-        }
-        .semaine-event {
-            display: flex; align-items: center; gap: .6rem;
-            padding: .4rem .6rem; border-radius: 8px; text-decoration: none;
-            font-size: .85rem; color: var(--text); margin-bottom: .4rem;
-            transition: opacity .2s;
-        }
-        .semaine-event:hover { opacity: .8; }
-        .semaine-event.cal-3d { background: #1a3a5c55; border-left: 3px solid #58a6ff; }
-        .semaine-event.cal-2d { background: #2d1f5255; border-left: 3px solid var(--purple); }
-        .semaine-date { font-size: .78rem; color: var(--text2); min-width: 130px; }
-
-        /* ── DIFFUSEURS ── */
-        .diffuseurs-grid { display: flex; flex-direction: column; gap: .8rem; }
-        .diffuseur-card { display: flex; align-items: center; gap: 1rem; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: .8rem 1rem; }
-        .diff-rank { font-size: 1.5rem; min-width: 2rem; text-align: center; }
-        .diff-info { flex: 1; }
-        .diff-nom { font-weight: 600; margin-bottom: .3rem; }
-        .diff-barre-wrap { background: var(--bg3); border-radius: 10px; height: 6px; margin-bottom: .3rem; overflow: hidden; }
-        .diff-barre { background: var(--accent); height: 100%; border-radius: 10px; }
-        .diff-stats { font-size: .8rem; color: var(--text2); }
-
-        footer { text-align: center; padding: 2rem; color: var(--text2); font-size: .85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
-        .vide-msg { color: var(--text2); font-style: italic; padding: 1rem 0; }
-
-        @media (max-width: 600px) {
-            .card { flex-direction: column; }
-            .card-poster { width: 100%; }
-            .affiche { width: 100%; height: 200px; }
-            header h1 { font-size: 1.5rem; }
-            .cal-nav-btn { font-size: .82rem; padding: .35rem .7rem; }
-        }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BigscreenFR Calendrier</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--border:#30363d;--accent:#1E90FF;--accent2:#58a6ff;--text:#e6edf3;--text2:#8b949e;--green:#3fb950;--purple:#bc8cff;--radius:12px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+header{background:linear-gradient(135deg,#0d1117,#1a1f2e,#0d1117);border-bottom:1px solid var(--border);padding:2rem 1rem;text-align:center;}
+header h1{font-size:2.2rem;color:var(--accent2);letter-spacing:1px;}
+header p{color:var(--text2);margin-top:.4rem;}
+.stats-bar{display:flex;justify-content:center;gap:2rem;margin-top:1.2rem;flex-wrap:wrap;}
+.stat{text-align:center;}.stat-num{font-size:1.6rem;font-weight:700;color:var(--accent2);}.stat-label{font-size:.8rem;color:var(--text2);}
+nav{display:flex;justify-content:center;gap:.5rem;padding:.8rem;background:var(--bg2);border-bottom:1px solid var(--border);flex-wrap:wrap;position:sticky;top:0;z-index:100;}
+nav a{color:var(--text2);text-decoration:none;padding:.4rem 1rem;border-radius:20px;font-size:.9rem;transition:all .2s;}
+nav a:hover{background:var(--bg3);color:var(--text);}
+main{max-width:1100px;margin:0 auto;padding:2rem 1rem;}
+section{margin-bottom:3rem;}
+section h2{font-size:1.4rem;margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:2px solid var(--border);color:var(--accent2);}
+.toolbar{display:flex;gap:.8rem;margin-bottom:1rem;flex-wrap:wrap;align-items:center;}
+#search{flex:1;min-width:200px;padding:.7rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:1rem;outline:none;}
+#search:focus{border-color:var(--accent);}
+.btn-ical-global{display:inline-flex;align-items:center;gap:.4rem;background:var(--bg3);border:1px solid var(--border);color:var(--accent2);padding:.45rem 1rem;border-radius:8px;text-decoration:none;font-size:.85rem;transition:all .2s;}
+.btn-ical-global:hover{border-color:var(--accent);}
+.filtres{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.filtre-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:.35rem .8rem;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s;white-space:nowrap;}
+.filtre-btn.active,.filtre-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600;}
+.cards{display:flex;flex-direction:column;gap:1.2rem;}
+.card{display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,transform .2s;}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);}.card.passee{opacity:.65;}
+.card-poster{flex-shrink:0;width:140px;overflow:hidden;}
+.affiche{width:140px;height:210px;object-fit:cover;display:block;transition:transform .2s;}.affiche:hover{transform:scale(1.04);}
+.affiche-placeholder{width:140px;height:210px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.card-body{flex:1;padding:1rem;display:flex;flex-direction:column;gap:.4rem;}
+.card-header-row{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;flex-wrap:wrap;}
+.card-titre{font-size:1.15rem;font-weight:700;color:var(--text);}.card-titre:hover{color:var(--accent2);}
+.badges{display:flex;gap:.4rem;flex-wrap:wrap;}
+.badge{padding:.2rem .6rem;border-radius:20px;font-size:.75rem;font-weight:600;white-space:nowrap;}
+.badge-3d{background:#1a3a5c;color:#58a6ff;border:1px solid var(--accent);}.badge-2d{background:#2d1f52;color:var(--purple);border:1px solid #8b5cf6;}
+.badge-avenir{background:#1a3a1a;color:var(--green);border:1px solid var(--green);}.badge-passee{background:#2d2d2d;color:var(--text2);border:1px solid var(--border);}
+.badge-type{background:#1a2a1a;color:#aaa;border:1px solid #444;}
+.horaires{display:flex;gap:1rem;flex-wrap:wrap;}.horaire-bloc{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}
+.heure{font-size:.9rem;font-weight:600;color:var(--accent2);}.decalage{font-size:.78rem;color:var(--text2);}
+.meta{display:flex;gap:.8rem;flex-wrap:wrap;font-size:.82rem;color:var(--text2);}
+.resume{font-size:.875rem;color:var(--text2);line-height:1.5;}
+.serie-info{background:#1a2a3a;color:#58a6ff;border:1px solid #2a4a6a;padding:.15rem .5rem;border-radius:12px;font-size:.8rem;font-weight:600;}
+.card-actions{margin-top:auto;display:flex;gap:.5rem;flex-wrap:wrap;}
+.btn-ical{display:inline-flex;align-items:center;gap:.3rem;background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:.3rem .7rem;border-radius:8px;text-decoration:none;font-size:.78rem;transition:all .2s;}
+.btn-ical:hover{border-color:var(--accent);color:var(--accent2);}
+.modal-overlay{display:none;position:fixed;inset:0;background:#000c;z-index:1000;align-items:center;justify-content:center;padding:1rem;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);max-width:800px;width:100%;max-height:90vh;overflow-y:auto;position:relative;}
+.modal-close{position:absolute;top:.8rem;right:1rem;background:none;border:none;color:var(--text2);font-size:1.5rem;cursor:pointer;z-index:10;padding:.2rem .5rem;}
+.modal-close:hover{color:var(--text);}
+.modal-poster{width:100%;max-height:440px;object-fit:cover;border-radius:var(--radius) var(--radius) 0 0;display:block;}
+.modal-body{padding:1.5rem;}.modal-titre{font-size:1.5rem;font-weight:700;margin-bottom:.8rem;}
+.modal-meta{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:.8rem;}
+.modal-resume{color:var(--text2);line-height:1.6;margin:.8rem 0;}
+.modal-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem;}
+.modal-ical{display:inline-flex;align-items:center;gap:.4rem;background:var(--accent);color:#fff;padding:.5rem 1.2rem;border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:600;}
+.modal-ical:hover{opacity:.85;}
+.modal-webcal{display:inline-flex;align-items:center;gap:.4rem;background:#2ECC71;color:#fff;padding:.5rem 1.2rem;border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:600;}
+.modal-webcal:hover{opacity:.85;}
+#calendrier-container{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;gap:.5rem;}
+.cal-mois-titre{font-size:1.15rem;font-weight:700;color:var(--accent2);text-align:center;flex:1;}
+.cal-nav-btn{background:var(--bg3);border:1px solid var(--border);color:var(--accent2);padding:.45rem 1.1rem;border-radius:8px;cursor:pointer;font-size:.95rem;font-weight:600;display:flex;align-items:center;gap:.4rem;}
+.cal-nav-btn:hover{background:var(--bg);border-color:var(--accent);}
+.vue-selector{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;}
+.vue-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:.3rem .85rem;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s;}
+.vue-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600;}
+#cal-table{width:100%;border-collapse:collapse;table-layout:fixed;}
+#cal-table th{padding:.5rem .2rem;text-align:center;font-size:.75rem;color:var(--text2);background:var(--bg3);border-bottom:1px solid var(--border);}
+#cal-table td.jour{padding:.3rem;vertical-align:top;border:1px solid var(--border);min-height:60px;word-break:break-word;}
+#cal-table td.vide{background:var(--bg);border:1px solid var(--border);}
+#cal-table td.has-seance{background:#0d1f35;}
+.num-jour{display:block;font-weight:600;font-size:.75rem;color:var(--text2);margin-bottom:.2rem;}
+.cal-event{display:block;font-size:.68rem;padding:.2rem .3rem;border-radius:4px;margin-bottom:.2rem;cursor:pointer;line-height:1.3;}
+.cal-titre-film{display:block;font-weight:600;margin-top:.1rem;}
+.cal-3d{background:#1a3a5c;color:#58a6ff;}.cal-2d{background:#2d1f52;color:var(--purple);}
+.cal-event:hover{opacity:.8;}
+.semaine-bloc,.jour-bloc{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.8rem 1rem;margin-bottom:.8rem;}
+.semaine-titre,.jour-titre{font-size:.9rem;font-weight:700;color:var(--accent2);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+.semaine-event{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem;border-radius:8px;font-size:.85rem;color:var(--text);margin-bottom:.4rem;cursor:pointer;}
+.semaine-event:hover{opacity:.8;}
+.semaine-event.cal-3d{background:#1a3a5c55;border-left:3px solid #58a6ff;}.semaine-event.cal-2d{background:#2d1f5255;border-left:3px solid var(--purple);}
+.semaine-date{font-size:.78rem;color:var(--text2);min-width:130px;}
+.diffuseurs-grid{display:flex;flex-direction:column;gap:.8rem;}
+.diffuseur-card{display:flex;align-items:center;gap:1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:.8rem 1rem;}
+.diff-rank{font-size:1.5rem;min-width:2rem;text-align:center;}.diff-info{flex:1;}.diff-nom{font-weight:600;margin-bottom:.3rem;}
+.diff-barre-wrap{background:var(--bg3);border-radius:10px;height:6px;margin-bottom:.3rem;overflow:hidden;}
+.diff-barre{background:var(--accent);height:100%;border-radius:10px;}
+.diff-stats{font-size:.8rem;color:var(--text2);}
+.graphs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.graph-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;}
+.graph-card h3{font-size:1rem;color:var(--accent2);margin-bottom:1rem;}.graph-card.full{grid-column:1/-1;}
+footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem;}
+.vide-msg{color:var(--text2);font-style:italic;padding:1rem 0;}
+@media(max-width:700px){.card{flex-direction:column;}.card-poster,.affiche{width:100%;}.affiche{height:220px;}.graphs-grid{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
-
 <header>
-    <h1>🎬  BigscreenFR Calendrier</h1>
-    <p>Programmation officielle des diffusions • Mis à jour le dimanche 22 février 2026  —  14:16</p>
-    <div class="stats-bar">
-        <div class="stat"><div class="stat-num">3</div><div class="stat-label">À venir</div></div>
-        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Total diffusions</div></div>
-        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Films uniques</div></div>
-    </div>
+  <h1>🎬  BigscreenFR Calendrier</h1>
+  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  15:43</p>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">À venir</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Total</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Titres uniques</div></div>
+    <div class="stat"><div class="stat-num">7.7</div><div class="stat-label">Note moy.</div></div>
+  </div>
 </header>
-
 <nav>
-    <a href="#calendrier">📅 Calendrier</a>
-    <a href="#a-venir">🎬 À venir</a>
-    <a href="#historique">📼 Historique</a>
-    <a href="#diffuseurs">📡 Diffuseurs</a>
+  <a href="#calendrier">📅 Calendrier</a>
+  <a href="#a-venir">🎬 À venir</a>
+  <a href="#historique">📼 Historique</a>
+  <a href="#diffuseurs">📡 Diffuseurs</a>
+  <a href="#graphiques">📊 Stats</a>
 </nav>
-
 <main>
-
-    <input type="text" id="search" placeholder="🔍  Rechercher un film, un diffuseur, une salle…" oninput="filtrer()">
-
-    <section id="calendrier">
-        <h2>📅  Calendrier des diffusions</h2>
-        <div id="calendrier-container">
-            <!-- Entête navigation -->
-            <div class="cal-nav">
-                <button class="cal-nav-btn" id="btn-prec" onclick="naviguer(-1)">&#9664; <span id="label-prec"></span></button>
-                <span class="cal-mois-titre" id="titre-mois"></span>
-                <button class="cal-nav-btn" id="btn-suiv" onclick="naviguer(1)"><span id="label-suiv"></span> &#9654;</button>
-            </div>
-            <!-- Sélecteur vue -->
-            <div class="vue-selector">
-                <button class="vue-btn active" id="btn-vue-mois"    onclick="setVue('mois',this)">📅 Mois</button>
-                <button class="vue-btn"        id="btn-vue-semaine" onclick="setVue('semaine',this)">📆 Semaine</button>
-                <button class="vue-btn"        id="btn-vue-jour"    onclick="setVue('jour',this)">📋 Jour</button>
-            </div>
-            <!-- Conteneur de la grille -->
-            <div id="cal-body"></div>
-        </div>
-    </section>
-
-    <section id="a-venir">
-        <h2>🎬  Prochaines diffusions <small style="font-size:.9rem;color:var(--text2)">(3 séance(s))</small></h2>
-        <div class="cards" id="cards-avenir">
-    <div class="card" id="seance-1">
-        <div class="card-poster"><div class="affiche-placeholder">🎬</div></div>
-        <div class="card-body">
-            <div class="card-header-row">
-                <h3 class="card-titre">Roman Frayssinet  —  Roman Frayssinet</h3>
-                <div class="badges"><span class="badge badge-2d">📽️ 2D</span> <span class="badge badge-avenir">À venir</span></div>
-            </div>
-            <div class="horaires">
-                <div class="horaire-bloc">
-                    <span class="flag" title="France"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="28" height="19" style="border-radius:3px;vertical-align:middle;box-shadow:0 0 0 1px #ffffff22">
-  <rect width="1" height="2" fill="#002395"/>
-  <rect x="1" width="1" height="2" fill="#fff"/>
-  <rect x="2" width="1" height="2" fill="#ED2939"/>
-</svg></span>
-                    <span class="heure">mercredi 25 février 2026  —  21:00</span>
-                </div>
-                <div class="horaire-bloc">
-                    <span class="flag" title="Canada / Québec"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="28" height="19" style="border-radius:3px;vertical-align:middle;box-shadow:0 0 0 1px #ffffff22">
-  <rect width="6" height="3" fill="#fff"/>
-  <rect width="1.5" height="3" fill="#D80621"/>
-  <rect x="4.5" width="1.5" height="3" fill="#D80621"/>
-  <path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/>
-  <rect x="2.88" y="1.42" width="0.24" height="0.35" fill="#D80621"/>
-</svg></span>
-                    <span class="heure">mercredi 25 février 2026  —  15:00</span>
-                    <span class="decalage">(−6h)</span>
-                </div>
-            </div>
-            <div class="meta"><span class="salle">🏠 Salle de Beta Test</span>  <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> </div>
-            <p class="resume">Artiste / Compagnie : Roman Frayssinet</p>
-        </div>
+  <div class="toolbar">
+    <input type="text" id="search" placeholder="🔍  Rechercher…" oninput="filtrer()">
+    <a class="btn-ical-global" href="bigscreenfr.ics" download="bigscreenfr.ics">📅 Exporter tout (iCal)</a>
+  </div>
+  <div class="filtres">
+    <button class="filtre-btn active" onclick="setFiltre('',this)">🌐 Tout</button>
+    <button class="filtre-btn" onclick="setFiltre('movie',this)">🎬 Films</button>
+    <button class="filtre-btn" onclick="setFiltre('tv',this)">📺 Séries</button>
+    <button class="filtre-btn" onclick="setFiltre('anime',this)">🍥 Animés</button>
+    <button class="filtre-btn" onclick="setFiltre('doc',this)">🎙️ Docs</button>
+    <button class="filtre-btn" onclick="setFiltre('concert',this)">🎤 Concerts</button>
+    <button class="filtre-btn" onclick="setFiltre('spectacle',this)">🎭 Spectacles</button>
+  </div>
+  <section id="calendrier">
+    <h2>📅  Calendrier des diffusions</h2>
+    <div id="calendrier-container">
+      <div class="cal-nav">
+        <button class="cal-nav-btn" onclick="naviguer(-1)">&#9664; <span id="label-prec"></span></button>
+        <span class="cal-mois-titre" id="titre-mois"></span>
+        <button class="cal-nav-btn" onclick="naviguer(1)"><span id="label-suiv"></span> &#9654;</button>
+      </div>
+      <div class="vue-selector">
+        <button class="vue-btn active" onclick="setVue('mois',this)">📅 Mois</button>
+        <button class="vue-btn" onclick="setVue('semaine',this)">📆 Semaine</button>
+        <button class="vue-btn" onclick="setVue('jour',this)">📋 Jour</button>
+      </div>
+      <div id="cal-body"></div>
     </div>
+  </section>
+  <section id="a-venir">
+    <h2>🎬  Prochaines diffusions <small style="font-size:.9rem;color:var(--text2)">(4 séance(s))</small></h2>
+    <div class="cards" id="cards-avenir">
+<div class="card spectacle" id="seance-1" data-type="spectacle">
+  <div class="card-poster" onclick="ouvrirDetail(1)" style="cursor:pointer"><div class="affiche-placeholder">🎬</div></div>
+  <div class="card-body">
+    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(1)" style="cursor:pointer">Roman Frayssinet  —  Roman Frayssinet</h3><div class="badges"><span class="badge badge-2d">📽️ 2D</span> <span class="badge badge-type">🎭 Spectacle</span> <span class="badge badge-avenir">À venir</span></div></div>
+    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">mercredi 25 février 2026  —  21:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">mercredi 25 février 2026  —  15:00</span><span class="decalage"> (−6h)</span></div></div>
+    <div class="meta"><span class="salle">🏠 Salle de Beta Test</span><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span></div><p class="resume">Artiste / Compagnie : Roman Frayssinet</p>
+    <div class="card-actions"><a class="btn-ical" href="seance_1.ics" download="seance_1.ics">📅 iCal</a></div>
+  </div>
+</div>
 
-    <div class="card" id="seance-5">
-        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/vpsvHLkoeKUjceIMeNSqCp3xEyY.jpg" alt="Affiche Titanic" class="affiche" loading="lazy"></div>
-        <div class="card-body">
-            <div class="card-header-row">
-                <h3 class="card-titre">Titanic</h3>
-                <div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-avenir">À venir</span></div>
-            </div>
-            <div class="horaires">
-                <div class="horaire-bloc">
-                    <span class="flag" title="France"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="28" height="19" style="border-radius:3px;vertical-align:middle;box-shadow:0 0 0 1px #ffffff22">
-  <rect width="1" height="2" fill="#002395"/>
-  <rect x="1" width="1" height="2" fill="#fff"/>
-  <rect x="2" width="1" height="2" fill="#ED2939"/>
-</svg></span>
-                    <span class="heure">vendredi 27 février 2026  —  21:00</span>
-                </div>
-                <div class="horaire-bloc">
-                    <span class="flag" title="Canada / Québec"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="28" height="19" style="border-radius:3px;vertical-align:middle;box-shadow:0 0 0 1px #ffffff22">
-  <rect width="6" height="3" fill="#fff"/>
-  <rect width="1.5" height="3" fill="#D80621"/>
-  <rect x="4.5" width="1.5" height="3" fill="#D80621"/>
-  <path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/>
-  <rect x="2.88" y="1.42" width="0.24" height="0.35" fill="#D80621"/>
-</svg></span>
-                    <span class="heure">vendredi 27 février 2026  —  15:00</span>
-                    <span class="decalage">(−6h)</span>
-                </div>
-            </div>
-            <div class="meta"><span class="salle">🏠 Iceberg</span>  <span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span> <span class="note">⭐ 7.9/10</span></div>
-            <p class="resume">Southampton, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde, réputé pour son insubmersibilité, le « Titanic », appareille pour son premier voyage. Quatre jours plus tard, il heurte un iceberg. À son bord, un artiste pauvre et une grande bourgeoise tombent amoureux.</p>
-        </div>
+<div class="card film" id="seance-6" data-type="film">
+  <div class="card-poster" onclick="ouvrirDetail(6)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/rJAML5icaPEkj8CU4wLHjpL4RWd.jpg" alt="Love Actually" class="affiche" loading="lazy" onclick="ouvrirDetail(6)"></div>
+  <div class="card-body">
+    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(6)" style="cursor:pointer">Love Actually</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-avenir">À venir</span></div></div>
+    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">mercredi 25 février 2026  —  21:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">mercredi 25 février 2026  —  15:00</span><span class="decalage"> (−6h)</span></div></div>
+    <div class="meta"><span class="salle">🏠 YEAH</span><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span><span class="note">⭐ 7.1/10</span></div><p class="resume">L'amour est partout, imprévisible, inexplicable, insurmontable. Il frappe quand il veut et souvent, ça fait pas mal de dégâts... Pour le nouveau Premier Ministre britannique, il va prendre la jolie forme d'une jeune collaboratrice. Pour l'écrivain au coeur brisé parti se réfugier dans le sud de la F…</p>
+    <div class="card-actions"><a class="btn-ical" href="seance_6.ics" download="seance_6.ics">📅 iCal</a></div>
+  </div>
+</div>
+
+<div class="card movie" id="seance-5" data-type="movie">
+  <div class="card-poster" onclick="ouvrirDetail(5)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/vpsvHLkoeKUjceIMeNSqCp3xEyY.jpg" alt="Titanic" class="affiche" loading="lazy" onclick="ouvrirDetail(5)"></div>
+  <div class="card-body">
+    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(5)" style="cursor:pointer">Titanic</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">🎬 Film</span> <span class="badge badge-avenir">À venir</span></div></div>
+    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">vendredi 27 février 2026  —  21:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">vendredi 27 février 2026  —  15:00</span><span class="decalage"> (−6h)</span></div></div>
+    <div class="meta"><span class="salle">🏠 Iceberg</span><span class="diffuseur">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</span><span class="note">⭐ 7.9/10</span></div><p class="resume">Southampton, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde, réputé pour son insubmersibilité, le « Titanic », appareille pour son premier voyage. Quatre jours plus tard, il heurte un iceberg. À son bord, un artiste pauvre et une grande bourgeoise tombent amoureux.</p>
+    <div class="card-actions"><a class="btn-ical" href="seance_5.ics" download="seance_5.ics">📅 iCal</a></div>
+  </div>
+</div>
+
+<div class="card tv" id="seance-4" data-type="tv">
+  <div class="card-poster" onclick="ouvrirDetail(4)" style="cursor:pointer"><img src="https://image.tmdb.org/t/p/w500/ohr8BDFA47MYIyGGENwjPkwihmo.jpg" alt="One Piece — S172 Ép. 1-36780" class="affiche" loading="lazy" onclick="ouvrirDetail(4)"></div>
+  <div class="card-body">
+    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(4)" style="cursor:pointer">One Piece — S172 Ép. 1-36780</h3><div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-type">📺 Série</span> <span class="badge badge-avenir">À venir</span></div></div>
+    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">samedi 21 mars 2026  —  21:00</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">samedi 21 mars 2026  —  16:00</span><span class="decalage"> (−5h)</span></div></div>
+    <div class="meta"><span class="salle">🏠 Test</span><span class="serie-info">📺 S172 Ép. 1-36780</span><span class="diffuseur">📡 Statik</span><span class="note">⭐ 8.1/10</span></div><p class="resume">Une aventure en haute mer légendaire et unique en son genre. Monkey D. Luffy est un jeune aventurier qui a toujours rêvé d'une vie de liberté. Quittant son village, il se lance dans un périlleux voyage à la recherche d'un trésor mythique, le One Piece, afin de devenir le roi des pirates ! Mais pour …</p>
+    <div class="card-actions"><a class="btn-ical" href="seance_4.ics" download="seance_4.ics">📅 iCal</a></div>
+  </div>
+</div></div>
+  </section>
+  <section id="historique">
+    <h2>📼  Historique <small style="font-size:.9rem;color:var(--text2)">(1 diffusion(s))</small></h2>
+    <div class="cards" id="cards-histo">
+<div class="card spectacle passee" id="seance-3" data-type="spectacle">
+  <div class="card-poster" onclick="ouvrirDetail(3)" style="cursor:pointer"><div class="affiche-placeholder">🎬</div></div>
+  <div class="card-body">
+    <div class="card-header-row"><h3 class="card-titre" onclick="ouvrirDetail(3)" style="cursor:pointer">Moi sous la douche, concert 2026  —  Moi même</h3><div class="badges"><span class="badge badge-2d">📽️ 2D</span> <span class="badge badge-type">🎭 Spectacle</span> <span class="badge badge-passee">Diffusée</span></div></div>
+    <div class="horaires"><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></span> <span class="heure">dimanche 22 février 2026  —  07:28</span></div><div class="horaire-bloc"><span class="flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="24" height="16" style="border-radius:3px;vertical-align:middle"><rect width="6" height="3" fill="#fff"/><rect width="1.5" height="3" fill="#D80621"/><rect x="4.5" width="1.5" height="3" fill="#D80621"/><path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/></svg></span> <span class="heure">dimanche 22 février 2026  —  01:28</span><span class="decalage"> (−6h)</span></div></div>
+    <div class="meta"><span class="salle">🏠 Séquence en full no vision avec audio dolby douche avec résonnance puissance 4</span><span class="diffuseur">📡 Zaz</span></div>
+    <div class="card-actions"><a class="btn-ical" href="seance_3.ics" download="seance_3.ics">📅 iCal</a></div>
+  </div>
+</div></div>
+  </section>
+  <section id="diffuseurs">
+    <h2>📡  Classement des diffuseurs</h2>
+    <div class="diffuseurs-grid"><div class="diffuseur-card"><div class="diff-rank">🥇</div><div class="diff-info"><div class="diff-nom">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</div><div class="diff-barre-wrap"><div class="diff-barre" style="width:60%"></div></div><div class="diff-stats">3 diffusions  •  60%</div></div></div><div class="diffuseur-card"><div class="diff-rank">🥈</div><div class="diff-info"><div class="diff-nom">📡 Statik</div><div class="diff-barre-wrap"><div class="diff-barre" style="width:20%"></div></div><div class="diff-stats">1 diffusion  •  20%</div></div></div><div class="diffuseur-card"><div class="diff-rank">🥉</div><div class="diff-info"><div class="diff-nom">📡 Zaz</div><div class="diff-barre-wrap"><div class="diff-barre" style="width:20%"></div></div><div class="diff-stats">1 diffusion  •  20%</div></div></div></div>
+  </section>
+  <section id="graphiques">
+    <h2>📊  Statistiques & Graphiques</h2>
+    <div class="graphs-grid">
+      <div class="graph-card full"><h3>📆 Diffusions par mois</h3><canvas id="chartMois" height="80"></canvas></div>
+      <div class="graph-card"><h3>📂 Types de contenu</h3><canvas id="chartTypes"></canvas></div>
+      <div class="graph-card"><h3>🥽 Format 2D / 3D</h3><canvas id="chartFormat"></canvas></div>
     </div>
-
-    <div class="card" id="seance-4">
-        <div class="card-poster"><img src="https://image.tmdb.org/t/p/w500/ohr8BDFA47MYIyGGENwjPkwihmo.jpg" alt="Affiche One Piece — S172 Ép. 1-36780" class="affiche" loading="lazy"></div>
-        <div class="card-body">
-            <div class="card-header-row">
-                <h3 class="card-titre">One Piece — S172 Ép. 1-36780</h3>
-                <div class="badges"><span class="badge badge-3d">🥽 3D</span> <span class="badge badge-avenir">À venir</span></div>
-            </div>
-            <div class="horaires">
-                <div class="horaire-bloc">
-                    <span class="flag" title="France"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="28" height="19" style="border-radius:3px;vertical-align:middle;box-shadow:0 0 0 1px #ffffff22">
-  <rect width="1" height="2" fill="#002395"/>
-  <rect x="1" width="1" height="2" fill="#fff"/>
-  <rect x="2" width="1" height="2" fill="#ED2939"/>
-</svg></span>
-                    <span class="heure">samedi 21 mars 2026  —  21:00</span>
-                </div>
-                <div class="horaire-bloc">
-                    <span class="flag" title="Canada / Québec"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="28" height="19" style="border-radius:3px;vertical-align:middle;box-shadow:0 0 0 1px #ffffff22">
-  <rect width="6" height="3" fill="#fff"/>
-  <rect width="1.5" height="3" fill="#D80621"/>
-  <rect x="4.5" width="1.5" height="3" fill="#D80621"/>
-  <path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/>
-  <rect x="2.88" y="1.42" width="0.24" height="0.35" fill="#D80621"/>
-</svg></span>
-                    <span class="heure">samedi 21 mars 2026  —  15:00</span>
-                    <span class="decalage">(−6h)</span>
-                </div>
-            </div>
-            <div class="meta"><span class="salle">🏠 Test</span> <span class="serie-info">📺 Saison 172 Ép. 1-36780</span> <span class="diffuseur">📡 Statik</span> <span class="note">⭐ 8.1/10</span></div>
-            <p class="resume">Une aventure en haute mer légendaire et unique en son genre. Monkey D. Luffy est un jeune aventurier qui a toujours rêvé d'une vie de liberté. Quittant son village, il se lance dans un périlleux voyage à la recherche d'un trésor mythique, le One Piece, afin de devenir le roi des pirates ! Mais pour …</p>
-        </div>
-    </div></div>
-    </section>
-
-    <section id="historique">
-        <h2>📼  Historique complet <small style="font-size:.9rem;color:var(--text2)">(1 diffusion(s))</small></h2>
-        <div class="cards" id="cards-histo">
-    <div class="card passee" id="seance-3">
-        <div class="card-poster"><div class="affiche-placeholder">🎬</div></div>
-        <div class="card-body">
-            <div class="card-header-row">
-                <h3 class="card-titre">Moi sous la douche, concert 2026  —  Moi même</h3>
-                <div class="badges"><span class="badge badge-2d">📽️ 2D</span> <span class="badge badge-passee">Diffusée</span></div>
-            </div>
-            <div class="horaires">
-                <div class="horaire-bloc">
-                    <span class="flag" title="France"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="28" height="19" style="border-radius:3px;vertical-align:middle;box-shadow:0 0 0 1px #ffffff22">
-  <rect width="1" height="2" fill="#002395"/>
-  <rect x="1" width="1" height="2" fill="#fff"/>
-  <rect x="2" width="1" height="2" fill="#ED2939"/>
-</svg></span>
-                    <span class="heure">dimanche 22 février 2026  —  07:28</span>
-                </div>
-                <div class="horaire-bloc">
-                    <span class="flag" title="Canada / Québec"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" width="28" height="19" style="border-radius:3px;vertical-align:middle;box-shadow:0 0 0 1px #ffffff22">
-  <rect width="6" height="3" fill="#fff"/>
-  <rect width="1.5" height="3" fill="#D80621"/>
-  <rect x="4.5" width="1.5" height="3" fill="#D80621"/>
-  <path d="M3,0.35 L3.18,0.8 L3.65,0.72 L3.35,1.05 L3.5,1.05 L3,1.45 L2.5,1.05 L2.65,1.05 L2.35,0.72 L2.82,0.8 Z" fill="#D80621"/>
-  <rect x="2.88" y="1.42" width="0.24" height="0.35" fill="#D80621"/>
-</svg></span>
-                    <span class="heure">dimanche 22 février 2026  —  01:28</span>
-                    <span class="decalage">(−6h)</span>
-                </div>
-            </div>
-            <div class="meta"><span class="salle">🏠 Séquence en full no vision avec audio dolby douche avec résonnance puissance 4</span>  <span class="diffuseur">📡 Zaz</span> </div>
-            
-        </div>
-    </div></div>
-    </section>
-
-    <section id="diffuseurs">
-        <h2>📡  Classement des diffuseurs</h2>
-        <div class="diffuseurs-grid">
-        <div class="diffuseur-card">
-            <div class="diff-rank">🥇</div>
-            <div class="diff-info">
-                <div class="diff-nom">📡 🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑</div>
-                <div class="diff-barre-wrap"><div class="diff-barre" style="width:50%"></div></div>
-                <div class="diff-stats">2 diffusions  •  50%</div>
-            </div>
-        </div>
-        <div class="diffuseur-card">
-            <div class="diff-rank">🥈</div>
-            <div class="diff-info">
-                <div class="diff-nom">📡 Statik</div>
-                <div class="diff-barre-wrap"><div class="diff-barre" style="width:25%"></div></div>
-                <div class="diff-stats">1 diffusion  •  25%</div>
-            </div>
-        </div>
-        <div class="diffuseur-card">
-            <div class="diff-rank">🥉</div>
-            <div class="diff-info">
-                <div class="diff-nom">📡 Zaz</div>
-                <div class="diff-barre-wrap"><div class="diff-barre" style="width:25%"></div></div>
-                <div class="diff-stats">1 diffusion  •  25%</div>
-            </div>
-        </div></div>
-    </section>
-
+  </section>
 </main>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  15:43</p></footer>
 
-<footer>
-    <p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  14:16</p>
-</footer>
+<div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
+  <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
+</div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-//  DONNÉES — injectées par Python au moment de la génération
-// ═══════════════════════════════════════════════════════
-const SEANCES = [{"id": 4, "titre": "One Piece — S172 Ép. 1-36780", "fmt": "3D", "heureFR": "21:00", "heureQC": "15:00", "jour": 21, "mois": 3, "annee": 2026, "ancre": "seance-4"}, {"id": 5, "titre": "Titanic", "fmt": "3D", "heureFR": "21:00", "heureQC": "15:00", "jour": 27, "mois": 2, "annee": 2026, "ancre": "seance-5"}, {"id": 1, "titre": "Roman Frayssinet  —  Roman Frayssinet", "fmt": "2D", "heureFR": "21:00", "heureQC": "15:00", "jour": 25, "mois": 2, "annee": 2026, "ancre": "seance-1"}, {"id": 3, "titre": "Moi sous la douche, concert 2026  —  Moi même", "fmt": "2D", "heureFR": "07:28", "heureQC": "01:28", "jour": 22, "mois": 2, "annee": 2026, "ancre": "seance-3"}];
+const SEANCES=[{"id": 4, "titre": "One Piece — S172 Ép. 1-36780", "fmt": "3D", "type": "tv", "heureFR": "21:00", "heureQC": "16:00", "jour": 21, "mois": 3, "annee": 2026, "ancre": "seance-4", "affiche": "https://image.tmdb.org/t/p/w500/ohr8BDFA47MYIyGGENwjPkwihmo.jpg", "resume": "Une aventure en haute mer légendaire et unique en son genre. Monkey D. Luffy est un jeune aventurier qui a toujours rêvé d'une vie de liberté. Quittant son village, il se lance dans un périlleux voyage à la recherche d'un trésor mythique, le One Piece, afin de devenir le roi des pirates ! Mais pour trouver ce fameux butin, Luffy devra assembler l'équipage de ses rêves puis dénicher un navire, quad", "note": 8.1, "salle": "Test", "diffuseur": "Statik", "saison": 172, "episodes": "1-36780", "passee": false}, {"id": 5, "titre": "Titanic", "fmt": "3D", "type": "movie", "heureFR": "21:00", "heureQC": "15:00", "jour": 27, "mois": 2, "annee": 2026, "ancre": "seance-5", "affiche": "https://image.tmdb.org/t/p/w500/vpsvHLkoeKUjceIMeNSqCp3xEyY.jpg", "resume": "Southampton, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde, réputé pour son insubmersibilité, le « Titanic », appareille pour son premier voyage. Quatre jours plus tard, il heurte un iceberg. À son bord, un artiste pauvre et une grande bourgeoise tombent amoureux.", "note": 7.9, "salle": "Iceberg", "diffuseur": "🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑", "saison": null, "episodes": "", "passee": false}, {"id": 1, "titre": "Roman Frayssinet  —  Roman Frayssinet", "fmt": "2D", "type": "spectacle", "heureFR": "21:00", "heureQC": "15:00", "jour": 25, "mois": 2, "annee": 2026, "ancre": "seance-1", "affiche": "", "resume": "Artiste / Compagnie : Roman Frayssinet", "note": null, "salle": "Salle de Beta Test", "diffuseur": "🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑", "saison": null, "episodes": "", "passee": false}, {"id": 6, "titre": "Love Actually", "fmt": "3D", "type": "film", "heureFR": "21:00", "heureQC": "15:00", "jour": 25, "mois": 2, "annee": 2026, "ancre": "seance-6", "affiche": "https://image.tmdb.org/t/p/w500/rJAML5icaPEkj8CU4wLHjpL4RWd.jpg", "resume": "L'amour est partout, imprévisible, inexplicable, insurmontable. Il frappe quand il veut et souvent, ça fait pas mal de dégâts... Pour le nouveau Premier Ministre britannique, il va prendre la jolie forme d'une jeune collaboratrice. Pour l'écrivain au coeur brisé parti se réfugier dans le sud de la France, il surgira d'un lac. Il s'éloigne de cette femme qui, installée dans une vie de couple ronron", "note": 7.1, "salle": "YEAH", "diffuseur": "🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑", "saison": null, "episodes": "", "passee": false}, {"id": 3, "titre": "Moi sous la douche, concert 2026  —  Moi même", "fmt": "2D", "type": "spectacle", "heureFR": "07:28", "heureQC": "01:28", "jour": 22, "mois": 2, "annee": 2026, "ancre": "seance-3", "affiche": "", "resume": "Artiste / Compagnie : Moi même", "note": null, "salle": "Séquence en full no vision avec audio dolby douche avec résonnance puissance 4", "diffuseur": "Zaz", "saison": null, "episodes": "", "passee": true}];
+const SD={"mois_labels": ["Fév 2026", "Mar 2026"], "mois_values": [4, 1], "type_labels": ["🎭 Spectacle", "📺 Série", "🎬 Film", "🎬 Film"], "type_values": [2, 1, 1, 1], "fmt_3d": 3, "fmt_2d": 2};
+const MOIS_FR=["","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+const JOURS_FR=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];
+let aA=2026,mA=2,vue='mois',ft='',rq='';
 
-const MOIS_FR  = ["","Janvier","Février","Mars","Avril","Mai","Juin",
-                  "Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
-const JOURS_FR = ["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];
+function setFiltre(t,b){ft=t;document.querySelectorAll('.filtre-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');appFiltres();rendreMois();}
+function filtrer(){rq=document.getElementById('search').value.toLowerCase();appFiltres();}
+function appFiltres(){document.querySelectorAll('.card').forEach(c=>{const t=!ft||c.dataset.type===ft;const q=!rq||c.textContent.toLowerCase().includes(rq);c.style.display=(t&&q)?'':'none';});}
 
-// ═══════════════════════════════════════════════════════
-//  ÉTAT
-// ═══════════════════════════════════════════════════════
-let anneeAff = 2026;
-let moisAff  = 2;   // 1–12
-let vueActuelle = 'mois';
+function ouvrirDetail(id){
+  const s=SEANCES.find(x=>x.id===id);if(!s)return;
+  const ic=s.fmt==='3D'?'🥽':'📽️';
+  const tm={movie:'🎬 Film',tv:'📺 Série',anime:'🍥 Animé',documentaire:'🎙️ Doc',concert:'🎤 Concert',spectacle:'🎭 Spectacle'};
+  const iu=`seance_${s.id}.ics`;
+  const wu=`webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/${iu}`;
+  let h='';
+  if(s.affiche) h+=`<img src="${s.affiche}" class="modal-poster" alt="${s.titre}">`;
+  h+=`<div class="modal-body"><div class="modal-titre">${ic} ${s.titre}</div>`;
+  h+=`<div class="modal-meta"><span class="badge badge-${s.fmt.toLowerCase()}">${s.fmt}</span><span class="badge badge-type">${tm[s.type]||'🎬 Film'}</span>`;
+  if(s.note) h+=`<span class="badge" style="background:#1a3a1a;color:#3fb950;border:1px solid #3fb950">⭐ ${s.note}/10</span>`;
+  h+=s.passee?`<span class="badge badge-passee">Diffusée</span>`:`<span class="badge badge-avenir">À venir</span>`;
+  h+=`</div><div class="horaires" style="margin:.8rem 0"><div class="horaire-bloc">🇫🇷 <span class="heure" style="font-size:1.05rem">${s.heureFR}</span></div><div class="horaire-bloc">🍁 <span class="heure" style="font-size:1.05rem">${s.heureQC}</span></div></div>`;
+  if(s.salle) h+=`<div style="color:var(--text2);margin:.25rem 0">🏠 <strong>Salle :</strong> ${s.salle}</div>`;
+  if(s.diffuseur) h+=`<div style="color:var(--text2);margin:.25rem 0">📡 <strong>Diffuseur :</strong> ${s.diffuseur}</div>`;
+  if(s.saison) h+=`<div style="color:var(--text2);margin:.25rem 0">📺 <strong>Saison ${s.saison}</strong>${s.episodes?' — Ép. '+s.episodes:''}</div>`;
+  if(s.resume) h+=`<div class="modal-resume">${s.resume}</div>`;
+  h+=`<div class="modal-actions"><a class="modal-ical" href="${iu}" download="${iu}">📅 Télécharger (.ics)</a><a class="modal-webcal" href="${wu}">📲 Ajouter à l'agenda</a></div></div>`;
+  document.getElementById('modal-inner').innerHTML=h;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function fermerDetail(e,f){if(f||!e||e.target===document.getElementById('modal-overlay')){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')fermerDetail(null,true);});
 
-// ═══════════════════════════════════════════════════════
-//  HELPERS
-// ═══════════════════════════════════════════════════════
-function seancesDuMois(a, m) {
-    return SEANCES.filter(s => s.annee === a && s.mois === m);
+function sdM(a,m){return SEANCES.filter(s=>s.annee===a&&s.mois===m);}
+function majNav(){
+  let pM=mA-1,pA=aA;if(pM<1){pM=12;pA--;}let sM=mA+1,sA=aA;if(sM>12){sM=1;sA++;}
+  document.getElementById('titre-mois').textContent=MOIS_FR[mA]+' '+aA;
+  document.getElementById('label-prec').textContent=MOIS_FR[pM];
+  document.getElementById('label-suiv').textContent=MOIS_FR[sM];
+}
+function naviguer(d){mA+=d;if(mA>12){mA=1;aA++;}if(mA<1){mA=12;aA--;}rendreMois();}
+function setVue(v,b){vue=v;document.querySelectorAll('.vue-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');rendreMois();}
+function rendreMois(){majNav();const s=sdM(aA,mA);if(vue==='mois')vMois(s);else if(vue==='semaine')vSem(s);else vJour(s);}
+
+function vMois(seances){
+  const pJ={};seances.forEach(s=>{if(!pJ[s.jour])pJ[s.jour]=[];pJ[s.jour].push(s);});
+  const pd=new Date(aA,mA-1,1).getDay(),dec=pd===0?6:pd-1,nb=new Date(aA,mA,0).getDate();
+  let h='<table id="cal-table"><thead><tr>';JOURS_FR.forEach(j=>h+=`<th>${j}</th>`);h+='</tr></thead><tbody><tr>';
+  let c=0,j=1;for(let i=0;i<dec;i++){h+='<td class="vide"></td>';c++;}
+  while(j<=nb){const ss=pJ[j]||[];h+=`<td class="jour${ss.length?' has-seance':''}""><span class="num-jour">${j}</span>`;
+    ss.forEach(s=>{const ic=s.fmt==='3D'?'🥽':'📽️';h+=`<span class="cal-event cal-${s.fmt.toLowerCase()}" onclick="ouvrirDetail(${s.id})">${ic} ${s.heureFR}<br><span class="cal-titre-film">${s.titre}</span></span>`;});
+    h+='</td>';c++;if(c%7===0&&j<nb)h+='</tr><tr>';j++;}
+  const r=7-(c%7);if(r<7)for(let i=0;i<r;i++)h+='<td class="vide"></td>';h+='</tr></tbody></table>';
+  document.getElementById('cal-body').innerHTML=h;
+}
+function vSem(seances){
+  if(!seances.length){document.getElementById('cal-body').innerHTML='<p class="vide-msg">Aucune séance ce mois.</p>';return;}
+  const pS={};seances.forEach(s=>{const d=new Date(aA,s.mois-1,s.jour);const t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));t.setUTCDate(t.getUTCDate()+4-(t.getUTCDay()||7));const ys=new Date(Date.UTC(t.getUTCFullYear(),0,1));const w=Math.ceil((((t-ys)/86400000)+1)/7);const k=`${t.getUTCFullYear()}-${String(w).padStart(2,'0')}`;if(!pS[k])pS[k]={week:w,seances:[]};pS[k].seances.push(s);});
+  let h='';Object.keys(pS).sort().forEach(k=>{const {week,seances:ss}=pS[k];const p=ss[0];const d=new Date(aA,p.mois-1,p.jour);const lu=new Date(d);lu.setDate(d.getDate()-((d.getDay()+6)%7));const di=new Date(lu);di.setDate(lu.getDate()+6);const fd=x=>`${String(x.getDate()).padStart(2,'0')}/${String(x.getMonth()+1).padStart(2,'0')}`;h+=`<div class="semaine-bloc"><div class="semaine-titre">Semaine ${week} — du ${fd(lu)} au ${fd(di)}</div>`;ss.sort((a,b)=>a.jour-b.jour||a.heureFR.localeCompare(b.heureFR)).forEach(s=>{const ic=s.fmt==='3D'?'🥽':'📽️';const nj=JOURS_FR[new Date(aA,s.mois-1,s.jour).getDay()===0?6:new Date(aA,s.mois-1,s.jour).getDay()-1];h+=`<span class="semaine-event cal-${s.fmt.toLowerCase()}" onclick="ouvrirDetail(${s.id})"><span class="semaine-date">${nj} ${String(s.jour).padStart(2,'0')}/${String(s.mois).padStart(2,'0')} à ${s.heureFR}</span> ${ic} <strong>${s.titre}</strong></span>`;});h+=`</div>`;}); document.getElementById('cal-body').innerHTML=h;
+}
+function vJour(seances){
+  if(!seances.length){document.getElementById('cal-body').innerHTML='<p class="vide-msg">Aucune séance ce mois.</p>';return;}
+  const pJ={};seances.forEach(s=>{if(!pJ[s.jour])pJ[s.jour]=[];pJ[s.jour].push(s);});
+  let h='';Object.keys(pJ).map(Number).sort((a,b)=>a-b).forEach(j=>{const d=new Date(aA,mA-1,j);const nj=JOURS_FR[d.getDay()===0?6:d.getDay()-1];h+=`<div class="jour-bloc"><div class="jour-titre">${nj} ${j} ${MOIS_FR[mA]}</div>`;pJ[j].sort((a,b)=>a.heureFR.localeCompare(b.heureFR)).forEach(s=>{const ic=s.fmt==='3D'?'🥽':'📽️';h+=`<span class="semaine-event cal-${s.fmt.toLowerCase()}" onclick="ouvrirDetail(${s.id})"><span class="semaine-date">${s.heureFR}</span> ${ic} <strong>${s.titre}</strong></span>`;});h+=`</div>`;});
+  document.getElementById('cal-body').innerHTML=h;
 }
 
-function nomMoisCourt(a, m) {
-    // Gère le débordement (m=0 → décembre année précédente, m=13 → janvier suivante)
-    let date = new Date(a, m - 1, 1);
-    return MOIS_FR[date.getMonth() + 1];
-}
+Chart.defaults.color='#e6edf3';
+new Chart(document.getElementById('chartMois'),{type:'bar',data:{labels:SD.mois_labels,datasets:[{label:'Diffusions',data:SD.mois_values,backgroundColor:'#1E90FF88',borderColor:'#1E90FF',borderWidth:1,borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{color:'#30363d'}},y:{grid:{color:'#30363d'},ticks:{stepSize:1}}}}});
+new Chart(document.getElementById('chartTypes'),{type:'doughnut',data:{labels:SD.type_labels,datasets:[{data:SD.type_values,backgroundColor:['#1E90FF','#3fb950','#bc8cff','#FF6B35','#FFD700','#FF69B4'],borderColor:'#161b22',borderWidth:2}]},options:{plugins:{legend:{position:'bottom'}}}});
+new Chart(document.getElementById('chartFormat'),{type:'doughnut',data:{labels:['🥽 3D','📽️ 2D'],datasets:[{data:[SD.fmt_3d,SD.fmt_2d],backgroundColor:['#1E90FF','#bc8cff'],borderColor:'#161b22',borderWidth:2}]},options:{plugins:{legend:{position:'bottom'}}}});
 
-function majLabelsNav() {
-    let pM = moisAff - 1, pA = anneeAff;
-    if (pM < 1) { pM = 12; pA--; }
-    let sM = moisAff + 1, sA = anneeAff;
-    if (sM > 12) { sM = 1; sA++; }
-
-    document.getElementById('titre-mois').textContent  = MOIS_FR[moisAff] + ' ' + anneeAff;
-    document.getElementById('label-prec').textContent  = MOIS_FR[pM];
-    document.getElementById('label-suiv').textContent  = MOIS_FR[sM];
-}
-
-// ═══════════════════════════════════════════════════════
-//  NAVIGATION
-// ═══════════════════════════════════════════════════════
-function naviguer(delta) {
-    moisAff += delta;
-    if (moisAff > 12) { moisAff = 1;  anneeAff++; }
-    if (moisAff < 1)  { moisAff = 12; anneeAff--; }
-    rendreMois();
-}
-
-function setVue(vue, btn) {
-    vueActuelle = vue;
-    document.querySelectorAll('.vue-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    rendreMois();
-}
-
-// ═══════════════════════════════════════════════════════
-//  RENDU — sélectionne la bonne vue
-// ═══════════════════════════════════════════════════════
-function rendreMois() {
-    majLabelsNav();
-    const seances = seancesDuMois(anneeAff, moisAff);
-
-    if (vueActuelle === 'mois')    rendreVueMois(seances);
-    else if (vueActuelle === 'semaine') rendreVueSemaine(seances);
-    else                            rendreVueJour(seances);
-}
-
-// ── Vue MOIS ──────────────────────────────────────────
-function rendreVueMois(seances) {
-    // Groupement par jour
-    const parJour = {};
-    seances.forEach(s => {
-        if (!parJour[s.jour]) parJour[s.jour] = [];
-        parJour[s.jour].push(s);
-    });
-
-    // Calcul du premier jour du mois (0=dim, ajusté lun=0)
-    const premierJour = new Date(anneeAff, moisAff - 1, 1).getDay(); // 0=dim
-    const decalage    = (premierJour === 0) ? 6 : premierJour - 1;   // lundi en premier
-    const nbJours     = new Date(anneeAff, moisAff, 0).getDate();
-
-    let html = '<table id="cal-table"><thead><tr>';
-    JOURS_FR.forEach(j => html += `<th>${j}</th>`);
-    html += '</tr></thead><tbody>';
-
-    let cellule = 0;
-    let jour = 1;
-    html += '<tr>';
-
-    // Cellules vides avant le 1er
-    for (let i = 0; i < decalage; i++) {
-        html += '<td class="vide"></td>';
-        cellule++;
-    }
-
-    while (jour <= nbJours) {
-        const seancesJour = parJour[jour] || [];
-        const classeHas   = seancesJour.length ? ' has-seance' : '';
-        html += `<td class="jour${classeHas}"><span class="num-jour">${jour}</span>`;
-        seancesJour.forEach(s => {
-            const icone = s.fmt === '3D' ? '🥽' : '📽️';
-            html += `<a href="#${s.ancre}" class="cal-event cal-${s.fmt.toLowerCase()}" title="${s.titre}">`
-                  + `${icone} ${s.heureFR}<br><span class="cal-titre-film">${s.titre}</span></a>`;
-        });
-        html += '</td>';
-        cellule++;
-        if (cellule % 7 === 0 && jour < nbJours) html += '</tr><tr>';
-        jour++;
-    }
-
-    // Cellules vides après le dernier jour
-    const reste = 7 - (cellule % 7);
-    if (reste < 7) for (let i = 0; i < reste; i++) html += '<td class="vide"></td>';
-    html += '</tr></tbody></table>';
-
-    document.getElementById('cal-body').innerHTML = html;
-}
-
-// ── Vue SEMAINE ───────────────────────────────────────
-function rendreVueSemaine(seances) {
-    if (!seances.length) {
-        document.getElementById('cal-body').innerHTML = '<p class="vide-msg">Aucune séance ce mois.</p>';
-        return;
-    }
-
-    // Groupement par semaine ISO
-    const parSemaine = {};
-    seances.forEach(s => {
-        const d = new Date(anneeAff, s.mois - 1, s.jour);
-        // Numéro de semaine ISO simplifié
-        const tmp = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-        tmp.setUTCDate(tmp.getUTCDate() + 4 - (tmp.getUTCDay() || 7));
-        const yearStart = new Date(Date.UTC(tmp.getUTCFullYear(), 0, 1));
-        const week = Math.ceil((((tmp - yearStart) / 86400000) + 1) / 7);
-        const cle = `${tmp.getUTCFullYear()}-${String(week).padStart(2,'0')}`;
-        if (!parSemaine[cle]) parSemaine[cle] = { week, seances: [] };
-        parSemaine[cle].seances.push(s);
-    });
-
-    let html = '';
-    Object.keys(parSemaine).sort().forEach(cle => {
-        const { week, seances: ss } = parSemaine[cle];
-        // Trouver lundi/dimanche de cette semaine
-        const premierS = ss[0];
-        const d = new Date(anneeAff, premierS.mois - 1, premierS.jour);
-        const lundi = new Date(d); lundi.setDate(d.getDate() - ((d.getDay() + 6) % 7));
-        const dim   = new Date(lundi); dim.setDate(lundi.getDate() + 6);
-        const fmtD  = dt => `${String(dt.getDate()).padStart(2,'0')}/${String(dt.getMonth()+1).padStart(2,'0')}`;
-
-        html += `<div class="semaine-bloc">`;
-        html += `<div class="semaine-titre">Semaine ${week} — du ${fmtD(lundi)} au ${fmtD(dim)}</div>`;
-        ss.sort((a,b) => a.jour - b.jour || a.heureFR.localeCompare(b.heureFR)).forEach(s => {
-            const icone = s.fmt === '3D' ? '🥽' : '📽️';
-            const nomJ  = JOURS_FR[new Date(anneeAff, s.mois-1, s.jour).getDay() === 0 ? 6 : new Date(anneeAff, s.mois-1, s.jour).getDay() - 1];
-            html += `<a href="#${s.ancre}" class="semaine-event cal-${s.fmt.toLowerCase()}">`
-                  + `<span class="semaine-date">${nomJ} ${String(s.jour).padStart(2,'0')}/${String(s.mois).padStart(2,'0')} à ${s.heureFR}</span>`
-                  + ` ${icone} <strong>${s.titre}</strong></a>`;
-        });
-        html += `</div>`;
-    });
-
-    document.getElementById('cal-body').innerHTML = html;
-}
-
-// ── Vue JOUR ──────────────────────────────────────────
-function rendreVueJour(seances) {
-    if (!seances.length) {
-        document.getElementById('cal-body').innerHTML = '<p class="vide-msg">Aucune séance ce mois.</p>';
-        return;
-    }
-
-    const parJour = {};
-    seances.forEach(s => {
-        if (!parJour[s.jour]) parJour[s.jour] = [];
-        parJour[s.jour].push(s);
-    });
-
-    let html = '';
-    Object.keys(parJour).map(Number).sort((a,b) => a-b).forEach(jour => {
-        const d    = new Date(anneeAff, moisAff - 1, jour);
-        const nomJ = JOURS_FR[d.getDay() === 0 ? 6 : d.getDay() - 1];
-        html += `<div class="jour-bloc">`;
-        html += `<div class="jour-titre">${nomJ} ${jour} ${MOIS_FR[moisAff]}</div>`;
-        parJour[jour].sort((a,b) => a.heureFR.localeCompare(b.heureFR)).forEach(s => {
-            const icone = s.fmt === '3D' ? '🥽' : '📽️';
-            html += `<a href="#${s.ancre}" class="semaine-event cal-${s.fmt.toLowerCase()}">`
-                  + `<span class="semaine-date">${s.heureFR}</span>`
-                  + ` ${icone} <strong>${s.titre}</strong></a>`;
-        });
-        html += `</div>`;
-    });
-
-    document.getElementById('cal-body').innerHTML = html;
-}
-
-// ═══════════════════════════════════════════════════════
-//  RECHERCHE
-// ═══════════════════════════════════════════════════════
-function filtrer() {
-    const q = document.getElementById('search').value.toLowerCase();
-    document.querySelectorAll('.card').forEach(c => {
-        c.style.display = c.textContent.toLowerCase().includes(q) ? '' : 'none';
-    });
-}
-
-// ═══════════════════════════════════════════════════════
-//  NAVIGATION DOUCE (ancres)
-// ═══════════════════════════════════════════════════════
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        const cible = document.querySelector(a.getAttribute('href'));
-        if (cible) { e.preventDefault(); cible.scrollIntoView({behavior:'smooth'}); }
-    });
-});
-
-// ═══════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════
-rendreMois();
+rendreMois();appFiltres();
 </script>
-
 </body>
 </html>
