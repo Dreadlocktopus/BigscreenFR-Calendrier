@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-20@bigscreenfr
+DTSTAMP:20260222T192728Z
+DTSTART:20260328T225900Z
+DTEND:20260329T005900Z
+SUMMARY:Voulzy à l'église de Boulloire  —  Laurent — 2D ((◉‿◉) S҉E҉C҉O҉T҉O҉ (◉‿◉))
+DESCRIPTION:Artiste / Compagnie : Laurent
+LOCATION:beanscream - Secoto - Que du bonheur
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-4@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260321T200000Z
 DTEND:20260321T220000Z
 SUMMARY:One Piece — S172 Ép. 1-36780 — 3D (Statik)
@@ -15,8 +24,17 @@ DESCRIPTION:Une aventure en haute mer légendaire et unique en son genre. Monkey
 LOCATION:Test
 END:VEVENT
 BEGIN:VEVENT
+UID:seance-21@bigscreenfr
+DTSTAMP:20260222T192728Z
+DTSTART:20260312T070000Z
+DTEND:20260312T090000Z
+SUMMARY:Le Fléau — S01 Intégrale — 3D (maroushka69)
+DESCRIPTION:Suite à une erreur survenue dans un laboratoire top secret américain\, un virus est libéré et décime la majorité de la population mondiale. Les quelques survivants essaient de se retrouver et de se ra
+LOCATION:cloude
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-5@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260227T200000Z
 DTEND:20260227T220000Z
 SUMMARY:Titanic — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -25,7 +43,7 @@ LOCATION:Iceberg
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-9@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260227T200000Z
 DTEND:20260227T220000Z
 SUMMARY:Autant en emporte le vent — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -34,7 +52,7 @@ LOCATION:DREAD
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-1@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260225T200000Z
 DTEND:20260225T220000Z
 SUMMARY:Roman Frayssinet  —  Roman Frayssinet — 2D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -43,7 +61,7 @@ LOCATION:Salle de Beta Test
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-7@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260225T200000Z
 DTEND:20260225T220000Z
 SUMMARY:Beetlejuice Beetlejuice — 3D (nicolas.dumont)
@@ -52,7 +70,7 @@ LOCATION:BigscreenFr  Beetlejuice Beetlejuice
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-18@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260225T200000Z
 DTEND:20260225T220000Z
 SUMMARY:NARUTO — S01 Ép. 18 — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -61,7 +79,7 @@ LOCATION:
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-6@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260225T200000Z
 DTEND:20260225T220000Z
 SUMMARY:Love Actually — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -70,7 +88,7 @@ LOCATION:Prout
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-14@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260223T200000Z
 DTEND:20260223T220000Z
 SUMMARY:Astérix & Obélix : Mission Cléopâtre — 2D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -79,7 +97,7 @@ LOCATION:TEST
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-17@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260223T200000Z
 DTEND:20260223T220000Z
 SUMMARY:Shérif, fais-moi peur ! — S01 Intégrale — 3D (FragThor)
@@ -87,8 +105,17 @@ DESCRIPTION:13 épisodes | Saison produite en 1979 | 1ère diffusion : janvier 1
 LOCATION:Le Valhalla de Frag
 END:VEVENT
 BEGIN:VEVENT
+UID:seance-19@bigscreenfr
+DTSTAMP:20260222T192728Z
+DTSTART:20260223T200000Z
+DTEND:20260223T220000Z
+SUMMARY:Poséidon — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Une nuit de Saint Sylvestre festive a commencé au milieu de l'Atlantique Nord\, sur le luxueux navire de croisière Poséidon. De nombreux passagers se sont rassemblés dans l'opulente salle de bal pour 
+LOCATION:
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-13@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260222T220000Z
 DTEND:20260223T000000Z
 SUMMARY:Brotherhood of Lions — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -97,7 +124,7 @@ LOCATION:ICI
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-16@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260222T220000Z
 DTEND:20260223T000000Z
 SUMMARY:Kaamelott — S01 Intégrale — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
@@ -106,11 +133,20 @@ LOCATION:TEST
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-8@bigscreenfr
-DTSTAMP:20260222T183819Z
+DTSTAMP:20260222T192728Z
 DTSTART:20260222T200000Z
 DTEND:20260222T220000Z
 SUMMARY:Ready Player One — 3D (Statik)
 DESCRIPTION:En 2045\, le monde est au bord du chaos. Les êtres humains se réfugient dans l'OASIS\, univers virtuel mis au point par le brillant et excentrique James Halliday. Avant de disparaître\, celui-ci a déc
 LOCATION:Cinéma
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-22@bigscreenfr
+DTSTAMP:20260222T192728Z
+DTSTART:20260222T200000Z
+DTEND:20260222T220000Z
+SUMMARY:Grève party — 2D (Oagern)
+DESCRIPTION:Un matin du mois de mai\, M. Jean\, ex-baron de la lutte syndicale des années soixante et aujourd'hui libraire sur la place Sainte-Geneviève\, reprend du service par amitié pour René\, un ancien camar
+LOCATION:Grève Party
 END:VEVENT
 END:VCALENDAR
