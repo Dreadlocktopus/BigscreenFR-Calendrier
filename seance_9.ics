@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-9@bigscreenfr
+DTSTAMP:20260222T155028Z
+DTSTART:20260227T200000Z
+DTEND:20260227T220000Z
+SUMMARY:Autant en emporte le vent — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:En Géorgie\, en 1861\, Scarlett O'Hara est une jeune femme fière et volontaire de la haute société sudiste. Courtisée par tous les bons partis du pays\, elle n'a d'yeux que pour Ashley Wilkes malgré s
+LOCATION:DREAD
+END:VEVENT
+END:VCALENDAR
