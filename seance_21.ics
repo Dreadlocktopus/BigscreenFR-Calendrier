@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-21@bigscreenfr
+DTSTAMP:20260222T192730Z
+DTSTART:20260312T070000Z
+DTEND:20260312T090000Z
+SUMMARY:Le Fléau — S01 Intégrale — 3D (maroushka69)
+DESCRIPTION:Suite à une erreur survenue dans un laboratoire top secret américain\, un virus est libéré et décime la majorité de la population mondiale. Les quelques survivants essaient de se retrouver et de se ra
+LOCATION:cloude
+END:VEVENT
+END:VCALENDAR
