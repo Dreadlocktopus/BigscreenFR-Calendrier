@@ -24,6 +24,8 @@ section h2{font-size:1.4rem;margin-bottom:1.2rem;padding-bottom:.6rem;border-bot
 #search:focus{border-color:var(--accent);}
 .btn-ical-global{display:inline-flex;align-items:center;gap:.4rem;background:var(--bg3);border:1px solid var(--border);color:var(--accent2);padding:.45rem 1rem;border-radius:8px;text-decoration:none;font-size:.85rem;transition:all .2s;}
 .btn-ical-global:hover{border-color:var(--accent);}
+.btn-webcal{color:#a8d8a8;border-color:#3a5a3a;}.btn-webcal:hover{border-color:#3fb950;background:#1a3a1a;}
+.btn-gcal{color:#f5c842;border-color:#5a4a1a;}.btn-gcal:hover{border-color:#f5c842;background:#2a2a0a;}
 .filtres{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.5rem;}
 .filtre-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:.35rem .8rem;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s;white-space:nowrap;}
 .filtre-btn.active,.filtre-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600;}
@@ -63,6 +65,8 @@ section h2{font-size:1.4rem;margin-bottom:1.2rem;padding-bottom:.6rem;border-bot
 .modal-ical:hover{opacity:.85;}
 .modal-webcal{display:inline-flex;align-items:center;gap:.4rem;background:#2ECC71;color:#fff;padding:.5rem 1.2rem;border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:600;}
 .modal-webcal:hover{opacity:.85;}
+.modal-gcal{display:inline-flex;align-items:center;gap:.4rem;background:#f5c842;color:#1a1a00;padding:.5rem 1.2rem;border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:600;}
+.modal-gcal:hover{opacity:.85;}
 #calendrier-container{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;}
 .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;gap:.5rem;}
 .cal-mois-titre{font-size:1.15rem;font-weight:700;color:var(--accent2);text-align:center;flex:1;}
@@ -102,7 +106,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  16:30</p>
+  <p>Programmation officielle • Mis à jour le dimanche 22 février 2026  —  16:38</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">6</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">Total</div></div>
@@ -119,7 +123,9 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <main>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Rechercher…" oninput="filtrer()">
-    <a class="btn-ical-global" href="bigscreenfr.ics" download="bigscreenfr.ics">📅 Exporter tout (iCal)</a>
+    <a class="btn-ical-global" href="bigscreenfr.ics" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
+    <a class="btn-ical-global btn-webcal" href="webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics">🍎 Apple Agenda</a>
+    <a class="btn-ical-global btn-gcal" href="https://calendar.google.com/calendar/r?cid=webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics" target="_blank" rel="noopener">🗓️ Google Agenda</a>
   </div>
   <div class="filtres">
     <button class="filtre-btn active" onclick="setFiltre('',this)">🌐 Tout</button>
@@ -235,7 +241,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  16:30</p></footer>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • dimanche 22 février 2026  —  16:38</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
@@ -269,7 +275,7 @@ function ouvrirDetail(id){
   if(s.diffuseur) h+=`<div style="color:var(--text2);margin:.25rem 0">📡 <strong>Diffuseur :</strong> ${s.diffuseur}</div>`;
   if(s.saison) h+=`<div style="color:var(--text2);margin:.25rem 0">📺 <strong>Saison ${s.saison}</strong>${s.episodes?' — Ép. '+s.episodes:''}</div>`;
   if(s.resume) h+=`<div class="modal-resume">${s.resume}</div>`;
-  h+=`<div class="modal-actions"><a class="modal-ical" href="${iu}" download="${iu}">📅 Télécharger (.ics)</a><a class="modal-webcal" href="${wu}">📲 Ajouter à l'agenda</a></div></div>`;
+  h+=`<div class="modal-actions"><a class="modal-ical" href="${iu}" download="${iu}">📅 Télécharger (.ics)</a><a class="modal-webcal" href="${wu}">🍎 Apple Agenda</a><a class="modal-gcal" href="https://calendar.google.com/calendar/r?cid=${wu}" target="_blank" rel="noopener">🗓️ Google Agenda</a></div></div>`;
   document.getElementById('modal-inner').innerHTML=h;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow='hidden';
