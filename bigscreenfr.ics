@@ -1,0 +1,44 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:BigscreenFR Programmation
+X-WR-TIMEZONE:Europe/Paris
+BEGIN:VEVENT
+UID:seance-4@bigscreenfr
+DTSTAMP:20260222T144354Z
+DTSTART:20260321T200000Z
+DTEND:20260321T220000Z
+SUMMARY:One Piece — S172 Ép. 1-36780 — 3D (Statik)
+DESCRIPTION:Une aventure en haute mer légendaire et unique en son genre. Monkey D. Luffy est un jeune aventurier qui a toujours rêvé d'une vie de liberté. Quittant son village\, il se lance dans un périlleux voya
+LOCATION:Test
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-5@bigscreenfr
+DTSTAMP:20260222T144354Z
+DTSTART:20260227T200000Z
+DTEND:20260227T220000Z
+SUMMARY:Titanic — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Southampton\, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde\, réputé pour son insubmersibilité\, le « Titanic »\, appareille pour son premier voyage. Quatre jours plus tard\, il
+LOCATION:Iceberg
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-1@bigscreenfr
+DTSTAMP:20260222T144354Z
+DTSTART:20260225T200000Z
+DTEND:20260225T220000Z
+SUMMARY:Roman Frayssinet  —  Roman Frayssinet — 2D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Artiste / Compagnie : Roman Frayssinet
+LOCATION:Salle de Beta Test
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-6@bigscreenfr
+DTSTAMP:20260222T144354Z
+DTSTART:20260225T200000Z
+DTEND:20260225T220000Z
+SUMMARY:Love Actually — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:L'amour est partout\, imprévisible\, inexplicable\, insurmontable. Il frappe quand il veut et souvent\, ça fait pas mal de dégâts... Pour le nouveau Premier Ministre britannique\, il va prendre la jol
+LOCATION:YEAH
+END:VEVENT
+END:VCALENDAR
