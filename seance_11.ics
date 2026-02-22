@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-11@bigscreenfr
+DTSTAMP:20260222T163413Z
+DTSTART:20260222T163200Z
+DTEND:20260222T183200Z
+SUMMARY:RRRrrrr!!! — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Il y a 37 000 ans\, deux tribus voisines vivaient en paix… à un cheveu près. Pendant que la tribu des Cheveux Propres coulait des jours paisibles en gardant pour elle seule le secret de la formule du 
+LOCATION:ICI
+END:VEVENT
+END:VCALENDAR
