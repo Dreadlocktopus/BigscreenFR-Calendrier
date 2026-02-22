@@ -5,9 +5,9 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="generated-at" content="1771802734">
+<meta name="generated-at" content="1771803807">
 <title>BigscreenFR Calendrier</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js?v=1771802734"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js?v=1771803807"></script>
 <style>
 :root{--bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--border:#30363d;--accent:#1E90FF;--accent2:#58a6ff;--text:#e6edf3;--text2:#8b949e;--green:#3fb950;--purple:#bc8cff;--radius:12px;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -281,7 +281,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le lundi 23 février 2026  —  00:25</p>
+  <p>Programmation officielle • Mis à jour le lundi 23 février 2026  —  00:43</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">14</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">24</div><div class="stat-label">Total</div></div>
@@ -301,7 +301,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <main>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Rechercher…" oninput="filtrer()">
-    <a class="btn-ical-global" href="bigscreenfr.ics?v=1771802734" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
+    <a class="btn-ical-global" href="bigscreenfr.ics?v=1771803807" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
     <a class="btn-ical-global btn-gcal" href="https://calendar.google.com/calendar/r?cid=webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics" target="_blank" rel="noopener">🗓️ Google Agenda</a>
     <a class="btn-ical-global btn-webcal" href="webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics">🍎 Apple Agenda</a>
   </div>
@@ -515,7 +515,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • lundi 23 février 2026  —  00:25</p></footer>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • lundi 23 février 2026  —  00:43</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
@@ -550,14 +550,83 @@ const JOURS_FR=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];
 let aA=2026,mA=2,vue='mois',ft='',rq='';
 
 function setFiltre(t,b){ft=t;document.querySelectorAll('.filtre-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');appFiltres();rendreMois();}
-function filtrer(){rq=document.getElementById('search').value.toLowerCase();appFiltres();}
-function appFiltres(){document.querySelectorAll('.card').forEach(c=>{const t=!ft||c.dataset.type===ft;const q=!rq||c.textContent.toLowerCase().includes(rq);c.style.display=(t&&q)?'':'none';});}
 
+function filtrer(){
+  rq=document.getElementById('search').value.toLowerCase().trim();
+  appFiltres();
+  // ── Recherche globale dans l'historique ──────────────────────────
+  if(rq.length>=2){
+    const histoMatch=PASSEES.filter(s=>
+      s.titre.toLowerCase().includes(rq)||
+      (s.diffuseur||'').toLowerCase().includes(rq)||
+      (s.resume||'').toLowerCase().includes(rq)||
+      (s.salle||'').toLowerCase().includes(rq)
+    );
+    _afficherRecherchePasees(histoMatch,rq);
+  }else{
+    _cacherRecherchePassees();
+  }
+}
+
+function _afficherRecherchePasees(liste,query){
+  let section=document.getElementById('search-results-section');
+  if(!section){
+    section=document.createElement('div');
+    section.id='search-results-section';
+    section.style.cssText='margin:1rem 0;padding:1rem;background:var(--bg2);border:1px solid var(--accent);border-radius:var(--radius);';
+    const toolbar=document.querySelector('.toolbar');
+    toolbar.parentNode.insertBefore(section,toolbar.nextSibling.nextSibling);
+  }
+  if(!liste.length){
+    section.innerHTML='<div style="color:var(--text2);font-size:.9rem">🔍 Aucun résultat dans l'historique pour <strong>"'+query+'"</strong></div>';
+    section.style.display='';
+    return;
+  }
+  const groupes=_groupParTitre(liste);
+  const items=groupes.slice(0,12).map(g=>{
+    const nb=g.diffusions.length;
+    const aff=g.affiche?`<img src="${g.affiche}" style="width:44px;height:66px;object-fit:cover;border-radius:6px;flex-shrink:0" alt="">`:`<div style="width:44px;height:66px;background:var(--bg3);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0">🎬</div>`;
+    return `<div onclick="ouvrirHistoModal('${encodeURIComponent(g.titre)}')" style="display:flex;align-items:center;gap:.7rem;padding:.5rem .7rem;border-radius:8px;cursor:pointer;background:var(--bg3);transition:background .15s" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background='var(--bg3)'">
+      ${aff}
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:700;font-size:.88rem;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${g.titre}</div>
+        <div style="font-size:.76rem;color:var(--text2);margin-top:.15rem">${TYPE_LABEL[g.type]||'🎬'} · ${nb} diffusion${nb>1?'s':''} · 📼 Historique</div>
+      </div>
+      <span style="font-size:.7rem;color:var(--accent2);white-space:nowrap">Voir ›</span>
+    </div>`;
+  }).join('');
+  const extra=groupes.length>12?`<div style="font-size:.78rem;color:var(--text2);margin-top:.5rem;text-align:center">${groupes.length-12} résultat(s) supplémentaire(s) — affine ta recherche</div>`:'';
+  // Ouvrir automatiquement l'accordéon historique si fermé
+  const panel=document.getElementById('histo-panel');
+  const btn=document.getElementById('histo-toggle');
+  if(panel&&!panel.classList.contains('open')){toggleHistorique();}
+  // Propager la recherche dans la barre historique
+  const hs=document.getElementById('histo-search');
+  if(hs){hs.value=query;filtrerHistorique();}
+  section.innerHTML=`<div style="font-weight:700;color:var(--accent2);margin-bottom:.6rem;font-size:.9rem">📼 Résultats dans l'historique (${groupes.length} titre(s))</div><div style="display:flex;flex-direction:column;gap:.4rem">${items}</div>${extra}`;
+  section.style.display='';
+}
+
+function _cacherRecherchePassees(){
+  const section=document.getElementById('search-results-section');
+  if(section)section.style.display='none';
+  // Réinitialiser la barre de recherche historique
+  const hs=document.getElementById('histo-search');
+  if(hs&&hs.value){hs.value='';filtrerHistorique();}
+}
+
+function appFiltres(){
+  document.querySelectorAll('.card').forEach(c=>{
+    const t=!ft||c.dataset.type===ft;
+    const q=!rq||c.textContent.toLowerCase().includes(rq);
+    c.style.display=(t&&q)?'':'none';
+  });
+}
 function ouvrirDetail(id){
   const s=SEANCES.find(x=>x.id===id);if(!s)return;
   const ic=s.fmt==='3D'?'🥽':'📽️';
   const tm={movie:'🎬 Film',tv:'📺 Série',anime:'🍥 Animé',documentaire:'🎙️ Doc',concert:'🎤 Concert',spectacle:'🎭 Spectacle'};
-  const iu=`seance_${s.id}.ics?v=1771802734`;
+  const iu=`seance_${s.id}.ics?v=1771803807`;
   const wu=`webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/${iu}`;
   let h='';
   if(s.affiche) h+=`<img src="${s.affiche}" class="modal-poster" alt="${s.titre}">`;
