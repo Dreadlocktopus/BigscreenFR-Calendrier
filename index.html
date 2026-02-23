@@ -5,9 +5,9 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="generated-at" content="1771833125">
+<meta name="generated-at" content="1771833672">
 <title>BigscreenFR Calendrier</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js?v=1771833125"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js?v=1771833672"></script>
 <style>
 :root{--bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--border:#30363d;--accent:#1E90FF;--accent2:#58a6ff;--text:#e6edf3;--text2:#8b949e;--green:#3fb950;--purple:#bc8cff;--radius:12px;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -75,8 +75,11 @@ section h2{font-size:1.4rem;margin-bottom:1.2rem;padding-bottom:.6rem;border-bot
 .modal-gcal:hover{opacity:.85;}
 .modal-voir-plus{display:inline-flex;align-items:center;gap:.4rem;background:#bc8cff22;border:1px solid #bc8cff;color:#bc8cff;padding:.5rem 1.2rem;border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:600;}
 .modal-voir-plus:hover{background:#bc8cff33;}
-.modal-trailer{margin:.8rem 0;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;}
-.modal-trailer iframe{width:100%;height:100%;display:block;}
+.modal-trailer{margin:.8rem 0;border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;background:#000;}
+.modal-trailer img{width:100%;display:block;opacity:.85;transition:opacity .2s;border-radius:var(--radius);}
+.modal-trailer:hover img{opacity:1;}
+.modal-trailer-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.modal-trailer-play svg{width:68px;height:68px;filter:drop-shadow(0 2px 8px #000a);}
 #calendrier-container{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;}
 .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;gap:.5rem;}
 .cal-mois-titre{font-size:1.15rem;font-weight:700;color:var(--accent2);text-align:center;flex:1;}
@@ -281,7 +284,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le lundi 23 février 2026  —  08:52</p>
+  <p>Programmation officielle • Mis à jour le lundi 23 février 2026  —  09:01</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">14</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">24</div><div class="stat-label">Total</div></div>
@@ -301,7 +304,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <main>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Rechercher…" oninput="filtrer()">
-    <a class="btn-ical-global" href="bigscreenfr.ics?v=1771833125" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
+    <a class="btn-ical-global" href="bigscreenfr.ics?v=1771833672" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
     <a class="btn-ical-global btn-gcal" href="https://calendar.google.com/calendar/r?cid=webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics" target="_blank" rel="noopener">🗓️ Google Agenda</a>
     <a class="btn-ical-global btn-webcal" href="webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics">🍎 Apple Agenda</a>
   </div>
@@ -515,7 +518,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • lundi 23 février 2026  —  08:52</p></footer>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • lundi 23 février 2026  —  09:01</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
@@ -556,7 +559,7 @@ function filtrer(){
   appFiltres();
   // ── Recherche globale dans l'historique ──────────────────────────
   if(rq.length>=2){
-    const histoMatch=PASSEES.filter(s=>
+    const histoMatch=_getPassees().filter(s=>
       s.titre.toLowerCase().includes(rq)||
       (s.diffuseur||'').toLowerCase().includes(rq)||
       (s.resume||'').toLowerCase().includes(rq)||
@@ -626,7 +629,7 @@ function ouvrirDetail(id){
   const s=SEANCES.find(x=>x.id===id);if(!s)return;
   const ic=s.fmt==='3D'?'🥽':'📽️';
   const tm={movie:'🎬 Film',tv:'📺 Série',anime:'🍥 Animé',documentaire:'🎙️ Doc',concert:'🎤 Concert',spectacle:'🎭 Spectacle'};
-  const iu=`seance_${s.id}.ics?v=1771833125`;
+  const iu=`seance_${s.id}.ics?v=1771833672`;
   const wu=`webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/${iu}`;
   let h='';
   if(s.affiche) h+=`<img src="${s.affiche}" class="modal-poster" alt="${s.titre}">`;
@@ -645,7 +648,16 @@ function ouvrirDetail(id){
   if(s.resume) h+=`<div class="modal-resume">${s.resume}</div>`;
   if(s.trailerUrl){
     const ytId=_extractYtId(s.trailerUrl);
-    if(ytId)h+=`<div class="modal-trailer"><iframe src="https://www.youtube.com/embed/${ytId}?rel=0&autoplay=0" title="🎬 Bande annonce" frameborder="0" allow="accelerometer;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe></div>`;
+    if(ytId){
+      const thumb=`https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+      const ytUrl=`https://www.youtube.com/watch?v=${ytId}`;
+      h+=`<a class="modal-trailer" href="${ytUrl}" target="_blank" rel="noopener" title="🎬 Ouvrir la bande annonce sur YouTube">` +
+         `<img src="${thumb}" alt="Bande annonce" loading="lazy">` +
+         `<div class="modal-trailer-play"><svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">` +
+         `<circle cx="34" cy="34" r="34" fill="#FF0000CC"/>` +
+         `<polygon points="26,20 54,34 26,48" fill="white"/>` +
+         `</svg></div></a>`;
+    }
   }
   h+=`<div class="modal-actions"><a class="modal-ical" href="${iu}" download="${iu}">📅 Télécharger (.ics)</a><a class="modal-gcal" href="https://calendar.google.com/calendar/r?cid=${wu}" target="_blank" rel="noopener">🗓️ Google Agenda</a><a class="modal-webcal" href="${wu}">🍎 Apple Agenda</a>`;
   if(s.externalUrl) h+=`<a class="modal-voir-plus" href="${s.externalUrl}" target="_blank" rel="noopener">🔗 Voir plus</a>`;
@@ -657,7 +669,7 @@ function ouvrirDetail(id){
 function fermerDetail(e,f){if(f||!e||e.target===document.getElementById('modal-overlay')){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')fermerDetail(null,true);});
 
-function sdM(a,m){return SEANCES.filter(s=>s.annee===a&&s.mois===m);}
+function sdM(a,m){return SEANCES.filter(s=>s.annee===a&&s.mois===m&&(!ft||s.type===ft));}
 function majNav(){
   let pM=mA-1,pA=aA;if(pM<1){pM=12;pA--;}let sM=mA+1,sA=aA;if(sM>12){sM=1;sA++;}
   document.getElementById('titre-mois').textContent=MOIS_FR[mA]+' '+aA;
@@ -691,10 +703,14 @@ function vJour(seances){
   document.getElementById('cal-body').innerHTML=h;
 }
 
-Chart.defaults.color='#e6edf3';
-new Chart(document.getElementById('chartMois'),{type:'bar',data:{labels:SD.mois_labels,datasets:[{label:'Diffusions',data:SD.mois_values,backgroundColor:'#1E90FF88',borderColor:'#1E90FF',borderWidth:1,borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{color:'#30363d'}},y:{grid:{color:'#30363d'},ticks:{stepSize:1}}}}});
-new Chart(document.getElementById('chartTypes'),{type:'doughnut',data:{labels:SD.type_labels,datasets:[{data:SD.type_values,backgroundColor:['#1E90FF','#3fb950','#bc8cff','#FF6B35','#FFD700','#FF69B4'],borderColor:'#161b22',borderWidth:2}]},options:{plugins:{legend:{position:'bottom'}}}});
-new Chart(document.getElementById('chartFormat'),{type:'doughnut',data:{labels:['🥽 3D','📽️ 2D'],datasets:[{data:[SD.fmt_3d,SD.fmt_2d],backgroundColor:['#1E90FF','#bc8cff'],borderColor:'#161b22',borderWidth:2}]},options:{plugins:{legend:{position:'bottom'}}}});
+function _initCharts() {
+  if (typeof Chart === 'undefined') { setTimeout(_initCharts, 500); return; }
+  if (!SD || !SD.mois_labels) return;
+  Chart.defaults.color = '#e6edf3';
+  try { new Chart(document.getElementById('chartMois'),{type:'bar',data:{labels:SD.mois_labels,datasets:[{label:'Diffusions',data:SD.mois_values,backgroundColor:'#1E90FF88',borderColor:'#1E90FF',borderWidth:1,borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{color:'#30363d'}},y:{grid:{color:'#30363d'},ticks:{stepSize:1}}}}}}); } catch(e) { console.warn('chartMois:',e); }
+  try { new Chart(document.getElementById('chartTypes'),{type:'doughnut',data:{labels:SD.type_labels,datasets:[{data:SD.type_values,backgroundColor:['#1E90FF','#3fb950','#bc8cff','#FF6B35','#FFD700','#FF69B4'],borderColor:'#161b22',borderWidth:2}]},options:{plugins:{legend:{position:'bottom'}}}}}); } catch(e) { console.warn('chartTypes:',e); }
+  try { new Chart(document.getElementById('chartFormat'),{type:'doughnut',data:{labels:['🥽 3D','📽️ 2D'],datasets:[{data:[SD.fmt_3d,SD.fmt_2d],backgroundColor:['#1E90FF','#bc8cff'],borderColor:'#161b22',borderWidth:2}]},options:{plugins:{legend:{position:'bottom'}}}}}); } catch(e) { console.warn('chartFormat:',e); }
+}
 
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -873,7 +889,7 @@ function _scheduleLiveRefresh() {
 //  HISTORIQUE — accordéon + catalogue par titre
 // ═══════════════════════════════════════════════════════════════════════
 
-const PASSEES = SEANCES.filter(s => s.passee);
+// PASSEES supprimé — utiliser _getPassees() à la place
 
 function _groupParTitre(liste) {
   const map = {};
@@ -902,7 +918,7 @@ function toggleHistorique() {
   const open  = btn.classList.toggle('open');
   panel.classList.toggle('open', open);
   if (open && !document.getElementById('histo-grid').children.length) {
-    _rendreHistoGrille(PASSEES);
+    _rendreHistoGrille(_getPassees());
   }
 }
 
@@ -910,8 +926,8 @@ let _histoFiltreQuery = '';
 function filtrerHistorique() {
   _histoFiltreQuery = document.getElementById('histo-search').value.toLowerCase().trim();
   const filtrees = _histoFiltreQuery
-    ? PASSEES.filter(s => s.titre.toLowerCase().includes(_histoFiltreQuery))
-    : PASSEES;
+    ? _getPassees().filter(s => s.titre.toLowerCase().includes(_histoFiltreQuery))
+    : _getPassees();
   _rendreHistoGrille(filtrees);
 }
 
@@ -942,7 +958,7 @@ function _rendreHistoGrille(liste) {
 
 function ouvrirHistoModal(titrEnc) {
   const titre = decodeURIComponent(titrEnc);
-  const groupes = _groupParTitre(PASSEES);
+  const groupes = _groupParTitre(_getPassees());
   const g = groupes.find(x => x.titre === titre);
   if (!g) return;
 
@@ -995,7 +1011,7 @@ function fermerHistoModal(e, force) {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { fermerDetail(null,true); fermerHistoModal(null,true); } });
 
-rendreMois();appFiltres();rendreSectionLive();_scheduleLiveRefresh();
+rendreMois();appFiltres();rendreSectionLive();_scheduleLiveRefresh();_initCharts();
 </script>
 </body>
 </html>
