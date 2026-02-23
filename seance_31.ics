@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-31@bigscreenfr
+DTSTAMP:20260223T205530Z
+DTSTART:20260206T200000Z
+DTEND:20260206T220000Z
+SUMMARY:Interstellar — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Dans un futur proche\, face à une Terre exsangue\, un groupe d’explorateurs utilise un vaisseau interstellaire pour franchir un trou de ver permettant de parcourir des distances jusque‐là infranchissa
+LOCATION:
+END:VEVENT
+END:VCALENDAR
