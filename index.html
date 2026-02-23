@@ -5,9 +5,9 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="generated-at" content="1771824690">
+<meta name="generated-at" content="1771824740">
 <title>BigscreenFR Calendrier</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js?v=1771824690"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js?v=1771824740"></script>
 <style>
 :root{--bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--border:#30363d;--accent:#1E90FF;--accent2:#58a6ff;--text:#e6edf3;--text2:#8b949e;--green:#3fb950;--purple:#bc8cff;--radius:12px;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -281,7 +281,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le lundi 23 février 2026  —  06:31</p>
+  <p>Programmation officielle • Mis à jour le lundi 23 février 2026  —  06:32</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">14</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">24</div><div class="stat-label">Total</div></div>
@@ -301,7 +301,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <main>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Rechercher…" oninput="filtrer()">
-    <a class="btn-ical-global" href="bigscreenfr.ics?v=1771824690" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
+    <a class="btn-ical-global" href="bigscreenfr.ics?v=1771824740" download="bigscreenfr.ics">📅 Télécharger (.ics)</a>
     <a class="btn-ical-global btn-gcal" href="https://calendar.google.com/calendar/r?cid=webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics" target="_blank" rel="noopener">🗓️ Google Agenda</a>
     <a class="btn-ical-global btn-webcal" href="webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/bigscreenfr.ics">🍎 Apple Agenda</a>
   </div>
@@ -515,7 +515,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • lundi 23 février 2026  —  06:31</p></footer>
+<footer><p>BigscreenFR Calendrier • Site généré automatiquement par le bot Discord • lundi 23 février 2026  —  06:32</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
@@ -626,7 +626,7 @@ function ouvrirDetail(id){
   const s=SEANCES.find(x=>x.id===id);if(!s)return;
   const ic=s.fmt==='3D'?'🥽':'📽️';
   const tm={movie:'🎬 Film',tv:'📺 Série',anime:'🍥 Animé',documentaire:'🎙️ Doc',concert:'🎤 Concert',spectacle:'🎭 Spectacle'};
-  const iu=`seance_${s.id}.ics?v=1771824690`;
+  const iu=`seance_${s.id}.ics?v=1771824740`;
   const wu=`webcal://dreadlocktopus.github.io/BigscreenFr-Calendrier/${iu}`;
   let h='';
   if(s.affiche) h+=`<img src="${s.affiche}" class="modal-poster" alt="${s.titre}">`;
