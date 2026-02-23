@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-26@bigscreenfr
+DTSTAMP:20260223T103223Z
+DTSTART:20260321T200000Z
+DTEND:20260321T220000Z
+SUMMARY:La Méthode Williams — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Focus sur la personnalité de l'entraîneur de tennis Richard Williams\, père des joueuses mondiales Venus et Serena. Il n'avait aucune expérience dans le sport mais lorsque ses filles ont eu quatre ans
+LOCATION:TEST
+END:VEVENT
+END:VCALENDAR
