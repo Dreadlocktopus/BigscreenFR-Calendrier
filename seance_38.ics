@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//BigscreenFR//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-38@bigscreenfr
+DTSTAMP:20260224T021436Z
+DTSTART:20260301T200000Z
+DTEND:20260301T220000Z
+SUMMARY:Ugly Betty — S01 Ép. 1 — 2D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Betty Suarez n'est pas spécialement belle\, mais elle est douce\, intelligente et travaille dur. Dans un monde régi par les apparences\, ses qualités sont invisibles. Pourtant\, le président de Meade 
+LOCATION:
+END:VEVENT
+END:VCALENDAR
