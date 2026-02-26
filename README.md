@@ -1,2 +1,2 @@
 # BigscreenFR-Calendrier
-Programmation Bigscreen 3D Cinéma
+Programmations de la communauté BigscreenFR
