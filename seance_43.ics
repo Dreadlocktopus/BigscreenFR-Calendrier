@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V6//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-43@dreadlocktopus_bot_v5
+DTSTAMP:20260226T155943Z
+DTSTART:20260226T160000Z
+DTEND:20260226T180000Z
+SUMMARY:Honor — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Dans un monde où les gangs des rues bafouent quotidiennement la loi\, deux amis\, Raymond et Gabriel\, doivent choisir leur camp. A la suite d'un violent incident qui a ensanglanté leur quartier\, Ray
+LOCATION:
+END:VEVENT
+END:VCALENDAR
