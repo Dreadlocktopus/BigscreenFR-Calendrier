@@ -1,11 +1,11 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//BigscreenFR//BigscreenFR//FR
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V6//FR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:seance-14@bigscreenfr
-DTSTAMP:20260226T042322Z
+UID:seance-14@dreadlocktopus_bot_v5
+DTSTAMP:20260226T140748Z
 DTSTART:20260223T200000Z
 DTEND:20260223T220000Z
 SUMMARY:Astérix & Obélix : Mission Cléopâtre — 2D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
