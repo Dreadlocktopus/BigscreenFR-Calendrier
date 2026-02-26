@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V6//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-44@dreadlocktopus_bot_v5
+DTSTAMP:20260226T180921Z
+DTSTART:20260226T190000Z
+DTEND:20260226T210000Z
+SUMMARY:San Francisco 1985 — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:San Francisco 1985. Frankie est un jeune danseur qui vient d’intégrer une des plus prestigieuses troupes de danse contemporaine de la ville. Il fait la connaissance de Todd\, un des danseurs de la tro
+LOCATION:
+END:VEVENT
+END:VCALENDAR
