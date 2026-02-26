@@ -5,11 +5,11 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-41@dreadlocktopus_bot_v5
-DTSTAMP:20260226T150138Z
-DTSTART:20260227T150200Z
-DTEND:20260227T170200Z
-SUMMARY:San Francisco 1985 — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
-DESCRIPTION:San Francisco 1985. Frankie est un jeune danseur qui vient d’intégrer une des plus prestigieuses troupes de danse contemporaine de la ville. Il fait la connaissance de Todd\, un des danseurs de la tro
+DTSTAMP:20260226T152815Z
+DTSTART:20260326T152900Z
+DTEND:20260326T172900Z
+SUMMARY:Jumpers — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Mabel est une jeune fille audacieuse qui a une grande ambition : infiltrer le monde animal. Pour ce faire\, elle transfère son esprit à un robot castor afin de pouvoir approcher d’autres animaux et ét
 LOCATION:
 END:VEVENT
 END:VCALENDAR
