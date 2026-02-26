@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DREADBOT V6 — Guide de l'Équipe</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg:       #0e0f17;
+  --bg2:      #13141f;
+  --bg3:      #191b2a;
+  --card:     #1a1d2e;
+  --card2:    #1f2235;
+  --border:   #252840;
+  --border2:  #2d3154;
+  --accent:   #7c6af7;
+  --accent2:  #f7506a;
+  --gold:     #f5c842;
+  --green:    #4ade80;
+  --cyan:     #22d3ee;
+  --pink:     #f472b6;
+  --orange:   #fb923c;
+  --text:     #e2e5f5;
+  --text2:    #9197b8;
+  --text3:    #5a6080;
+  --n2:       #60a5fa;
+  --n3:       #34d399;
+  --r: 255;--g: 255;--b: 255;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NOISE TEXTURE ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none; z-index: 0; opacity: 0.6;
+}
+
+/* ══ HERO ══ */
+.hero {
+  position: relative;
+  padding: 80px 40px 60px;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,106,247,0.18) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 40% at 80% 50%, rgba(247,80,106,0.08) 0%, transparent 60%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border2), transparent);
+}
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 4px;
+  color: var(--accent); text-transform: uppercase;
+  margin-bottom: 20px;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; display: block; width: 30px; height: 1px; background: var(--accent);
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+.hero h1 .grad {
+  background: linear-gradient(135deg, #a78bfa, #f7506a, #f5c842);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 17px; color: var(--text2);
+  max-width: 560px; margin: 16px auto 32px;
+  font-weight: 300; letter-spacing: 0.2px;
+}
+
+.hero-badges {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.hbadge {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 16px; border-radius: 30px;
+  font-size: 12px; font-weight: 500;
+  border: 1px solid;
+}
+
+.hb-v6 { background: rgba(124,106,247,0.12); color: #a78bfa; border-color: rgba(124,106,247,0.3); }
+.hb-beta { background: rgba(247,80,106,0.1); color: #f7506a; border-color: rgba(247,80,106,0.3); animation: badge-pulse 2.5s ease-in-out infinite; }
+.hb-love { background: rgba(245,200,66,0.1); color: var(--gold); border-color: rgba(245,200,66,0.25); }
+
+@keyframes badge-pulse { 0%,100%{opacity:1} 50%{opacity:0.65} }
+
+/* ── CREATOR CARD ── */
+.creator-strip {
+  max-width: 680px; margin: 0 auto;
+  background: linear-gradient(135deg, rgba(124,106,247,0.1), rgba(247,80,106,0.07));
+  border: 1px solid rgba(124,106,247,0.25);
+  border-radius: 16px; padding: 20px 28px;
+  display: flex; align-items: center; gap: 18px;
+  text-align: left;
+}
+
+.creator-icon {
+  width: 52px; height: 52px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  font-size: 24px; box-shadow: 0 8px 24px rgba(124,106,247,0.35);
+}
+
+.creator-info .name {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px;
+  color: var(--text);
+}
+
+.creator-info .desc {
+  font-size: 13px; color: var(--text2); font-style: italic;
+}
+
+/* ── NAV / TOC ── */
+.toc {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(14,15,23,0.92);
+  backdrop-filter: blur(16px) saturate(1.5);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  display: flex; gap: 0; align-items: center;
+  overflow-x: auto;
+}
+
+.toc a {
+  display: flex; align-items: center; gap: 7px;
+  padding: 14px 18px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.5px;
+  color: var(--text3); text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s; white-space: nowrap;
+}
+
+.toc a:hover { color: var(--text); border-color: var(--accent); }
+.toc a.active { color: var(--accent); border-color: var(--accent); }
+
+/* ── MAIN LAYOUT ── */
+.main {
+  max-width: 1100px; margin: 0 auto;
+  padding: 60px 40px 120px;
+}
+
+/* ── SECTION ── */
+.section { margin-bottom: 80px; scroll-margin-top: 60px; }
+
+.section-header {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-icon {
+  width: 46px; height: 46px; flex-shrink: 0;
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+
+.section-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px; font-weight: 800; letter-spacing: -0.5px;
+}
+
+.section-header p { font-size: 13px; color: var(--text2); margin-top: 2px; }
+
+/* ── ROLE PILL ── */
+.role-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px; }
+
+.rpill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; border: 1px solid;
+  font-family: 'DM Mono', monospace; letter-spacing: 0.5px;
+}
+
+.rp-n2 { background: rgba(96,165,250,0.1); color: var(--n2); border-color: rgba(96,165,250,0.3); }
+.rp-n3 { background: rgba(52,211,153,0.1); color: var(--n3); border-color: rgba(52,211,153,0.3); }
+.rp-n0 { background: rgba(245,200,66,0.1); color: var(--gold); border-color: rgba(245,200,66,0.25); }
+.rp-elite { background: rgba(245,200,66,0.15); color: var(--gold); border-color: rgba(245,200,66,0.4); animation: badge-pulse 2s ease-in-out infinite; }
+
+/* ── CARD GRID ── */
+.cmd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 16px;
+}
+
+.cmd-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cmd-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--card-accent, transparent);
+  transition: opacity 0.2s;
+}
+
+.cmd-card:hover {
+  border-color: var(--border2);
+  background: var(--card2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.cmd-card:hover::before { opacity: 1; }
+
+.card-head {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 12px;
+}
+
+.card-emoji {
+  font-size: 28px; flex-shrink: 0; line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 15px; color: var(--text);
+}
+
+.card-cmd {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--accent); background: rgba(124,106,247,0.1);
+  padding: 2px 8px; border-radius: 4px; display: inline-block; margin-top: 3px;
+}
+
+.card-desc {
+  font-size: 13px; color: var(--text2); line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.card-tags {
+  display: flex; gap: 5px; flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 10px; font-family: 'DM Mono', monospace;
+  padding: 2px 8px; border-radius: 4px; border: 1px solid;
+  letter-spacing: 0.5px;
+}
+
+.tag-public { background: rgba(74,222,128,0.08); color: var(--green); border-color: rgba(74,222,128,0.2); }
+.tag-eph    { background: rgba(34,211,238,0.08); color: var(--cyan); border-color: rgba(34,211,238,0.2); }
+.tag-ia     { background: rgba(124,106,247,0.1); color: #a78bfa; border-color: rgba(124,106,247,0.25); }
+.tag-n2only { background: rgba(96,165,250,0.08); color: var(--n2); border-color: rgba(96,165,250,0.2); }
+.tag-fun    { background: rgba(251,146,60,0.08); color: var(--orange); border-color: rgba(251,146,60,0.2); }
+
+/* Card color accents per category */
+.c-fun    { --card-accent: linear-gradient(90deg, #f7506a, #f5c842); }
+.c-gif    { --card-accent: linear-gradient(90deg, #fb923c, #f472b6); }
+.c-sondage{ --card-accent: linear-gradient(90deg, #7c6af7, #22d3ee); }
+.c-diff   { --card-accent: linear-gradient(90deg, #4ade80, #22d3ee); }
+.c-admin  { --card-accent: linear-gradient(90deg, #60a5fa, #7c6af7); }
+.c-util   { --card-accent: linear-gradient(90deg, #f472b6, #7c6af7); }
+.c-special{ --card-accent: linear-gradient(90deg, var(--gold), #f7506a); }
+
+/* ── SPECIAL KAAMELOTT BLOCK ── */
+.kaamelott-block {
+  background: linear-gradient(135deg, rgba(139,0,0,0.2), rgba(245,200,66,0.08));
+  border: 1px solid rgba(245,200,66,0.3);
+  border-radius: 18px;
+  padding: 32px;
+  position: relative; overflow: hidden;
+  margin-top: 20px;
+}
+
+.kaamelott-block::before {
+  content: '⚔️';
+  position: absolute; right: 24px; top: 24px;
+  font-size: 80px; opacity: 0.06;
+  transform: rotate(-15deg);
+}
+
+.kaamelott-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800;
+  color: var(--gold); margin-bottom: 8px;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.kaamelott-subtitle {
+  font-size: 13px; color: var(--text2); margin-bottom: 20px;
+}
+
+.elite-seal {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(245,200,66,0.12);
+  border: 1px solid rgba(245,200,66,0.4);
+  border-radius: 10px; padding: 12px 18px;
+  margin-bottom: 20px;
+}
+
+.elite-seal .seal-icon { font-size: 24px; }
+.elite-seal .seal-text { font-size: 13px; }
+.elite-seal .seal-text strong { color: var(--gold); display: block; font-size: 14px; }
+.elite-seal .seal-text span { color: var(--text2); font-style: italic; }
+
+.kaamelott-desc {
+  font-size: 14px; color: var(--text); line-height: 1.8;
+  border-left: 3px solid rgba(245,200,66,0.4);
+  padding-left: 16px;
+}
+
+/* ── EPHEMERE INFO BOX ── */
+.info-box {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 12px; padding: 16px 18px; margin-bottom: 24px;
+}
+
+.info-box .ib-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.info-box .ib-text { font-size: 13px; color: var(--text2); }
+.info-box .ib-text strong { color: var(--text); }
+
+.info-box.cyan { border-color: rgba(34,211,238,0.2); background: rgba(34,211,238,0.04); }
+.info-box.green { border-color: rgba(74,222,128,0.2); background: rgba(74,222,128,0.04); }
+.info-box.gold { border-color: rgba(245,200,66,0.2); background: rgba(245,200,66,0.04); }
+
+/* ── COMMAND TABLE ── */
+.cmd-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  font-size: 13px;
+}
+
+.cmd-table th {
+  background: var(--bg3); padding: 10px 14px;
+  text-align: left; font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 1px; color: var(--text3);
+  text-transform: uppercase; border-bottom: 1px solid var(--border);
+}
+
+.cmd-table td {
+  padding: 12px 14px; border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.cmd-table tr:last-child td { border-bottom: none; }
+.cmd-table tr:hover td { background: rgba(255,255,255,0.015); }
+
+.cmd-table .cmd-name {
+  font-family: 'DM Mono', monospace; color: var(--accent); font-size: 12px;
+}
+
+/* ── INTRO BLOCK ── */
+.intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 48px;
+}
+
+@media (max-width: 700px) {
+  .intro-grid { grid-template-columns: 1fr; }
+  .cmd-grid { grid-template-columns: 1fr; }
+  .hero { padding: 60px 20px 40px; }
+  .main { padding: 40px 20px 80px; }
+  .toc { padding: 0 16px; }
+}
+
+.intro-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px;
+}
+
+.intro-card h3 {
+  font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700;
+  margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+}
+
+.intro-card p { font-size: 13px; color: var(--text2); }
+
+/* ── LEVEL BADGE big ── */
+.level-big {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 20px; border-radius: 12px; margin-bottom: 8px;
+  font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700;
+  border: 1px solid;
+}
+
+.lb-n2 { background: rgba(96,165,250,0.1); color: var(--n2); border-color: rgba(96,165,250,0.3); }
+.lb-n3 { background: rgba(52,211,153,0.1); color: var(--n3); border-color: rgba(52,211,153,0.3); }
+
+.level-desc { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; }
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 60px 40px;
+  border-top: 1px solid var(--border);
+  background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(124,106,247,0.08) 0%, transparent 70%);
+}
+
+.footer-logo {
+  font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.footer p { font-size: 13px; color: var(--text3); }
+
+/* ── ANIMATIONS ── */
+.fade-in {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible { opacity: 1; transform: none; }
+
+.cmd-card { animation: card-in 0.4s ease both; }
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border2), transparent);
+  margin: 48px 0;
+}
+
+/* ── QUOTE ── */
+.quote-block {
+  border-left: 3px solid var(--accent);
+  padding: 14px 20px; margin: 24px 0;
+  background: rgba(124,106,247,0.05);
+  border-radius: 0 8px 8px 0;
+  font-style: italic; color: var(--text2); font-size: 14px;
+}
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 7px 0; font-size: 14px; color: var(--text2);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content: '✦'; color: var(--accent); flex-shrink: 0; margin-top: 2px; font-size: 12px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* ── HIGHLIGHT NUMBER ── */
+.stat-row {
+  display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0;
+}
+
+.stat-pill {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 18px; text-align: center;
+  flex: 1; min-width: 100px;
+}
+
+.stat-pill .n {
+  font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.stat-pill .l { font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-eyebrow">Guide officiel</div>
+  <h1><span class="grad">DREADBOT V6</span><br>Guide de l'Équipe</h1>
+  <p class="hero-sub">Tout ce que vous devez savoir pour maîtriser votre bot de cinéma — à l'usage exclusif de l'équipe.</p>
+
+  <div class="hero-badges">
+    <span class="hbadge hb-v6">🤖 Version 6.0</span>
+    <span class="hbadge hb-beta">🧪 Béta Équipe</span>
+    <span class="hbadge hb-love">💛 Fait avec amour</span>
+  </div>
+
+  <div class="creator-strip">
+    <div class="creator-icon">🐙</div>
+    <div class="creator-info">
+      <div class="name">Créé par Dreadlocktopus</div>
+      <div class="desc">Ce bot est le fruit d'un travail de passion — chaque fonction, chaque animation, chaque interaction a été pensée avec amour pour notre communauté ciné. Bienvenue dans la V6 ✨</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NAV ══ -->
+<nav class="toc" id="toc">
+  <a href="#intro" onclick="setActive(this)">🗺️ Intro</a>
+  <a href="#fun" onclick="setActive(this)">🎮 Fun & Défis</a>
+  <a href="#gifs" onclick="setActive(this)">🎭 GIFs</a>
+  <a href="#sondages" onclick="setActive(this)">🗳️ Sondages</a>
+  <a href="#social" onclick="setActive(this)">💖 Social</a>
+  <a href="#diffusions" onclick="setActive(this)">📅 Diffusions</a>
+  <a href="#admin" onclick="setActive(this)">🛡️ Admin</a>
+  <a href="#kaamelott" onclick="setActive(this)">⚔️ Kaamelott Élite</a>
+  <a href="#ephemere" onclick="setActive(this)">👻 Éphémère</a>
+</nav>
+
+<!-- ══ MAIN ══ -->
+<div class="main">
+
+  <!-- ── INTRO ── -->
+  <section class="section" id="intro">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(124,106,247,0.15);">🗺️</div>
+      <div>
+        <h2>Bienvenue dans la V6</h2>
+        <p>Présentation du bot et de vos accès</p>
+      </div>
+    </div>
+
+    <div class="stat-row fade-in">
+      <div class="stat-pill"><div class="n">35+</div><div class="l">FONCTIONS</div></div>
+      <div class="stat-pill"><div class="n">5</div><div class="l">NIVEAUX</div></div>
+      <div class="stat-pill"><div class="n">V6</div><div class="l">VERSION</div></div>
+      <div class="stat-pill"><div class="n">🧠</div><div class="l">IA GROQ</div></div>
+    </div>
+
+    <div class="quote-block fade-in">
+      « Ce bot a été construit brique par brique, avec une obsession du détail. Chaque commande est pensée pour enrichir nos soirées ciné — pas juste un outil, une expérience. »
+      <br><strong style="color: var(--text); font-style: normal; font-size: 12px; margin-top: 6px; display: block;">— Dreadlocktopus, créateur du bot</strong>
+    </div>
+
+    <div class="intro-grid fade-in">
+      <div class="intro-card">
+        <h3>🛡️ Votre niveau <span style="color: var(--n2);">N2 — Administrateur</span></h3>
+        <div class="level-big lb-n2">🛡️ N2 · Administrateur</div>
+        <p class="level-desc">Accès complet aux fonctions fun, aux outils de diffusion et à certains panneaux d'administration.</p>
+        <br>
+        <ul class="checklist">
+          <li>Toutes les commandes /fun & défis ciné</li>
+          <li>Gestion des diffusions et du calendrier</li>
+          <li>Panneau /admin — vue et annulations</li>
+          <li>GIFs réactions dont Popcorn 🍿</li>
+          <li>Sondages, votes et duels</li>
+        </ul>
+      </div>
+      <div class="intro-card">
+        <h3>🎬 Votre niveau <span style="color: var(--n3);">N3 — Diffuseur</span></h3>
+        <div class="level-big lb-n3">🎬 N3 · Diffuseur</div>
+        <p class="level-desc">Accès à tout ce qui concerne la programmation et l'animation des soirées ciné.</p>
+        <br>
+        <ul class="checklist">
+          <li>Toutes les commandes /fun & défis ciné</li>
+          <li>Programmer et gérer ses propres séances</li>
+          <li>Accès au panneau /admin en lecture</li>
+          <li>GIFs réactions de base</li>
+          <li>Sondages et votes films</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-box cyan fade-in">
+      <span class="ib-icon">👻</span>
+      <div class="ib-text">
+        <strong>Éphémère vs. Public</strong> — Certaines commandes vous répondent en privé (visible uniquement par vous, marqué 👻), d'autres postent directement dans le salon (visible de tous, marqué 📢). C'est configuré différemment selon votre rôle — les membres de l'équipe voient généralement les réponses en public pour animer la communauté.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FUN & DÉFIS ── -->
+  <section class="section" id="fun">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(247,80,106,0.12);">🎮</div>
+      <div>
+        <h2>Fun & Défis Ciné</h2>
+        <p>Toutes les commandes interactives pour animer le salon</p>
+      </div>
+    </div>
+
+    <div class="role-pills fade-in">
+      <span class="rpill rp-n2">🛡️ N2 — Accès ✅</span>
+      <span class="rpill rp-n3">🎬 N3 — Accès ✅</span>
+    </div>
+
+    <div class="info-box green fade-in">
+      <span class="ib-icon">🤖</span>
+      <div class="ib-text">
+        <strong>Propulsé par l'IA Groq/Gemini</strong> — La plupart de ces défis utilisent une IA pour générer du contenu à la volée : synopsis uniques, notes inventées, portraits de personnages… Chaque partie est différente.
+      </div>
+    </div>
+
+    <div class="cmd-grid">
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">📽️</span>
+          <div>
+            <div class="card-title">Synopsis Foireux</div>
+            <div class="card-cmd">/fun → Défis → Synopsis</div>
+          </div>
+        </div>
+        <p class="card-desc">L'IA génère un synopsis complètement raté, absurde ou incohérent d'un film tiré de la base TMDB. Le bot choisit un film au hasard selon le genre que vous sélectionnez, et l'IA réécrit son histoire… à sa façon.</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+          <span class="tag tag-fun">🎲 Aléatoire</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">⭐</span>
+          <div>
+            <div class="card-title">Note Mystère</div>
+            <div class="card-cmd">/fun → Défis → Note</div>
+          </div>
+        </div>
+        <p class="card-desc">Le bot affiche une note (ex : 7.4/10) pour un film. Vraie ou inventée par l'IA ? Les membres votent. Une bonne façon de tester la culture ciné du salon sans que personne ne sache si c'est réel.</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🎭</span>
+          <div>
+            <div class="card-title">Qui est-ce ?</div>
+            <div class="card-cmd">/fun → Défis → Qui</div>
+          </div>
+        </div>
+        <p class="card-desc">Le bot révèle progressivement des indices sur un personnage ou acteur. Après chaque indice, les membres peuvent tenter leur réponse. Plus on attend, plus les indices se précisent — mais les points diminuent !</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🔎</span>
+          <div>
+            <div class="card-title">Trouve ton Film</div>
+            <div class="card-cmd">/fun → Défis → Trouve</div>
+          </div>
+        </div>
+        <p class="card-desc">5 indices issus de la base TMDB sont révélés un à un : genre, année, acteur principal, réalisateur… À chaque indice, un bouton pour tenter sa chance. Suspense garanti !</p>
+        <div class="card-tags">
+          <span class="tag tag-public">📢 Public</span>
+          <span class="tag tag-fun">🎲 TMDB</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🌀</span>
+          <div>
+            <div class="card-title">Cross-Univers</div>
+            <div class="card-cmd">/fun → Défis → Cross</div>
+          </div>
+        </div>
+        <p class="card-desc">L'IA imagine une collision absurde entre deux univers de films totalement différents. Le résultat ? Une histoire folle, un pitch improbable et beaucoup de rires. Jamais deux fois pareil.</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🍔</span>
+          <div>
+            <div class="card-title">Burger Quiz</div>
+            <div class="card-cmd">/fun → Défis → Burger Quiz</div>
+          </div>
+        </div>
+        <p class="card-desc">Inspiré du célèbre jeu TV, le Burger Quiz ciné se joue en 3 rounds avec des questions de difficulté croissante. Points doublés, jokers, et ambiance garantie — parfait pour animer une soirée.</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+          <span class="tag tag-fun">🏆 Compétitif</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🐉</span>
+          <div>
+            <div class="card-title">Kamoulox</div>
+            <div class="card-cmd">/fun → Défis → Kamoulox</div>
+          </div>
+        </div>
+        <p class="card-desc">Un duel absurde contre John-Bob l'arbitre IA, inspiré du jeu de la radio. Vous proposez des combinaisons d'objets improbables, John-Bob décide si c'est un Kamoulox ou pas. Le délire à l'état pur.</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">⚔️</span>
+          <div>
+            <div class="card-title">Citation Kaamelott</div>
+            <div class="card-cmd">/fun → Défis → Citation Kaamelott</div>
+          </div>
+        </div>
+        <p class="card-desc">Une réplique culte de Kaamelott s'affiche — à vous de retrouver quel personnage l'a prononcée. 4 choix proposés par l'IA, chrono en route. Idéal pour les fans de la série !</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🎬</span>
+          <div>
+            <div class="card-title">Citation Cinéma</div>
+            <div class="card-cmd">/fun → Défis → Citation Cinéma</div>
+          </div>
+        </div>
+        <p class="card-desc">Une réplique culte du cinéma mondial, et vous devez retrouver le film. L'IA génère des faux-semblants convaincants pour les autres choix. Vos connaissances ciné sont-elles à la hauteur ?</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🏰</span>
+          <div>
+            <div class="card-title">Aventure Kaamelott</div>
+            <div class="card-cmd">/fun → Défis → Aventure</div>
+          </div>
+        </div>
+        <p class="card-desc">Une aventure textuelle interactive entièrement générée par l'IA dans l'univers de Kaamelott. Vous faites des choix, l'histoire s'adapte. Chaque partie est unique — et votre mort est presque inévitable.</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🎲</span>
+          <div>
+            <div class="card-title">Pitch IA</div>
+            <div class="card-cmd">/fun → Pitch</div>
+          </div>
+        </div>
+        <p class="card-desc">Découvrez un film ou une série que vous ne connaissez pas selon vos envies du moment. Choisissez un genre, une ambiance, et l'IA vous présente une pépite avec son pitch personnalisé. Une façon de découvrir des œuvres oubliées.</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-fun">🔍 Découverte</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-fun fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🏆</span>
+          <div>
+            <div class="card-title">Quiz Citations</div>
+            <div class="card-cmd">/fun → Quiz Citations</div>
+          </div>
+        </div>
+        <p class="card-desc">Le grand quiz de citations en rounds progressifs avec classement en temps réel. Plusieurs rounds, un chrono, et un tableau des scores à la fin. Le plus complet des jeux du bot — format tournoi.</p>
+        <div class="card-tags">
+          <span class="tag tag-public">📢 Public</span>
+          <span class="tag tag-fun">🏆 Classement</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── GIFS ── -->
+  <section class="section" id="gifs">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(251,146,60,0.12);">🎭</div>
+      <div>
+        <h2>Réactions & GIFs</h2>
+        <p>Animer le salon avec les bons GIFs au bon moment</p>
+      </div>
+    </div>
+
+    <div class="role-pills fade-in">
+      <span class="rpill rp-n2">🛡️ N2 — Accès complet ✅</span>
+      <span class="rpill rp-n3">🎬 N3 — Accès partiel ✅</span>
+    </div>
+
+    <div class="cmd-grid">
+
+      <div class="cmd-card c-gif fade-in">
+        <div class="card-head">
+          <span class="card-emoji">😰</span>
+          <div><div class="card-title">Suspense</div><div class="card-cmd">/fun → Réactions → Suspense</div></div>
+        </div>
+        <p class="card-desc">Lance un GIF de suspense intense dans le salon. Parfait quand quelqu'un est sur le point de révéler le titre d'un film, ou pour ponctuer un moment de tension dans une soirée ciné.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-gif fade-in">
+        <div class="card-head">
+          <span class="card-emoji">👏</span>
+          <div><div class="card-title">Bravos</div><div class="card-cmd">/fun → Réactions → Bravos</div></div>
+        </div>
+        <p class="card-desc">Une ovation animée pour célébrer une bonne réponse, une séance réussie, ou simplement saluer quelqu'un. Le GIF d'applaudissements qui met l'ambiance.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-gif fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🤯</span>
+          <div><div class="card-title">Mindfuck</div><div class="card-cmd">/fun → Réactions → Mindfuck</div></div>
+        </div>
+        <p class="card-desc">Pour les révélations de fin de film, les twists inattendus, les questions qui font réfléchir. Ce GIF exprime ce moment où le cerveau ne suit plus. Usage conseillé après un bon Christopher Nolan.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-gif fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🥦</span>
+          <div><div class="card-title">Navet</div><div class="card-cmd">/fun → Réactions → Navet</div></div>
+        </div>
+        <p class="card-desc">Le verdict sans appel pour un film décevant. À utiliser avec modération — mais quand un navet le mérite, il le mérite. Le GIF qui dit tout sans avoir besoin d'un mot.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-gif fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🍿</span>
+          <div><div class="card-title">Popcorn</div><div class="card-cmd">/fun → Réactions → Popcorn</div></div>
+        </div>
+        <p class="card-desc">Le GIF popcorn emblématique — quelqu'un mange du popcorn en regardant le drama se dérouler. Réservé aux Administrateurs (N2+) car ça peut vite devenir un outil de trolling si tout le monde y a accès 😄</p>
+        <div class="card-tags">
+          <span class="tag tag-public">📢 Public</span>
+          <span class="tag tag-n2only">🛡️ N2+ uniquement</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── SONDAGES ── -->
+  <section class="section" id="sondages">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(124,106,247,0.12);">🗳️</div>
+      <div>
+        <h2>Sondages Films</h2>
+        <p>Faire voter la communauté en temps réel</p>
+      </div>
+    </div>
+
+    <div class="role-pills fade-in">
+      <span class="rpill rp-n2">🛡️ N2 — Accès ✅</span>
+      <span class="rpill rp-n3">🎬 N3 — Accès ✅</span>
+    </div>
+
+    <div class="cmd-grid">
+
+      <div class="cmd-card c-sondage fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🗳️</span>
+          <div><div class="card-title">Vote Film</div><div class="card-cmd">/fun → Sondages → Vote</div></div>
+        </div>
+        <p class="card-desc">Lancez un vote 👍 / 👎 / 🤷 sur un film ou une série. Le bot affiche les résultats en temps réel avec une barre de progression visuelle. Idéal pour jauger l'intérêt du groupe avant une soirée.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-sondage fade-in">
+        <div class="card-head">
+          <span class="card-emoji">⚔️</span>
+          <div><div class="card-title">Duel Films</div><div class="card-cmd">/fun → Sondages → Duel</div></div>
+        </div>
+        <p class="card-desc">Un combat épique entre deux films — 60 secondes chrono pour voter. Le bot affiche les deux films en embed côte à côte, les votes arrivent en direct, et le vainqueur est proclamé à la fin du timer.</p>
+        <div class="card-tags">
+          <span class="tag tag-public">📢 Public</span>
+          <span class="tag tag-fun">⏱️ 60 secondes</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── SOCIAL ── -->
+  <section class="section" id="social">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(244,114,182,0.12);">💖</div>
+      <div>
+        <h2>Social & Fun IA</h2>
+        <p>Créer des moments de connexion dans la communauté</p>
+      </div>
+    </div>
+
+    <div class="role-pills fade-in">
+      <span class="rpill rp-n2">🛡️ N2 — Accès ✅</span>
+      <span class="rpill rp-n3">🎬 N3 — Accès ✅</span>
+    </div>
+
+    <div class="cmd-grid">
+
+      <div class="cmd-card c-util fade-in">
+        <div class="card-head">
+          <span class="card-emoji">💖</span>
+          <div><div class="card-title">Statik</div><div class="card-cmd">/fun → Statik</div></div>
+        </div>
+        <p class="card-desc">Le bot envoie un message de bienveillance aléatoire, choisi parmi 300 textes soigneusement écrits. Messages d'encouragement, de soutien, d'humour tendre. Un petit rayon de soleil dans le salon quand l'ambiance en a besoin.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-util fade-in">
+        <div class="card-head">
+          <span class="card-emoji">💡</span>
+          <div><div class="card-title">Fun Facts IA</div><div class="card-cmd">/fun → Fun Facts</div></div>
+        </div>
+        <p class="card-desc">L'IA génère une anecdote vérifiée et surprenante — sur le cinéma, les poulpes, les jeux vidéo, ou d'autres domaines insolites. Chaque fun fact est unique, sourcé, et présenté dans un embed coloré. Parfait pour alimenter la discussion.</p>
+        <div class="card-tags">
+          <span class="tag tag-ia">🤖 IA</span>
+          <span class="tag tag-public">📢 Public</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── DIFFUSIONS ── -->
+  <section class="section" id="diffusions">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(74,222,128,0.12);">📅</div>
+      <div>
+        <h2>Diffusions & Programme</h2>
+        <p>Tout ce qui touche à la programmation des soirées ciné</p>
+      </div>
+    </div>
+
+    <div class="role-pills fade-in">
+      <span class="rpill rp-n2">🛡️ N2 — Accès complet ✅</span>
+      <span class="rpill rp-n3">🎬 N3 — Accès complet ✅</span>
+    </div>
+
+    <div class="info-box gold fade-in">
+      <span class="ib-icon">📢</span>
+      <div class="ib-text">
+        <strong>Réponses éphémères pour l'équipe</strong> — Toutes les commandes de diffusion vous répondent en privé (👻) pour que les modifications et la gestion restent discrètes. Le salon reste propre.
+      </div>
+    </div>
+
+    <div class="cmd-grid">
+
+      <div class="cmd-card c-diff fade-in">
+        <div class="card-head">
+          <span class="card-emoji">📅</span>
+          <div><div class="card-title">Programmer une séance</div><div class="card-cmd">/diffusion programmer</div></div>
+        </div>
+        <p class="card-desc">Ouvre le formulaire complet pour créer une nouvelle séance : titre du film, date, heure, salle Bigscreen, format (3D/2D), type de contenu (film, série, documentaire…). Le bot publie automatiquement l'annonce dans le salon dédié et met à jour le calendrier en ligne.</p>
+        <div class="card-tags">
+          <span class="tag tag-eph">👻 Privé</span>
+          <span class="tag tag-fun">🌐 Calendrier auto</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-diff fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🎬</span>
+          <div><div class="card-title">Gérer ses diffusions</div><div class="card-cmd">/diffusion gestion</div></div>
+        </div>
+        <p class="card-desc">Panneau de gestion complet de vos séances : modifier la date ou l'heure, changer la salle, annuler une séance, voir le statut en temps réel. Les Administrateurs (N2) peuvent gérer toutes les séances, pas seulement les leurs.</p>
+        <div class="card-tags">
+          <span class="tag tag-eph">👻 Privé</span>
+          <span class="tag tag-n2only">🛡️ N2 = toutes séances</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-diff fade-in">
+        <div class="card-head">
+          <span class="card-emoji">📋</span>
+          <div><div class="card-title">Afficher les diffusions</div><div class="card-cmd">/diffusions</div></div>
+        </div>
+        <p class="card-desc">Affiche les prochaines séances sous forme de cartes visuelles riches : affiche du film, date/heure aux deux fuseaux horaires (France & Québec), diffuseur, format. Idéal pour donner envie à la communauté.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-diff fade-in">
+        <div class="card-head">
+          <span class="card-emoji">📡</span>
+          <div><div class="card-title">Liste séances</div><div class="card-cmd">/seances</div></div>
+        </div>
+        <p class="card-desc">Version compacte du programme — une liste texte claire avec les IDs de chaque séance, les dates/heures et les diffuseurs. Pratique pour vérifier rapidement ce qui est prévu sans les visuels.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-diff fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🗓️</span>
+          <div><div class="card-title">Programme</div><div class="card-cmd">/programme</div></div>
+        </div>
+        <p class="card-desc">Vue programme complète des séances à venir, avec deux modes : compact (liste rapide) et riche (embeds détaillés avec affiches). Le mode riche est particulièrement impressionnant pour présenter le planning du mois.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+      <div class="cmd-card c-diff fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🌐</span>
+          <div><div class="card-title">Calendrier</div><div class="card-cmd">/calendrier</div></div>
+        </div>
+        <p class="card-desc">Génère et affiche le calendrier mensuel dans Discord, et le synchronise automatiquement avec le site GitHub Pages public. Le calendrier en ligne est accessible à tout moment par n'importe qui avec le lien.</p>
+        <div class="card-tags">
+          <span class="tag tag-public">📢 Public</span>
+          <span class="tag tag-fun">🌐 Site en ligne</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── ADMIN ── -->
+  <section class="section" id="admin">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(96,165,250,0.12);">🛡️</div>
+      <div>
+        <h2>Administration</h2>
+        <p>Outils de gestion — accès selon votre niveau</p>
+      </div>
+    </div>
+
+    <div class="role-pills fade-in">
+      <span class="rpill rp-n2">🛡️ N2 — Accès étendu</span>
+      <span class="rpill rp-n3">🎬 N3 — Accès limité</span>
+    </div>
+
+    <div class="cmd-grid">
+
+      <div class="cmd-card c-admin fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🛡️</span>
+          <div><div class="card-title">Panneau Admin</div><div class="card-cmd">/admin</div></div>
+        </div>
+        <p class="card-desc">Vue complète des séances avec outils de gestion rapide : annuler une séance en un clic, voir l'historique des diffusions, accéder aux statistiques d'utilisation. Interface paginée avec navigation intuitive. <strong style="color:var(--n2)">N2 uniquement.</strong></p>
+        <div class="card-tags">
+          <span class="tag tag-eph">👻 Privé</span>
+          <span class="tag tag-n2only">🛡️ N2 uniquement</span>
+        </div>
+      </div>
+
+      <div class="cmd-card c-admin fade-in">
+        <div class="card-head">
+          <span class="card-emoji">📖</span>
+          <div><div class="card-title">Aide</div><div class="card-cmd">/aide</div></div>
+        </div>
+        <p class="card-desc">Guide interactif personnalisé selon votre niveau. Le bot détecte votre rôle et n'affiche que les commandes auxquelles vous avez accès. Idéal pour les nouveaux membres — et pour retrouver rapidement une commande oubliée.</p>
+        <div class="card-tags"><span class="tag tag-eph">👻 Privé</span></div>
+      </div>
+
+      <div class="cmd-card c-admin fade-in">
+        <div class="card-head">
+          <span class="card-emoji">🔗</span>
+          <div><div class="card-title">Liens Utiles</div><div class="card-cmd">/liensutiles</div></div>
+        </div>
+        <p class="card-desc">Panneau regroupant tous les liens importants du serveur : calendrier en ligne, ressources Bigscreen, liens communauté. Accessible à l'équipe en vue publique pour partager facilement les liens dans le salon.</p>
+        <div class="card-tags"><span class="tag tag-public">📢 Public</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── KAAMELOTT ELITE ── -->
+  <section class="section" id="kaamelott">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(245,200,66,0.1);">⚔️</div>
+      <div>
+        <h2>Le GIF Kaamelott</h2>
+        <p>La fonction la plus secrète du bot</p>
+      </div>
+    </div>
+
+    <div class="kaamelott-block fade-in">
+      <div class="kaamelott-title">
+        <span>⚔️</span> L'Élite des Semi-Croustillants
+      </div>
+      <p class="kaamelott-subtitle">Cette fonction n'est pas configurable par rôle. Elle est réservée à vie à trois identifiants Discord spécifiques.</p>
+
+      <div class="elite-seal">
+        <span class="seal-icon">🔐</span>
+        <div class="seal-text">
+          <strong>Accès par reconnaissance d'identifiant Discord</strong>
+          <span>Ni le rôle N0, ni N1, ni aucun autre rôle ne suffit. Le bot vérifie directement votre ID Discord unique.</span>
+        </div>
+      </div>
+
+      <p class="kaamelott-desc">
+        Le GIF Kaamelott est une fonction à part. Elle envoie dans le salon un GIF animé tiré de la série Kaamelott, accompagné d'une réplique culte récupérée via une API dédiée — ou piochée dans une base locale si l'API est indisponible.<br><br>
+        Pourquoi aussi restreinte ? Parce que Kaamelott, c'est sacré. Ce n'est pas une fonction qu'on distribue à tout le monde. Elle appartient à ceux qui ont prouvé — d'une façon ou d'une autre, connue seulement de Dreadlocktopus — leur appartenance à <em>l'élite des semi-croustillants</em>.<br><br>
+        Si vous voyez l'option <strong>⚔️ Kaamelott</strong> apparaître dans le menu GIF, c'est que vous en faites partie. Si vous ne la voyez pas… c'est peut-être pour bientôt. Ou peut-être pas.
+      </p>
+
+      <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+        <span class="rpill rp-elite">👑 Élite uniquement — 3 IDs Discord</span>
+        <span class="rpill rp-n0">📢 Réponse publique dans le salon</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── EPHEMERE ── -->
+  <section class="section" id="ephemere">
+    <div class="section-header fade-in">
+      <div class="section-icon" style="background: rgba(34,211,238,0.1);">👻</div>
+      <div>
+        <h2>Éphémère ou Public ?</h2>
+        <p>Comprendre la visibilité des réponses du bot</p>
+      </div>
+    </div>
+
+    <div class="intro-grid fade-in">
+      <div class="intro-card">
+        <h3>👻 Réponse Éphémère</h3>
+        <p style="font-size:13px;color:var(--text2);margin-top:8px;">La réponse du bot n'est visible <strong style="color:var(--text)">que par vous</strong>. Elle disparaît quand vous fermez la fenêtre ou après 15 minutes. Idéal pour les commandes de gestion, les confirmations d'actions ou les commandes sensibles.</p>
+        <br>
+        <ul class="checklist">
+          <li>Commandes de gestion des séances</li>
+          <li>Panneau /admin</li>
+          <li>Commande /aide</li>
+          <li>/sauvegarde, /reset</li>
+        </ul>
+      </div>
+      <div class="intro-card">
+        <h3>📢 Réponse Publique</h3>
+        <p style="font-size:13px;color:var(--text2);margin-top:8px;">La réponse du bot s'affiche <strong style="color:var(--text)">dans le salon</strong>, visible de tous. Essentiel pour les fonctions fun, les GIFs, les votes et tout ce qui vise à animer la communauté.</p>
+        <br>
+        <ul class="checklist">
+          <li>Tous les défis ciné (/fun)</li>
+          <li>GIFs de réaction</li>
+          <li>Votes et duels</li>
+          <li>Fun Facts, Statik</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-box cyan fade-in">
+      <span class="ib-icon">⚙️</span>
+      <div class="ib-text">
+        <strong>Différent pour l'équipe et les membres</strong> — Pour certaines commandes, la visibilité est différente selon votre niveau. Par exemple, les défis fun sont publics pour vous (afin que vous les lanciez et animer le salon), mais éphémères pour les membres N4 pendant le béta — pour voir comment ils réagissent sans "polluer" le salon pendant les tests.
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── RECAP TABLE ── -->
+  <section class="section fade-in">
+    <div class="section-header">
+      <div class="section-icon" style="background: rgba(124,106,247,0.12);">📋</div>
+      <div>
+        <h2>Récapitulatif Rapide</h2>
+        <p>Toutes vos commandes en un coup d'œil</p>
+      </div>
+    </div>
+
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>Commande</th>
+          <th>Description courte</th>
+          <th>N2</th>
+          <th>N3</th>
+          <th>Visibilité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="cmd-name">/fun → Synopsis</td><td>Synopsis foireux IA</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Note</td><td>Note vraie ou inventée ?</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Qui est-ce</td><td>Indices progressifs</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Trouve</td><td>5 indices TMDB</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Cross-Univers</td><td>Collision 2 univers IA</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Burger Quiz</td><td>Quiz 3 rounds</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Kamoulox</td><td>Duel absurde IA</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Citation Kaamelott</td><td>Qui a dit cette réplique ?</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Citation Cinéma</td><td>Retrouver le film</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Aventure Kaamelott</td><td>Aventure textuelle IA</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Quiz Citations</td><td>Tournoi de citations</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Pitch IA</td><td>Découverte film</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Suspense</td><td>GIF suspense</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Bravos</td><td>GIF applaudissements</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Mindfuck</td><td>GIF explosion mentale</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Navet</td><td>GIF navet</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Popcorn 🍿</td><td>GIF popcorn</td><td>✅</td><td>❌</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Kaamelott GIF ⚔️</td><td>GIF Kaamelott + réplique</td><td colspan="2" style="text-align:center;color:var(--gold)">🔒 Élite 3 IDs</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Vote</td><td>Vote 👍/👎/🤷</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Duel</td><td>Combat 2 films 60s</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Statik</td><td>Message bienveillance</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/fun → Fun Facts</td><td>Anecdote IA</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/diffusion programmer</td><td>Créer une séance</td><td>✅</td><td>✅</td><td>👻</td></tr>
+        <tr><td class="cmd-name">/diffusion gestion</td><td>Gérer ses séances</td><td>✅</td><td>✅</td><td>👻</td></tr>
+        <tr><td class="cmd-name">/diffusions</td><td>Cartes visuelles</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/seances</td><td>Liste compacte</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/programme</td><td>Programme détaillé</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/calendrier</td><td>Calendrier Discord + site</td><td>✅</td><td>✅</td><td>📢</td></tr>
+        <tr><td class="cmd-name">/admin</td><td>Panneau admin complet</td><td>✅</td><td>❌</td><td>👻</td></tr>
+        <tr><td class="cmd-name">/aide</td><td>Aide interactive</td><td>✅</td><td>✅</td><td>👻</td></tr>
+        <tr><td class="cmd-name">/liensutiles</td><td>Liens du serveur</td><td>✅</td><td>✅</td><td>📢</td></tr>
+      </tbody>
+    </table>
+
+  </section>
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-logo">🤖 DREADBOT V6</div>
+  <p style="margin-bottom:8px;">Créé avec 💛 et beaucoup de passion par <strong style="color:var(--text)">Dreadlocktopus</strong></p>
+  <p>Béta équipe · Toutes les fonctions sont susceptibles d'évoluer selon vos retours.</p>
+  <p style="margin-top: 16px; font-size: 12px; color: var(--text3);">« Ce bot est l'aboutissement de centaines d'heures de code, de tests, de rires et d'itérations. Bonne soirée ciné. »</p>
+</footer>
+
+<script>
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Nav active
+function setActive(el) {
+  document.querySelectorAll('.toc a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Highlight nav on scroll
+const sections = document.querySelectorAll('.section[id]');
+const navLinks = document.querySelectorAll('.toc a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+}, { passive: true });
+
+// Stagger card animations
+document.querySelectorAll('.cmd-grid').forEach(grid => {
+  grid.querySelectorAll('.cmd-card').forEach((card, i) => {
+    card.style.animationDelay = `${i * 60}ms`;
+  });
+});
+</script>
+</body>
+</html>
