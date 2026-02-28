@@ -6,7 +6,7 @@
 
 [![Calendrier en ligne](https://img.shields.io/badge/📅_Calendrier-En_ligne-4ade80?style=for-the-badge)](https://Dreadlocktopus.github.io/BigscreenFR-Calendrier)
 [![Guide Équipe](https://img.shields.io/badge/📖_Guide_Équipe-En_ligne-7c6af7?style=for-the-badge)](https://Dreadlocktopus.github.io/BigscreenFR-Calendrier/guide-equipe.html)
-[![Version](https://img.shields.io/badge/Version-6.0-f5c842?style=for-the-badge)](.)
+[![Version](https://img.shields.io/badge/Version-7.0-f5c842?style=for-the-badge)](.)
 
 > *« Ce bot est l'aboutissement de centaines d'heures de code, de tests, de rires et d'itérations. »*
 > — **Dreadlocktopus**
