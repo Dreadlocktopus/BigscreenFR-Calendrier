@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 DREADBOT V6 — BigscreenFR
+# 🤖 DREADLOCKTOPUS_BOT V7 — BigscreenFR
 
 **Bot Discord pour la communauté ciné Bigscreen**
 
@@ -17,7 +17,7 @@
 
 ## 🔗 Liens rapides
 
-| 📅 [Calendrier des séances](https://Dreadlocktopus.github.io/BigscreenFR-Calendrier) | 📖 [Guide Équipe V6](https://Dreadlocktopus.github.io/BigscreenFR-Calendrier/guide-equipe.html) |
+| 📅 [Calendrier des séances](https://Dreadlocktopus.github.io/BigscreenFR-Calendrier) | 📖 [Guide Équipe V7](https://Dreadlocktopus.github.io/BigscreenFR-Calendrier/guide-equipe.html) |
 |:---:|:---:|
 | Programme et diffusions en ligne | Documentation complète pour l'équipe |
 
@@ -25,7 +25,7 @@
 
 ## 🎬 À propos
 
-DREADBOT V6 est un bot Discord dédié à la communauté ciné **BigscreenFR**.  
+DREADLOCKTOPUS_BOT V7 est un bot Discord dédié à la communauté ciné **BigscreenFR**.  
 Il gère la programmation des soirées ciné, les défis interactifs, les GIFs de réaction,
 les sondages films, et bien plus — propulsé par l'IA Groq/Gemini.
 
@@ -35,7 +35,7 @@ les sondages films, et bien plus — propulsé par l'IA Groq/Gemini.
 
 ## 📖 Guide de l'Équipe
 
-👉 **[Accéder au Guide Équipe V6](https://Dreadlocktopus.github.io/BigscreenFR-Calendrier/guide-equipe.html)**
+👉 **[Accéder au Guide Équipe V7](https://Dreadlocktopus.github.io/BigscreenFR-Calendrier/guide-equipe.html)**
 
 Le guide complet à destination de l'équipe (N2 / N3) : toutes les commandes,
 les niveaux d'accès, les fonctions IA, la gestion des diffusions et le panneau admin.
@@ -90,6 +90,6 @@ Les horaires sont stockés en **UTC** et affichés automatiquement en :
 
 <div align="center">
 
-Créé avec 💛 par **Dreadlocktopus** · Béta Équipe V6
+Créé avec 💛 par **Dreadlocktopus** · Béta Équipe V7
 
 </div>
