@@ -5,11 +5,11 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-45@dreadlocktopus_bot_v5
-DTSTAMP:20260303T233734Z
-DTSTART:20260304T200000Z
-DTEND:20260304T220000Z
-SUMMARY:Titanic — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
-DESCRIPTION:Southampton\, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde\, réputé pour son insubmersibilité\, le « Titanic »\, appareille pour son premier voyage. Quatre jours plus tard\, il
-LOCATION:PROUT
+DTSTAMP:20260304T114437Z
+DTSTART:20260305T200000Z
+DTEND:20260305T220000Z
+SUMMARY:L'Exorciste — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Regan\, une adolescente\, présente depuis quelque temps d’étranges symptômes. Après avoir épuisé les solutions médicales\, la mère de Regan consulte un prêtre-psychiatre qui est rapidement convaincu q
+LOCATION:[NSFW]
 END:VEVENT
 END:VCALENDAR
