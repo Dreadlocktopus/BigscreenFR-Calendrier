@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-46@dreadlocktopus_bot_v5
+DTSTAMP:20260307T223852Z
+DTSTART:20260321T200000Z
+DTEND:20260321T220000Z
+SUMMARY:L'Exorciste — 3D (blabla)
+DESCRIPTION:Regan\, une adolescente\, présente depuis quelque temps d’étranges symptômes. Après avoir épuisé les solutions médicales\, la mère de Regan consulte un prêtre-psychiatre qui est rapidement convaincu q
+LOCATION:[NSFW]
+END:VEVENT
+END:VCALENDAR
