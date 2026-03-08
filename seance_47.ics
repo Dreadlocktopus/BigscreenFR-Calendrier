@@ -5,10 +5,10 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-47@dreadlocktopus_bot_v5
-DTSTAMP:20260308T064623Z
-DTSTART:20260318T200000Z
-DTEND:20260318T220000Z
-SUMMARY:Titanic — 3D (korn)
+DTSTAMP:20260308T064723Z
+DTSTART:20260318T210000Z
+DTEND:20260318T230000Z
+SUMMARY:Titanic — 3D (3D)
 DESCRIPTION:Southampton\, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde\, réputé pour son insubmersibilité\, le « Titanic »\, appareille pour son premier voyage. Quatre jours plus tard\, il
 LOCATION:blabla
 END:VEVENT
