@@ -5,11 +5,11 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-48@dreadlocktopus_bot_v5
-DTSTAMP:20260310T054242Z
-DTSTART:20260310T070000Z
-DTEND:20260310T090000Z
-SUMMARY:Dredd — 3D (KornFlex)
-DESCRIPTION:Dans un avenir proche\, les États-Unis ne sont plus qu’un immense désert irradié. Mega City One est une métropole tentaculaire rongée par le vice. La seule forme d’autorité restante est représentée pa
-LOCATION:DREDD 3D (2012) 3D NATIVE BigScreenFR - Kornflex
+DTSTAMP:20260312T130107Z
+DTSTART:20260312T200000Z
+DTEND:20260312T220000Z
+SUMMARY:Mortal Kombat — 3D (KornFlex)
+DESCRIPTION:Lorsque les plus grands champions de la Terre sont appelés à combattre les ennemis de l'Autre Monde\, ils doivent découvrir leurs véritables pouvoirs pour sauver notre planète de l'annihilation totale
+LOCATION:Mortal Kombat  (2021) BigScreenFR - Kornflex
 END:VEVENT
 END:VCALENDAR
