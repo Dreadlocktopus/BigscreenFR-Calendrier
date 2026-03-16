@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="generated-at" content="1773531290">
+<meta name="generated-at" content="1773651509">
 <title>🎬 BigscreenFR Calendrier</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
@@ -289,7 +289,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <body>
 <header>
   <h1>🎬  BigscreenFR Calendrier</h1>
-  <p>Programmation officielle • Mis à jour le dimanche 15 mars 2026  —  00:34 • Soumission automatique via Dreadlocktopus_Bot V7</p>
+  <p>Programmation officielle • Mis à jour le lundi 16 mars 2026  —  09:58 • Soumission automatique via Dreadlocktopus_Bot V7</p>
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">À venir</div></div>
     <div class="stat"><div class="stat-num">44</div><div class="stat-label">Total</div></div>
@@ -309,7 +309,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
 <main>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Rechercher…" oninput="filtrer()">
-    <a class="btn-ical-global" href="dreadlocktopus_bot_v5.ics?v=1773531290" download="dreadlocktopus_bot_v5.ics">📅 Télécharger (.ics)</a>
+    <a class="btn-ical-global" href="dreadlocktopus_bot_v5.ics?v=1773651509" download="dreadlocktopus_bot_v5.ics">📅 Télécharger (.ics)</a>
     <a class="btn-ical-global btn-gcal" href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2FDreadlocktopus.github.io%2FBigscreenFR-Calendrier%2Fdreadlocktopus_bot_v5.ics" target="_blank" rel="noopener">🗓️ Google Agenda</a>
     <a class="btn-ical-global btn-webcal" href="webcal://Dreadlocktopus.github.io/BigscreenFR-Calendrier/dreadlocktopus_bot_v5.ics">🍎 Apple Agenda</a>
   </div>
@@ -452,7 +452,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
       <div class="graph-card full"><h3>⏱️ Temps de diffusion cumulé</h3>
         <div style="display:flex;flex-wrap:wrap;gap:2rem;padding:.5rem 0">
           <div class="stat"><div class="stat-num">0 min</div><div class="stat-label">Aujourd'hui</div></div>
-          <div class="stat"><div class="stat-num">16h25</div><div class="stat-label">Cette semaine</div></div>
+          <div class="stat"><div class="stat-num">14h35</div><div class="stat-label">Cette semaine</div></div>
           <div class="stat"><div class="stat-num">1j 6h</div><div class="stat-label">Ce mois</div></div>
           <div class="stat"><div class="stat-num">3j 12h</div><div class="stat-label">Cette année</div></div>
           <div class="stat"><div class="stat-num">3j 14h</div><div class="stat-label">Total cumulé</div></div>
@@ -462,7 +462,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.85rem;border
     </div>
   </section>
 </main>
-<footer><p>🎬 BigscreenFR Calendrier • Soumission automatique via Dreadlocktopus_Bot V7 • dimanche 15 mars 2026  —  00:34</p></footer>
+<footer><p>🎬 BigscreenFR Calendrier • Soumission automatique via Dreadlocktopus_Bot V7 • lundi 16 mars 2026  —  09:58</p></footer>
 
 <div class="modal-overlay" id="modal-overlay" onclick="fermerDetail(event)">
   <div class="modal"><button class="modal-close" onclick="fermerDetail(null,true)">✕</button><div id="modal-inner"></div></div>
@@ -617,7 +617,7 @@ function ouvrirDetail(id){
   const s=SEANCES.find(x=>x.id===id);if(!s)return;
   const ic=s.fmt==='3D'?'🥽':'📽️';
   const tm={movie:'🎬 Film',tv:'📺 Série',anime:'🍥 Animé',documentaire:'🎙️ Doc',concert:'🎤 Concert',spectacle:'🎭 Spectacle'};
-  const iu=`seance_${s.id}.ics?v=1773531290`;
+  const iu=`seance_${s.id}.ics?v=1773651509`;
   // webcal:// pour Apple Agenda, https:// pour Google Agenda
   const baseIcs=`https://Dreadlocktopus.github.io/BigscreenFR-Calendrier/seance_${s.id}.ics`;
   const wu=`webcal://Dreadlocktopus.github.io/BigscreenFR-Calendrier/seance_${s.id}.ics`;
