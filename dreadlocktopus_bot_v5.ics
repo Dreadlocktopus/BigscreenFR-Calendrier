@@ -7,11 +7,20 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-47@dreadlocktopus_bot_v5
-DTSTAMP:20260503T214359Z
+DTSTAMP:20260503T215217Z
 DTSTART:20270101T215900Z
 DTEND:20270101T235900Z
 SUMMARY:VHS Diaries — 3D (blue)
 DESCRIPTION:The filmmaker revisits the diaries she kept during the years when video was banned in Iran. Using her personal VHS archive of films as a point of reference\, the film explores a very personal film his
 LOCATION:naz
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-49@dreadlocktopus_bot_v5
+DTSTAMP:20260503T215217Z
+DTSTART:20260507T213500Z
+DTEND:20260507T233500Z
+SUMMARY:Interstellar — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Dans un futur proche\, face à une Terre exsangue\, un groupe d’explorateurs utilise un vaisseau interstellaire pour franchir un trou de ver permettant de parcourir des distances jusque‐là infranchissa
+LOCATION:DREADOUZ
 END:VEVENT
 END:VCALENDAR
