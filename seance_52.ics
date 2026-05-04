@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-52@dreadlocktopus_bot_v5
+DTSTAMP:20260504T063744Z
+DTSTART:20260504T184500Z
+DTEND:20260504T204500Z
+SUMMARY:De rouille et d'os — 3D (Secoto_FR_3D)
+DESCRIPTION:Ça commence dans le Nord. Ali se retrouve avec Sam\, 5 ans\, sur les bras. C'est son fils\, il le connaît à peine. Sans domicile\, sans argent et sans amis\, Ali trouve refuge chez sa sœur à Antibes. 
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
