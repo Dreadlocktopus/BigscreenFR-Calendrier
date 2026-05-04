@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-51@dreadlocktopus_bot_v5
+DTSTAMP:20260504T041952Z
+DTSTART:20260504T190000Z
+DTEND:20260504T210000Z
+SUMMARY:Le Jour d'après — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Le climatologue Jack Hall avait prédit l’arrivée d’un autre âge de glace\, mais n’avait jamais pensé que cela se produirait de son vivant. Un changement climatique imprévu et violent à l’échelle mondi
+LOCATION:TEST BOT
+END:VEVENT
+END:VCALENDAR
