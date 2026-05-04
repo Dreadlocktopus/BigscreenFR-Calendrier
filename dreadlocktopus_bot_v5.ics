@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-47@dreadlocktopus_bot_v5
-DTSTAMP:20260504T063157Z
+DTSTAMP:20260504T063741Z
 DTSTART:20270101T215900Z
 DTEND:20270101T235900Z
 SUMMARY:VHS Diaries — 3D (blue)
@@ -16,11 +16,20 @@ LOCATION:naz
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-51@dreadlocktopus_bot_v5
-DTSTAMP:20260504T063157Z
+DTSTAMP:20260504T063741Z
 DTSTART:20260504T190000Z
 DTEND:20260504T210000Z
 SUMMARY:Mad Max :  Au-delà du dôme du tonnerre — 3D (nicolasdumont)
 DESCRIPTION:Max\, de retour\, s'est fait dépouiller de son maigre bien. Suivant le voleur\, il arrive à la Ville du Troc\, où règne Entity. Celle-ci l'engage pour qu'il la débarrasse de Master et Blaster\, rois d
 LOCATION:BigScreeenFR MAD MAX Au-delà du dôme du tonnerre 3D 21H
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-52@dreadlocktopus_bot_v5
+DTSTAMP:20260504T063741Z
+DTSTART:20260504T184500Z
+DTEND:20260504T204500Z
+SUMMARY:De rouille et d'os — 3D (Secoto_FR_3D)
+DESCRIPTION:Ça commence dans le Nord. Ali se retrouve avec Sam\, 5 ans\, sur les bras. C'est son fils\, il le connaît à peine. Sans domicile\, sans argent et sans amis\, Ali trouve refuge chez sa sœur à Antibes. 
+LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
