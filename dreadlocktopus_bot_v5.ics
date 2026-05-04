@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-47@dreadlocktopus_bot_v5
-DTSTAMP:20260504T070723Z
+DTSTAMP:20260504T072024Z
 DTSTART:20270101T215900Z
 DTEND:20270101T235900Z
 SUMMARY:VHS Diaries — 3D (blue)
@@ -15,8 +15,17 @@ DESCRIPTION:The filmmaker revisits the diaries she kept during the years when vi
 LOCATION:naz
 END:VEVENT
 BEGIN:VEVENT
+UID:seance-55@dreadlocktopus_bot_v5
+DTSTAMP:20260504T072024Z
+DTSTART:20260802T190000Z
+DTEND:20260802T210000Z
+SUMMARY:Love — 3D (Secoto_fr_3D)
+DESCRIPTION:Un 1er janvier au matin\, le téléphone sonne. Murphy\, 25 ans\, se réveille entouré de sa jeune femme et de son enfant de deux ans. Il écoute son répondeur. Sur le message\, la mère d'Electra lui dema
+LOCATION:[NSFW] MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-54@dreadlocktopus_bot_v5
-DTSTAMP:20260504T070723Z
+DTSTAMP:20260504T072024Z
 DTSTART:20260507T185000Z
 DTEND:20260507T205000Z
 SUMMARY:Invictus — 3D (Secoto_fr_3D)
@@ -25,7 +34,7 @@ LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-53@dreadlocktopus_bot_v5
-DTSTAMP:20260504T070723Z
+DTSTAMP:20260504T072024Z
 DTSTART:20260505T185500Z
 DTEND:20260505T205500Z
 SUMMARY:Monsieur Batignole — 3D (Secoto_fr_3D)
@@ -34,7 +43,7 @@ LOCATION:Majestic !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-51@dreadlocktopus_bot_v5
-DTSTAMP:20260504T070723Z
+DTSTAMP:20260504T072024Z
 DTSTART:20260504T190000Z
 DTEND:20260504T210000Z
 SUMMARY:Mad Max :  Au-delà du dôme du tonnerre — 3D (nicolasdumont)
@@ -43,7 +52,7 @@ LOCATION:BigScreeenFR MAD MAX Au-delà du dôme du tonnerre 3D 21H
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-52@dreadlocktopus_bot_v5
-DTSTAMP:20260504T070723Z
+DTSTAMP:20260504T072024Z
 DTSTART:20260504T184500Z
 DTEND:20260504T204500Z
 SUMMARY:De rouille et d'os — 3D (Secoto_FR_3D)
