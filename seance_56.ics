@@ -5,10 +5,10 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-56@dreadlocktopus_bot_v5
-DTSTAMP:20260504T095928Z
+DTSTAMP:20260504T100124Z
 DTSTART:20260504T190000Z
 DTEND:20260504T210000Z
-SUMMARY:La Rage au ventre — 3D (Korflex)
+SUMMARY:La Rage au ventre — 3D (3D)
 DESCRIPTION:Champion du monde de boxe\, Billy Hope mène une existence fastueuse avec sa superbe femme et sa fille qu’il aime plus que tout. Lorsque sa femme est tuée\, son monde s’écroule\, jusqu’à perdre sa mais
 LOCATION:La Rage Au Ventre 3D BigScreenFR.Fr
 END:VEVENT
