@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-54@dreadlocktopus_bot_v5
+DTSTAMP:20260504T070725Z
+DTSTART:20260507T185000Z
+DTEND:20260507T205000Z
+SUMMARY:Invictus — 3D (Secoto_fr_3D)
+DESCRIPTION:En 1994\, l'élection de Nelson Mandela consacre la fin de l'Apartheid\, mais l'Afrique du Sud reste une nation profondément divisée sur le plan racial et économique. Pour unifier le pays et donner à c
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
