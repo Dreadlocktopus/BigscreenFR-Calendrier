@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-47@dreadlocktopus_bot_v5
-DTSTAMP:20260504T041537Z
+DTSTAMP:20260504T041949Z
 DTSTART:20270101T215900Z
 DTEND:20270101T235900Z
 SUMMARY:VHS Diaries — 3D (blue)
@@ -16,11 +16,20 @@ LOCATION:naz
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-49@dreadlocktopus_bot_v5
-DTSTAMP:20260504T041537Z
+DTSTAMP:20260504T041949Z
 DTSTART:20260507T213500Z
 DTEND:20260507T233500Z
 SUMMARY:Interstellar — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
 DESCRIPTION:Dans un futur proche\, face à une Terre exsangue\, un groupe d’explorateurs utilise un vaisseau interstellaire pour franchir un trou de ver permettant de parcourir des distances jusque‐là infranchissa
 LOCATION:DREADOUZ
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-51@dreadlocktopus_bot_v5
+DTSTAMP:20260504T041949Z
+DTSTART:20260504T190000Z
+DTEND:20260504T210000Z
+SUMMARY:Le Jour d'après — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Le climatologue Jack Hall avait prédit l’arrivée d’un autre âge de glace\, mais n’avait jamais pensé que cela se produirait de son vivant. Un changement climatique imprévu et violent à l’échelle mondi
+LOCATION:TEST BOT
 END:VEVENT
 END:VCALENDAR
