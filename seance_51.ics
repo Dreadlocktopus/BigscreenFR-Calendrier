@@ -5,11 +5,11 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-51@dreadlocktopus_bot_v5
-DTSTAMP:20260504T041952Z
+DTSTAMP:20260504T062701Z
 DTSTART:20260504T190000Z
 DTEND:20260504T210000Z
-SUMMARY:Le Jour d'après — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
-DESCRIPTION:Le climatologue Jack Hall avait prédit l’arrivée d’un autre âge de glace\, mais n’avait jamais pensé que cela se produirait de son vivant. Un changement climatique imprévu et violent à l’échelle mondi
-LOCATION:TEST BOT
+SUMMARY:Mad Max :  Au-delà du dôme du tonnerre — 3D (nicolasdumont)
+DESCRIPTION:Max\, de retour\, s'est fait dépouiller de son maigre bien. Suivant le voleur\, il arrive à la Ville du Troc\, où règne Entity. Celle-ci l'engage pour qu'il la débarrasse de Master et Blaster\, rois d
+LOCATION:BigScreeenFR MAD MAX Au-delà du dôme du tonnerre 3D 21H
 END:VEVENT
 END:VCALENDAR
