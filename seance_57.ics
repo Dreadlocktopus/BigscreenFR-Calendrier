@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-57@dreadlocktopus_bot_v5
+DTSTAMP:20260505T085042Z
+DTSTART:20260506T190000Z
+DTEND:20260506T210000Z
+SUMMARY:Wedding Nightmare : Deuxième Partie — 3D (Secoto_fr_3D)
+DESCRIPTION:Peu après avoir échappé à l’attaque sans merci de la famille Le Domas\, Grace découvre qu’elle vient d’atteindre un nouveau niveau dans ce jeu cauchemardesque – et elle aura à ses côtés sa sœur dont e
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
