@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-59@dreadlocktopus_bot_v5
+DTSTAMP:20260505T123320Z
+DTSTART:20260507T190000Z
+DTEND:20260507T210000Z
+SUMMARY:Titanic — 3D (🦑🐙 ᙃɾᥱᥲᑯꙆoᥴƙtoρᥙ⳽ 🐙🦑)
+DESCRIPTION:Southampton\, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde\, réputé pour son insubmersibilité\, le « Titanic »\, appareille pour son premier voyage. Quatre jours plus tard\, il
+LOCATION:
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-54@dreadlocktopus_bot_v5
-DTSTAMP:20260505T085504Z
+DTSTAMP:20260505T123320Z
 DTSTART:20260507T163000Z
 DTEND:20260507T183000Z
 SUMMARY:Invictus — 3D (Secoto_fr_3D)
@@ -16,7 +25,7 @@ LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-57@dreadlocktopus_bot_v5
-DTSTAMP:20260505T085504Z
+DTSTAMP:20260505T123320Z
 DTSTART:20260506T190000Z
 DTEND:20260506T210000Z
 SUMMARY:Wedding Nightmare : Deuxième Partie — 3D (Secoto_fr_3D)
@@ -25,7 +34,7 @@ LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-58@dreadlocktopus_bot_v5
-DTSTAMP:20260505T085504Z
+DTSTAMP:20260505T123320Z
 DTSTART:20260505T185500Z
 DTEND:20260505T205500Z
 SUMMARY:Super Mario Galaxy, le film — 3D (Secoto_fr_3D)
