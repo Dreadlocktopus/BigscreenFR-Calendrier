@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-54@dreadlocktopus_bot_v5
-DTSTAMP:20260505T084706Z
+DTSTAMP:20260505T085039Z
 DTSTART:20260507T163000Z
 DTEND:20260507T183000Z
 SUMMARY:Invictus — 3D (Secoto_fr_3D)
@@ -15,8 +15,17 @@ DESCRIPTION:En 1994\, l'élection de Nelson Mandela consacre la fin de l'Aparthe
 LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
+UID:seance-57@dreadlocktopus_bot_v5
+DTSTAMP:20260505T085039Z
+DTSTART:20260506T190000Z
+DTEND:20260506T210000Z
+SUMMARY:Wedding Nightmare : Deuxième Partie — 3D (Secoto_fr_3D)
+DESCRIPTION:Peu après avoir échappé à l’attaque sans merci de la famille Le Domas\, Grace découvre qu’elle vient d’atteindre un nouveau niveau dans ce jeu cauchemardesque – et elle aura à ses côtés sa sœur dont e
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-53@dreadlocktopus_bot_v5
-DTSTAMP:20260505T084706Z
+DTSTAMP:20260505T085039Z
 DTSTART:20260505T163000Z
 DTEND:20260505T183000Z
 SUMMARY:Monsieur Batignole — 3D (Secoto_fr_3D)
