@@ -5,9 +5,9 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-53@dreadlocktopus_bot_v5
-DTSTAMP:20260504T133739Z
-DTSTART:20260505T185500Z
-DTEND:20260505T205500Z
+DTSTAMP:20260505T084458Z
+DTSTART:20260505T163000Z
+DTEND:20260505T183000Z
 SUMMARY:Monsieur Batignole — 3D (Secoto_fr_3D)
 DESCRIPTION:Sous la France occupée de 1942\, à Paris\, Edmond Batignole\, un boucher sans histoire\, tente de survivre comme tant d'autres. Il peut se laisser entraîner par son entourage et sa lâcheté sur les pen
 LOCATION:Majestic !
