@@ -7,16 +7,16 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-54@dreadlocktopus_bot_v5
-DTSTAMP:20260505T084456Z
-DTSTART:20260507T185000Z
-DTEND:20260507T205000Z
+DTSTAMP:20260505T084706Z
+DTSTART:20260507T163000Z
+DTEND:20260507T183000Z
 SUMMARY:Invictus — 3D (Secoto_fr_3D)
 DESCRIPTION:En 1994\, l'élection de Nelson Mandela consacre la fin de l'Apartheid\, mais l'Afrique du Sud reste une nation profondément divisée sur le plan racial et économique. Pour unifier le pays et donner à c
 LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-53@dreadlocktopus_bot_v5
-DTSTAMP:20260505T084456Z
+DTSTAMP:20260505T084706Z
 DTSTART:20260505T163000Z
 DTEND:20260505T183000Z
 SUMMARY:Monsieur Batignole — 3D (Secoto_fr_3D)
