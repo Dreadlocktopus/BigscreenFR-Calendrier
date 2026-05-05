@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-54@dreadlocktopus_bot_v5
-DTSTAMP:20260504T133736Z
+DTSTAMP:20260505T084456Z
 DTSTART:20260507T185000Z
 DTEND:20260507T205000Z
 SUMMARY:Invictus — 3D (Secoto_fr_3D)
@@ -16,38 +16,11 @@ LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-53@dreadlocktopus_bot_v5
-DTSTAMP:20260504T133736Z
-DTSTART:20260505T185500Z
-DTEND:20260505T205500Z
+DTSTAMP:20260505T084456Z
+DTSTART:20260505T163000Z
+DTEND:20260505T183000Z
 SUMMARY:Monsieur Batignole — 3D (Secoto_fr_3D)
 DESCRIPTION:Sous la France occupée de 1942\, à Paris\, Edmond Batignole\, un boucher sans histoire\, tente de survivre comme tant d'autres. Il peut se laisser entraîner par son entourage et sa lâcheté sur les pen
 LOCATION:Majestic !
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-51@dreadlocktopus_bot_v5
-DTSTAMP:20260504T133736Z
-DTSTART:20260504T190000Z
-DTEND:20260504T210000Z
-SUMMARY:Mad Max :  Au-delà du dôme du tonnerre — 3D (nicolasdumont)
-DESCRIPTION:Max\, de retour\, s'est fait dépouiller de son maigre bien. Suivant le voleur\, il arrive à la Ville du Troc\, où règne Entity. Celle-ci l'engage pour qu'il la débarrasse de Master et Blaster\, rois d
-LOCATION:BigScreeenFR MAD MAX Au-delà du dôme du tonnerre 3D 21H
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-56@dreadlocktopus_bot_v5
-DTSTAMP:20260504T133736Z
-DTSTART:20260504T190000Z
-DTEND:20260504T210000Z
-SUMMARY:La Rage au ventre — 3D (KornFlex)
-DESCRIPTION:Champion du monde de boxe\, Billy Hope mène une existence fastueuse avec sa superbe femme et sa fille qu’il aime plus que tout. Lorsque sa femme est tuée\, son monde s’écroule\, jusqu’à perdre sa mais
-LOCATION:La Rage Au Ventre 3D BigScreenFR.Fr
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-52@dreadlocktopus_bot_v5
-DTSTAMP:20260504T133736Z
-DTSTART:20260504T184500Z
-DTEND:20260504T204500Z
-SUMMARY:De rouille et d'os — 3D (Secoto_FR_3D)
-DESCRIPTION:Ça commence dans le Nord. Ali se retrouve avec Sam\, 5 ans\, sur les bras. C'est son fils\, il le connaît à peine. Sans domicile\, sans argent et sans amis\, Ali trouve refuge chez sa sœur à Antibes. 
-LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
