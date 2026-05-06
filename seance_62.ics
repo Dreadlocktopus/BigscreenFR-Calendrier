@@ -5,9 +5,9 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-62@dreadlocktopus_bot_v5
-DTSTAMP:20260506T185649Z
-DTSTART:20260506T190000Z
-DTEND:20260506T210000Z
+DTSTAMP:20260506T185719Z
+DTSTART:20260506T210000Z
+DTEND:20260506T230000Z
 SUMMARY:Scary Movie — 3D (KornFlex)
 DESCRIPTION:Un soir\, Drew Becker reçoit un appel anonyme d’un maniaque. Traquée dans sa maison\, puis dans son jardin\, elle finit par se faire tuer. Sa mort plonge ses camarades de lycée en plein cauchemar\, d’
 LOCATION:Scary Movie (2000) Bigscreenfr.fr
