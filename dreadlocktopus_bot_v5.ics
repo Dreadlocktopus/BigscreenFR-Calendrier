@@ -7,29 +7,11 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-54@dreadlocktopus_bot_v5
-DTSTAMP:20260506T185716Z
-DTSTART:20260507T163000Z
-DTEND:20260507T183000Z
+DTSTAMP:20260507T073122Z
+DTSTART:20260507T160000Z
+DTEND:20260507T180000Z
 SUMMARY:Invictus — 3D (Secoto_fr_3D)
 DESCRIPTION:En 1994\, l'élection de Nelson Mandela consacre la fin de l'Apartheid\, mais l'Afrique du Sud reste une nation profondément divisée sur le plan racial et économique. Pour unifier le pays et donner à c
-LOCATION:MAJESTIC !
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-62@dreadlocktopus_bot_v5
-DTSTAMP:20260506T185716Z
-DTSTART:20260506T210000Z
-DTEND:20260506T230000Z
-SUMMARY:Scary Movie — 3D (KornFlex)
-DESCRIPTION:Un soir\, Drew Becker reçoit un appel anonyme d’un maniaque. Traquée dans sa maison\, puis dans son jardin\, elle finit par se faire tuer. Sa mort plonge ses camarades de lycée en plein cauchemar\, d’
-LOCATION:Scary Movie (2000) Bigscreenfr.fr
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-57@dreadlocktopus_bot_v5
-DTSTAMP:20260506T185716Z
-DTSTART:20260506T190000Z
-DTEND:20260506T210000Z
-SUMMARY:Wedding Nightmare : Deuxième Partie — 3D (Secoto_fr_3D)
-DESCRIPTION:Peu après avoir échappé à l’attaque sans merci de la famille Le Domas\, Grace découvre qu’elle vient d’atteindre un nouveau niveau dans ce jeu cauchemardesque – et elle aura à ses côtés sa sœur dont e
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
