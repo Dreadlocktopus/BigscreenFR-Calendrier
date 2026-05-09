@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-64@dreadlocktopus_bot_v5
+DTSTAMP:20260509T085822Z
+DTSTART:20260509T160000Z
+DTEND:20260509T180000Z
+SUMMARY:Fast & Furious X — 3D (Secoto_fr_3D)
+DESCRIPTION:Après bien des missions et contre toute attente\, Dom Toretto et sa famille ont su déjouer\, devancer\, surpasser et distancer tous les adversaires qui ont croisé leur route. Ils sont aujourd’hui face
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
