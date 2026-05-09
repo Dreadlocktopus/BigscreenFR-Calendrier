@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-65@dreadlocktopus_bot_v5
+DTSTAMP:20260509T155657Z
+DTSTART:20260509T190000Z
+DTEND:20260509T210000Z
+SUMMARY:La Légende de Beowulf — 3D (KornFlex)
+DESCRIPTION:En ces temps lointains\, les sauvages contrées du Nord de l'Europe étaient peuplées de héros et de monstres\, et des hommes audacieux\, taillés pour la lutte et les conquêtes\, pouvaient encore se for
+LOCATION:La Légende de Beowulf 3D - BigScreenFR.fr
+END:VEVENT
+END:VCALENDAR
