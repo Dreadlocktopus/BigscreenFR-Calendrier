@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-54@dreadlocktopus_bot_v5
-DTSTAMP:20260507T073122Z
-DTSTART:20260507T160000Z
-DTEND:20260507T180000Z
-SUMMARY:Invictus — 3D (Secoto_fr_3D)
-DESCRIPTION:En 1994\, l'élection de Nelson Mandela consacre la fin de l'Apartheid\, mais l'Afrique du Sud reste une nation profondément divisée sur le plan racial et économique. Pour unifier le pays et donner à c
+UID:seance-63@dreadlocktopus_bot_v5
+DTSTAMP:20260509T074628Z
+DTSTART:20260509T190000Z
+DTEND:20260509T210000Z
+SUMMARY:Smashing Machine — 3D (Secoto_fr_3D)
+DESCRIPTION:En 1997\, Mark Kerr\, champion poids lourd de combats d'arts martiaux mixtes\, connaît une première défaite lors d'un tournoi au Japon. Poursuivant sa carrière avec une confiance ébranlée\, le colosse
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
