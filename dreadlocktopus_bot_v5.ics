@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-63@dreadlocktopus_bot_v5
-DTSTAMP:20260509T085820Z
+DTSTAMP:20260509T155655Z
 DTSTART:20260509T190000Z
 DTEND:20260509T210000Z
 SUMMARY:Smashing Machine — 3D (Secoto_fr_3D)
@@ -15,8 +15,17 @@ DESCRIPTION:En 1997\, Mark Kerr\, champion poids lourd de combats d'arts martiau
 LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
+UID:seance-65@dreadlocktopus_bot_v5
+DTSTAMP:20260509T155655Z
+DTSTART:20260509T190000Z
+DTEND:20260509T210000Z
+SUMMARY:La Légende de Beowulf — 3D (KornFlex)
+DESCRIPTION:En ces temps lointains\, les sauvages contrées du Nord de l'Europe étaient peuplées de héros et de monstres\, et des hommes audacieux\, taillés pour la lutte et les conquêtes\, pouvaient encore se for
+LOCATION:La Légende de Beowulf 3D - BigScreenFR.fr
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-64@dreadlocktopus_bot_v5
-DTSTAMP:20260509T085820Z
+DTSTAMP:20260509T155655Z
 DTSTART:20260509T160000Z
 DTEND:20260509T180000Z
 SUMMARY:Fast & Furious X — 3D (Secoto_fr_3D)
