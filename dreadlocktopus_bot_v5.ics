@@ -7,11 +7,20 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-63@dreadlocktopus_bot_v5
-DTSTAMP:20260509T074628Z
+DTSTAMP:20260509T085820Z
 DTSTART:20260509T190000Z
 DTEND:20260509T210000Z
 SUMMARY:Smashing Machine — 3D (Secoto_fr_3D)
 DESCRIPTION:En 1997\, Mark Kerr\, champion poids lourd de combats d'arts martiaux mixtes\, connaît une première défaite lors d'un tournoi au Japon. Poursuivant sa carrière avec une confiance ébranlée\, le colosse
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
+UID:seance-64@dreadlocktopus_bot_v5
+DTSTAMP:20260509T085820Z
+DTSTART:20260509T160000Z
+DTEND:20260509T180000Z
+SUMMARY:Fast & Furious X — 3D (Secoto_fr_3D)
+DESCRIPTION:Après bien des missions et contre toute attente\, Dom Toretto et sa famille ont su déjouer\, devancer\, surpasser et distancer tous les adversaires qui ont croisé leur route. Ils sont aujourd’hui face
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
