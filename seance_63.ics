@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-63@dreadlocktopus_bot_v5
+DTSTAMP:20260509T074629Z
+DTSTART:20260509T190000Z
+DTEND:20260509T210000Z
+SUMMARY:Smashing Machine — 3D (Secoto_fr_3D)
+DESCRIPTION:En 1997\, Mark Kerr\, champion poids lourd de combats d'arts martiaux mixtes\, connaît une première défaite lors d'un tournoi au Japon. Poursuivant sa carrière avec une confiance ébranlée\, le colosse
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
