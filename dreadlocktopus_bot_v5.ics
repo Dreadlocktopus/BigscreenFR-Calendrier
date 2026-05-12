@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-66@dreadlocktopus_bot_v5
-DTSTAMP:20260511T160736Z
-DTSTART:20260511T190000Z
-DTEND:20260511T210000Z
-SUMMARY:Projet dernière chance — 3D (Secoto_fr_3D)
-DESCRIPTION:Le professeur de sciences Ryland Grace se réveille à bord d’un vaisseau spatial\, à des années-lumière de la Terre\, sans aucun souvenir de qui il est ni de la façon dont il est arrivé là. À mesure qu
-LOCATION:MAJESTIC !
+UID:seance-67@dreadlocktopus_bot_v5
+DTSTAMP:20260512T154305Z
+DTSTART:20260512T163000Z
+DTEND:20260512T183000Z
+SUMMARY:Crows Zero — 3D (KornFlex)
+DESCRIPTION:Takiya\, un nouveau venu au sein du lycée Suzuran\, où des bandes très violentes s'affrontent quotidiennement\, veut tenter d'en prendre le contrôle. Pour ce faire\, il est entraîné par Katagiri\, un 
+LOCATION:Crows Zero 3D BigScreenFR.fr
 END:VEVENT
 END:VCALENDAR
