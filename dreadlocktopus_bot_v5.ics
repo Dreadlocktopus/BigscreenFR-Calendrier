@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-67@dreadlocktopus_bot_v5
-DTSTAMP:20260512T154305Z
-DTSTART:20260512T163000Z
-DTEND:20260512T183000Z
-SUMMARY:Crows Zero — 3D (KornFlex)
-DESCRIPTION:Takiya\, un nouveau venu au sein du lycée Suzuran\, où des bandes très violentes s'affrontent quotidiennement\, veut tenter d'en prendre le contrôle. Pour ce faire\, il est entraîné par Katagiri\, un 
-LOCATION:Crows Zero 3D BigScreenFR.fr
+UID:seance-68@dreadlocktopus_bot_v5
+DTSTAMP:20260514T091833Z
+DTSTART:20260514T190000Z
+DTEND:20260514T210000Z
+SUMMARY:Mowgli : La Légende de la jungle — 3D (dudulechtii)
+DESCRIPTION:Mowgli qui\, enfant\, est élevé par une meute de loups au cœur de la jungle indienne. Tandis qu'il apprend les lois souvent âpres de la jungle\, sous la responsabilité de l'ours Baloo et de la panthèr
+LOCATION:BigscreenFR
 END:VEVENT
 END:VCALENDAR
