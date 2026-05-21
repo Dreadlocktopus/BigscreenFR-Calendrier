@@ -7,20 +7,11 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-47@dreadlocktopus_bot_v5
-DTSTAMP:20260520T093442Z
+DTSTAMP:20260521T005549Z
 DTSTART:20270101T215900Z
 DTEND:20270101T235900Z
 SUMMARY:VHS Diaries — 3D (blue)
 DESCRIPTION:The filmmaker revisits the diaries she kept during the years when video was banned in Iran. Using her personal VHS archive of films as a point of reference\, the film explores a very personal film his
 LOCATION:naz
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-52@dreadlocktopus_bot_v5
-DTSTAMP:20260520T093442Z
-DTSTART:20260520T190000Z
-DTEND:20260520T210000Z
-SUMMARY:Jeanne d'Arc — 3D (KornFlex)
-DESCRIPTION:L'épopée de Jeanne qui assista\, petite fille\, au pillage de son village Domrémy par l'armée anglaise. On la suit de sa jeunesse pieuse où des voix l'engagent à délivrer la France de la domination an
-LOCATION:Jeanne d'Arc 3D BigScreenFR.fr
 END:VEVENT
 END:VCALENDAR
