@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-47@dreadlocktopus_bot_v5
-DTSTAMP:20260522T193809Z
+DTSTAMP:20260523T192934Z
 DTSTART:20270101T215900Z
 DTEND:20270101T235900Z
 SUMMARY:VHS Diaries — 3D (blue)
@@ -15,12 +15,12 @@ DESCRIPTION:The filmmaker revisits the diaries she kept during the years when vi
 LOCATION:naz
 END:VEVENT
 BEGIN:VEVENT
-UID:seance-53@dreadlocktopus_bot_v5
-DTSTAMP:20260522T193809Z
-DTSTART:20260522T201500Z
-DTEND:20260522T221500Z
-SUMMARY:Kingdom of Heaven — 3D (KornFlex)
-DESCRIPTION:Balian le forgeron découvre que son père est un seigneur Croisé\, peu avant que celui-ci ne meure et que ses terres à Jérusalem ne lui reviennent. Parti sur place\, il se range au côté des fidèles du 
-LOCATION:Kingdom of heaven 3D BigScreenFR.fr
+UID:seance-54@dreadlocktopus_bot_v5
+DTSTAMP:20260523T192934Z
+DTSTART:20260523T201500Z
+DTEND:20260523T221500Z
+SUMMARY:Les Autres — 3D (KornFlex)
+DESCRIPTION:En 1945\, la Seconde Guerre mondiale est terminée mais le mari de Grace\, parti combattre\, n'est pas revenu du front. Dans une immense demeure victorienne isolée sur l'île de Jersey\, cette jeune fem
+LOCATION:Les Autres 3D - BigScreenFR.fr
 END:VEVENT
 END:VCALENDAR
