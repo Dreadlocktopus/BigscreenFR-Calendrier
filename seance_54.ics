@@ -5,11 +5,11 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:seance-54@dreadlocktopus_bot_v5
-DTSTAMP:20260523T192936Z
-DTSTART:20260523T201500Z
-DTEND:20260523T221500Z
-SUMMARY:Les Autres — 3D (KornFlex)
-DESCRIPTION:En 1945\, la Seconde Guerre mondiale est terminée mais le mari de Grace\, parti combattre\, n'est pas revenu du front. Dans une immense demeure victorienne isolée sur l'île de Jersey\, cette jeune fem
-LOCATION:Les Autres 3D - BigScreenFR.fr
+DTSTAMP:20260523T230029Z
+DTSTART:20260507T160000Z
+DTEND:20260507T180000Z
+SUMMARY:Invictus — 3D (Secoto_fr_3D)
+DESCRIPTION:En 1994\, l'élection de Nelson Mandela consacre la fin de l'Apartheid\, mais l'Afrique du Sud reste une nation profondément divisée sur le plan racial et économique. Pour unifier le pays et donner à c
+LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
