@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-69@dreadlocktopus_bot_v5
+DTSTAMP:20260524T075904Z
+DTSTART:20260524T190000Z
+DTEND:20260524T210000Z
+SUMMARY:Mortal Kombat: Federation of Martial Arts — 3D (dudulechtii)
+DESCRIPTION:Mortal Kombat: Federation of Martial Arts consists of several fights between popular Mortal Kombat characters as well as other story elements. The fights are split into three rounds. Characters in thi
+LOCATION:BigScreenFR
+END:VEVENT
+END:VCALENDAR
