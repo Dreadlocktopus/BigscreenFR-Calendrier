@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-70@dreadlocktopus_bot_v5
+DTSTAMP:20260528T125737Z
+DTSTART:20260528T185000Z
+DTEND:20260528T205000Z
+SUMMARY:Thirteen — 3D (Secoto_fr_3D)
+DESCRIPTION:Après avoir vu Evie et ses copines se « servir » froidement dans une boutique de mode\, Tracy vole un sac à main richement garni. L'argent dérobé lui sert de viatique : il n'en faut pas plus que cela 
+LOCATION:[NSFW] MAJESTIC !
+END:VEVENT
+END:VCALENDAR
