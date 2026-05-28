@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-71@dreadlocktopus_bot_v5
+DTSTAMP:20260528T173902Z
+DTSTART:20260528T205000Z
+DTEND:20260528T225000Z
+SUMMARY:The Killer — 3D (KornFlex)
+DESCRIPTION:Après un désastre évité de justesse\, un tueur se bat contre ses employeurs et lui-même\, dans une mission punitive à travers le monde qui n'a soi-disant rien de personnel.
+LOCATION:[NSFW] The Killer 3D BigScreenFR.fr
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-70@dreadlocktopus_bot_v5
-DTSTAMP:20260528T125736Z
+DTSTAMP:20260528T173902Z
 DTSTART:20260528T185000Z
 DTEND:20260528T205000Z
 SUMMARY:Thirteen — 3D (Secoto_fr_3D)
