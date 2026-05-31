@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-72@dreadlocktopus_bot_v5
+DTSTAMP:20260531T175510Z
+DTSTART:20260531T184500Z
+DTEND:20260531T204500Z
+SUMMARY:Gourou — 3D (Secoto_fr_3D)
+DESCRIPTION:Matt est le coach en développement personnel le plus suivi de France. Dans une société en quête de sens où la réussite individuelle est devenue sacrée\, il propose à ses adeptes une catharsis qui élec
+LOCATION:Majestic !
+END:VEVENT
+END:VCALENDAR
