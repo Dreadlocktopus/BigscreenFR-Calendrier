@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-72@dreadlocktopus_bot_v5
-DTSTAMP:20260531T175509Z
-DTSTART:20260531T184500Z
-DTEND:20260531T204500Z
-SUMMARY:Gourou — 3D (Secoto_fr_3D)
-DESCRIPTION:Matt est le coach en développement personnel le plus suivi de France. Dans une société en quête de sens où la réussite individuelle est devenue sacrée\, il propose à ses adeptes une catharsis qui élec
-LOCATION:Majestic !
+UID:seance-73@dreadlocktopus_bot_v5
+DTSTAMP:20260602T073636Z
+DTSTART:20260602T185000Z
+DTEND:20260602T205000Z
+SUMMARY:They Will Kill You — 3D (Secoto_fr_3D)
+DESCRIPTION:Une jeune femme doit survivre toute une nuit\, enfermée dans le mystérieux et sordide repaire d'une secte démoniaque\, et tout faire pour ne pas devenir leur prochain sacrifice. Une lutte acharnée\, d
+LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
