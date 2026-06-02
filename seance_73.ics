@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-73@dreadlocktopus_bot_v5
+DTSTAMP:20260602T073638Z
+DTSTART:20260602T185000Z
+DTEND:20260602T205000Z
+SUMMARY:They Will Kill You — 3D (Secoto_fr_3D)
+DESCRIPTION:Une jeune femme doit survivre toute une nuit\, enfermée dans le mystérieux et sordide repaire d'une secte démoniaque\, et tout faire pour ne pas devenir leur prochain sacrifice. Une lutte acharnée\, d
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
