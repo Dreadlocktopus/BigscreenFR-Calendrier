@@ -5,4 +5,13 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
+BEGIN:VEVENT
+UID:seance-76@dreadlocktopus_bot_v5
+DTSTAMP:20260605T104653Z
+DTSTART:20260605T185000Z
+DTEND:20260605T205000Z
+SUMMARY:Scary Movie — 3D (Secoto_fr_3D)
+DESCRIPTION:Un soir\, Drew Becker reçoit un appel anonyme d’un maniaque. Traquée dans sa maison\, puis dans son jardin\, elle finit par se faire tuer. Sa mort plonge ses camarades de lycée en plein cauchemar\, d’
+LOCATION:MAJESTIC !
+END:VEVENT
 END:VCALENDAR
