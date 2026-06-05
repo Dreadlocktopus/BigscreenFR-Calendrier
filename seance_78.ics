@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-78@dreadlocktopus_bot_v5
+DTSTAMP:20260605T105621Z
+DTSTART:20260607T185000Z
+DTEND:20260607T205000Z
+SUMMARY:Scary Movie 3 — 3D (Secoto_fr_3D)
+DESCRIPTION:Pour Cindy\, jeune et jolie reporter\, le compte à rebours a déjà commencé. Parce qu'elle a visionné la cassette au pouvoir démoniaque\, elle sait qu'il ne lui reste plus que sept jours à vivre. Si el
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
