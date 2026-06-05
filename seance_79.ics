@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-79@dreadlocktopus_bot_v5
+DTSTAMP:20260605T105727Z
+DTSTART:20260608T185000Z
+DTEND:20260608T205000Z
+SUMMARY:Scary Movie 4 — 3D (Secoto_fr_3D)
+DESCRIPTION:Cindy Campbell est toujours terriblement blonde. Mais bourrée de bonnes intentions. Ça tombe bien\, elle vient d'être engagée comme aide à domicile auprès d'une vieille grabataire qui\, grâce à ses so
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
