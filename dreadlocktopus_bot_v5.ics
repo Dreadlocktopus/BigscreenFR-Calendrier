@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-77@dreadlocktopus_bot_v5
+DTSTAMP:20260605T104815Z
+DTSTART:20260606T185000Z
+DTEND:20260606T205000Z
+SUMMARY:Scary Movie 2 — 3D (Secoto_fr_3D)
+DESCRIPTION:Une année s'est écoulée depuis les meurtres désopilants qui se sont produits dans la paisible ville de Cindy Campbell. Et le tueur court toujours. Un jour\, un professeur fou oblige Cindy et sa bande 
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-76@dreadlocktopus_bot_v5
-DTSTAMP:20260605T104653Z
+DTSTAMP:20260605T104815Z
 DTSTART:20260605T185000Z
 DTEND:20260605T205000Z
 SUMMARY:Scary Movie — 3D (Secoto_fr_3D)
