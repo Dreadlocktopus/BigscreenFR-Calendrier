@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-83@dreadlocktopus_bot_v5
+DTSTAMP:20260608T175439Z
+DTSTART:20260610T185000Z
+DTEND:20260610T205000Z
+SUMMARY:Scary Movie 5 — 3D (Secoto_fr_3D)
+DESCRIPTION:Jody et Dan\, qui forment un jeune couple\, emménagent avec leur bébé dans une maison où semblent se manifester d'étranges phénomènes. Ils vont faire appel à un médium... et au ballet pour faire la lu
+LOCATION:MAJESTIC
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-82@dreadlocktopus_bot_v5
-DTSTAMP:20260608T175351Z
+DTSTAMP:20260608T175439Z
 DTSTART:20260609T185000Z
 DTEND:20260609T205000Z
 SUMMARY:Scary Movie 4 — 3D (Secoto_fr_3D)
@@ -16,7 +25,7 @@ LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-81@dreadlocktopus_bot_v5
-DTSTAMP:20260608T175351Z
+DTSTAMP:20260608T175439Z
 DTSTART:20260608T184500Z
 DTEND:20260608T204500Z
 SUMMARY:Michael — 3D (Secoto_fr_3D)
