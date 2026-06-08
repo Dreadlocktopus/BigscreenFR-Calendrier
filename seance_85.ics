@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-85@dreadlocktopus_bot_v5
+DTSTAMP:20260608T205515Z
+DTSTART:20260609T193000Z
+DTEND:20260609T213000Z
+SUMMARY:Michael — 2D (ATY)
+DESCRIPTION:Michael dresse le portrait cinématographique de la vie et de l’héritage de l’un des artistes les plus influents de notre époque.  Le film raconte l’histoire de Michael Jackson au-delà de la musique\, 
+LOCATION:Michael 4K VOSTFR
+END:VEVENT
+END:VCALENDAR
