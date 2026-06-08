@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-84@dreadlocktopus_bot_v5
+DTSTAMP:20260608T193435Z
+DTSTART:20260608T205000Z
+DTEND:20260608T225000Z
+SUMMARY:Good Omens — S03 Ép. 1 — 3D (KornFlex)
+DESCRIPTION:Devenu Archange suprême\, Aziraphale cherche l'aide de Rampa\, mais les projets du Second Avènement prennent une tournure inattendue\, voire dangereuse. L'ange et le démon parviendront-ils à aplanir l
+LOCATION:Good Omens - 3D BigScreenFR.fr
+END:VEVENT
+END:VCALENDAR
