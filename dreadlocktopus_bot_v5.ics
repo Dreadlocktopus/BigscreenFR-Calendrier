@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-83@dreadlocktopus_bot_v5
-DTSTAMP:20260608T175439Z
+DTSTAMP:20260608T193431Z
 DTSTART:20260610T185000Z
 DTEND:20260610T205000Z
 SUMMARY:Scary Movie 5 — 3D (Secoto_fr_3D)
@@ -16,7 +16,7 @@ LOCATION:MAJESTIC
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-82@dreadlocktopus_bot_v5
-DTSTAMP:20260608T175439Z
+DTSTAMP:20260608T193431Z
 DTSTART:20260609T185000Z
 DTEND:20260609T205000Z
 SUMMARY:Scary Movie 4 — 3D (Secoto_fr_3D)
@@ -24,12 +24,12 @@ DESCRIPTION:Cindy Campbell est toujours terriblement blonde. Mais bourrée de bo
 LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
-UID:seance-81@dreadlocktopus_bot_v5
-DTSTAMP:20260608T175439Z
-DTSTART:20260608T184500Z
-DTEND:20260608T204500Z
-SUMMARY:Michael — 3D (Secoto_fr_3D)
-DESCRIPTION:Michael dresse le portrait cinématographique de la vie et de l’héritage de l’un des artistes les plus influents de notre époque.  Le film raconte l’histoire de Michael Jackson au-delà de la musique\, 
-LOCATION:MAJESTIC !
+UID:seance-84@dreadlocktopus_bot_v5
+DTSTAMP:20260608T193431Z
+DTSTART:20260608T205000Z
+DTEND:20260608T225000Z
+SUMMARY:Good Omens — S03 Ép. 1 — 3D (KornFlex)
+DESCRIPTION:Devenu Archange suprême\, Aziraphale cherche l'aide de Rampa\, mais les projets du Second Avènement prennent une tournure inattendue\, voire dangereuse. L'ange et le démon parviendront-ils à aplanir l
+LOCATION:Good Omens - 3D BigScreenFR.fr
 END:VEVENT
 END:VCALENDAR
