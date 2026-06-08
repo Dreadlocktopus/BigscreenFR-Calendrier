@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-81@dreadlocktopus_bot_v5
+DTSTAMP:20260608T175302Z
+DTSTART:20260608T184500Z
+DTEND:20260608T204500Z
+SUMMARY:Michael — 3D (Secoto_fr_3D)
+DESCRIPTION:Michael dresse le portrait cinématographique de la vie et de l’héritage de l’un des artistes les plus influents de notre époque.  Le film raconte l’histoire de Michael Jackson au-delà de la musique\, 
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
