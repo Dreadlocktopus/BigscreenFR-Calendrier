@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-82@dreadlocktopus_bot_v5
+DTSTAMP:20260608T175351Z
+DTSTART:20260609T185000Z
+DTEND:20260609T205000Z
+SUMMARY:Scary Movie 4 — 3D (Secoto_fr_3D)
+DESCRIPTION:Cindy Campbell est toujours terriblement blonde. Mais bourrée de bonnes intentions. Ça tombe bien\, elle vient d'être engagée comme aide à domicile auprès d'une vieille grabataire qui\, grâce à ses so
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-81@dreadlocktopus_bot_v5
-DTSTAMP:20260608T175301Z
+DTSTAMP:20260608T175351Z
 DTSTART:20260608T184500Z
 DTEND:20260608T204500Z
 SUMMARY:Michael — 3D (Secoto_fr_3D)
