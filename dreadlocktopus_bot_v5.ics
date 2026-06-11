@@ -5,13 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
-BEGIN:VEVENT
-UID:seance-83@dreadlocktopus_bot_v5
-DTSTAMP:20260609T212747Z
-DTSTART:20260610T185000Z
-DTEND:20260610T205000Z
-SUMMARY:Scary Movie 5 — 3D (Secoto_fr_3D)
-DESCRIPTION:Jody et Dan\, qui forment un jeune couple\, emménagent avec leur bébé dans une maison où semblent se manifester d'étranges phénomènes. Ils vont faire appel à un médium... et au ballet pour faire la lu
-LOCATION:MAJESTIC
-END:VEVENT
 END:VCALENDAR
