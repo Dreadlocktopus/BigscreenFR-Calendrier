@@ -5,13 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
-BEGIN:VEVENT
-UID:seance-86@dreadlocktopus_bot_v5
-DTSTAMP:20260612T002802Z
-DTSTART:20260612T010000Z
-DTEND:20260612T030000Z
-SUMMARY:Le 13ème Guerrier — 3D (KornFlex)
-DESCRIPTION:Contraint à l'exil par son calife\, pour avoir séduit la femme d'un autre\, Ahmed Ibn Fahdlan est envoyé comme ambassadeur en Asie mineure. Une prophétie l'oblige à devenir le "13ème Guerrier" d'un gr
-LOCATION:Le 13eme guerrier 3D BigscreenFR.fr
-END:VEVENT
 END:VCALENDAR
