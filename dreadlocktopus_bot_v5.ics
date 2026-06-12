@@ -5,4 +5,13 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
+BEGIN:VEVENT
+UID:seance-87@dreadlocktopus_bot_v5
+DTSTAMP:20260612T111154Z
+DTSTART:20260612T190000Z
+DTEND:20260612T210000Z
+SUMMARY:Mortal Kombat II — 3D (dudulechtii)
+DESCRIPTION:Les champions en arts martiaux de l'Earthrealm\, secondés par le héros de films d'action Johnny Cage\, s'affrontent dans un tournoi ultime. Leur but: renverser Shao Kahn\, un tyran qui menace l'existe
+LOCATION:BigScreenFr
+END:VEVENT
 END:VCALENDAR
