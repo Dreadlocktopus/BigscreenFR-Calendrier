@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-87@dreadlocktopus_bot_v5
-DTSTAMP:20260612T171301Z
-DTSTART:20260612T190000Z
-DTEND:20260612T210000Z
-SUMMARY:Mortal Kombat II — 3D (dudulechtii)
-DESCRIPTION:Les champions en arts martiaux de l'Earthrealm\, secondés par le héros de films d'action Johnny Cage\, s'affrontent dans un tournoi ultime. Leur but: renverser Shao Kahn\, un tyran qui menace l'existe
-LOCATION:BigScreenFr
+UID:seance-88@dreadlocktopus_bot_v5
+DTSTAMP:20260614T142602Z
+DTSTART:20260615T185000Z
+DTEND:20260615T205000Z
+SUMMARY:Gravity — 3D (Secoto_fr_3D)
+DESCRIPTION:Pour sa première expédition à bord d'une navette spatiale\, le docteur Ryan Stone\, brillante experte en ingénierie médicale\, accompagne l'astronaute chevronné Matt Kowalski qui effectue son dernier 
+LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
