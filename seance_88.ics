@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-88@dreadlocktopus_bot_v5
+DTSTAMP:20260614T142603Z
+DTSTART:20260615T185000Z
+DTEND:20260615T205000Z
+SUMMARY:Gravity — 3D (Secoto_fr_3D)
+DESCRIPTION:Pour sa première expédition à bord d'une navette spatiale\, le docteur Ryan Stone\, brillante experte en ingénierie médicale\, accompagne l'astronaute chevronné Matt Kowalski qui effectue son dernier 
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
