@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-89@dreadlocktopus_bot_v5
+DTSTAMP:20260615T100322Z
+DTSTART:20260615T190000Z
+DTEND:20260615T210000Z
+SUMMARY:Cobain: Montage of Heck — 2D (KornFlex)
+DESCRIPTION:Une plongée dans l’intimité et l’esprit de Kurt Cobain\, du groupe Nirvana. Salué comme étant le plus intime et le plus innovant documentaire jamais réalisé sur le chanteur\, le film est une plongée c
+LOCATION:Cobain Montage Of Heck VOSTF BigScreenFR.fr
+END:VEVENT
+END:VCALENDAR
