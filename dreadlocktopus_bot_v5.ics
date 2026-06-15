@@ -5,22 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
-BEGIN:VEVENT
-UID:seance-89@dreadlocktopus_bot_v5
-DTSTAMP:20260615T100321Z
-DTSTART:20260615T190000Z
-DTEND:20260615T210000Z
-SUMMARY:Cobain: Montage of Heck — 2D (KornFlex)
-DESCRIPTION:Une plongée dans l’intimité et l’esprit de Kurt Cobain\, du groupe Nirvana. Salué comme étant le plus intime et le plus innovant documentaire jamais réalisé sur le chanteur\, le film est une plongée c
-LOCATION:Cobain Montage Of Heck VOSTF BigScreenFR.fr
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-88@dreadlocktopus_bot_v5
-DTSTAMP:20260615T100321Z
-DTSTART:20260615T185000Z
-DTEND:20260615T205000Z
-SUMMARY:Gravity — 3D (Secoto_fr_3D)
-DESCRIPTION:Pour sa première expédition à bord d'une navette spatiale\, le docteur Ryan Stone\, brillante experte en ingénierie médicale\, accompagne l'astronaute chevronné Matt Kowalski qui effectue son dernier 
-LOCATION:MAJESTIC !
-END:VEVENT
 END:VCALENDAR
