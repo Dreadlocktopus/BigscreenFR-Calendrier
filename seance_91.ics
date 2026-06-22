@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-91@dreadlocktopus_bot_v5
+DTSTAMP:20260622T172756Z
+DTSTART:20260622T183000Z
+DTEND:20260622T203000Z
+SUMMARY:La Vague — 3D (KornFlex)
+DESCRIPTION:En Allemagne\, aujourd'hui. Dans le cadre d'un atelier\, un professeur de lycée propose à ses élèves une expérience visant à leur expliquer le fonctionnement d'un régime totalitaire. Commence alors un
+LOCATION:La vague 3D BigScreenFR.fr
+END:VEVENT
+END:VCALENDAR
