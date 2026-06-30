@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-91@dreadlocktopus_bot_v5
-DTSTAMP:20260622T172944Z
-DTSTART:20260622T183000Z
-DTEND:20260622T203000Z
-SUMMARY:La Vague — 3D (KornFlex)
-DESCRIPTION:En Allemagne\, aujourd'hui. Dans le cadre d'un atelier\, un professeur de lycée propose à ses élèves une expérience visant à leur expliquer le fonctionnement d'un régime totalitaire. Commence alors un
-LOCATION:La vague 3D BigScreenFR.fr
+UID:seance-92@dreadlocktopus_bot_v5
+DTSTAMP:20260630T142352Z
+DTSTART:20260630T190000Z
+DTEND:20260630T210000Z
+SUMMARY:Le Diable s'habille en Prada 2 — 3D (Secoto_fr_3D)
+DESCRIPTION:Près de vingt ans après\, Meryl Streep\, Anne Hathaway\, Emily Blunt et Stanley Tucci reprennent leurs rôles emblématiques de Miranda\, Andy\, Emily et Nigel\, et nous replongent dans l’univers impito
+LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
