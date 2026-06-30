@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-92@dreadlocktopus_bot_v5
+DTSTAMP:20260630T142354Z
+DTSTART:20260630T190000Z
+DTEND:20260630T210000Z
+SUMMARY:Le Diable s'habille en Prada 2 — 3D (Secoto_fr_3D)
+DESCRIPTION:Près de vingt ans après\, Meryl Streep\, Anne Hathaway\, Emily Blunt et Stanley Tucci reprennent leurs rôles emblématiques de Miranda\, Andy\, Emily et Nigel\, et nous replongent dans l’univers impito
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
