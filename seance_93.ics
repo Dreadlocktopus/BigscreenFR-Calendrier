@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-93@dreadlocktopus_bot_v5
+DTSTAMP:20260704T060715Z
+DTSTART:20260704T064500Z
+DTEND:20260704T084500Z
+SUMMARY:The Predator — 3D (KornFlex)
+DESCRIPTION:Les pires prédateurs de l'univers sont maintenant plus forts et plus intelligents que jamais\, ils se sont génétiquement perfectionnés grâce à l'ADN d'autres espèces. Quand un jeune garçon déclenche a
+LOCATION:The Predator 3D  BigScreenFR.fr
+END:VEVENT
+END:VCALENDAR
