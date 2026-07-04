@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-92@dreadlocktopus_bot_v5
-DTSTAMP:20260630T142352Z
-DTSTART:20260630T190000Z
-DTEND:20260630T210000Z
-SUMMARY:Le Diable s'habille en Prada 2 — 3D (Secoto_fr_3D)
-DESCRIPTION:Près de vingt ans après\, Meryl Streep\, Anne Hathaway\, Emily Blunt et Stanley Tucci reprennent leurs rôles emblématiques de Miranda\, Andy\, Emily et Nigel\, et nous replongent dans l’univers impito
-LOCATION:MAJESTIC !
+UID:seance-93@dreadlocktopus_bot_v5
+DTSTAMP:20260704T060714Z
+DTSTART:20260704T064500Z
+DTEND:20260704T084500Z
+SUMMARY:The Predator — 3D (KornFlex)
+DESCRIPTION:Les pires prédateurs de l'univers sont maintenant plus forts et plus intelligents que jamais\, ils se sont génétiquement perfectionnés grâce à l'ADN d'autres espèces. Quand un jeune garçon déclenche a
+LOCATION:The Predator 3D  BigScreenFR.fr
 END:VEVENT
 END:VCALENDAR
