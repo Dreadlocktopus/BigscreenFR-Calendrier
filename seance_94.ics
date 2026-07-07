@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-94@dreadlocktopus_bot_v5
+DTSTAMP:20260707T141828Z
+DTSTART:20260707T184500Z
+DTEND:20260707T204500Z
+SUMMARY:Alter ego — 3D (secoto_fr_3D)
+DESCRIPTION:Alex a un problème : son nouveau voisin est son sosie parfait. Avec des cheveux. Un double en mieux\, qui va totalement bouleverser son existence.
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
