@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-95@dreadlocktopus_bot_v5
+DTSTAMP:20260707T142328Z
+DTSTART:20260708T185000Z
+DTEND:20260708T205000Z
+SUMMARY:Toy Story — 3D (Secoto_fr_3D)
+DESCRIPTION:Dans un monde où les jouets vivent leur vie quand les humains ne sont pas présents\, Toy Story emmène les spectateurs dans un voyage fantastique vu principalement par les yeux de deux rivaux : Woody\,
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
