@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-97@dreadlocktopus_bot_v5
+DTSTAMP:20260708T074249Z
+DTSTART:20260716T185000Z
+DTEND:20260716T205000Z
+SUMMARY:Toy Story 3 — 3D (Secoto_fr_3D)
+DESCRIPTION:Woody\, Buzz l’Éclair et le reste des jouets reviennent dans une toute nouvelle aventure avec quelques nouveaux visages dont Ken et Barbie\, le hérisson La Brosse et l’ours Lotso. Andy se prépare à pa
+LOCATION:MAJESTIC ! from discord bigscreenFR
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-96@dreadlocktopus_bot_v5
-DTSTAMP:20260708T074148Z
+DTSTAMP:20260708T074249Z
 DTSTART:20260715T190000Z
 DTEND:20260715T210000Z
 SUMMARY:Toy Story 2 — 3D (Secoto_fr_3D)
@@ -16,7 +25,7 @@ LOCATION:MAJESTIC ! from discord bigscreenFR
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-95@dreadlocktopus_bot_v5
-DTSTAMP:20260708T074148Z
+DTSTAMP:20260708T074249Z
 DTSTART:20260708T184000Z
 DTEND:20260708T204000Z
 SUMMARY:Toy Story — 3D (Secoto_fr_3D)
