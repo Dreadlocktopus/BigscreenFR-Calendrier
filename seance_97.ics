@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-97@dreadlocktopus_bot_v5
+DTSTAMP:20260708T074250Z
+DTSTART:20260716T185000Z
+DTEND:20260716T205000Z
+SUMMARY:Toy Story 3 — 3D (Secoto_fr_3D)
+DESCRIPTION:Woody\, Buzz l’Éclair et le reste des jouets reviennent dans une toute nouvelle aventure avec quelques nouveaux visages dont Ken et Barbie\, le hérisson La Brosse et l’ours Lotso. Andy se prépare à pa
+LOCATION:MAJESTIC ! from discord bigscreenFR
+END:VEVENT
+END:VCALENDAR
