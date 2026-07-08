@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-96@dreadlocktopus_bot_v5
+DTSTAMP:20260708T074148Z
+DTSTART:20260715T190000Z
+DTEND:20260715T210000Z
+SUMMARY:Toy Story 2 — 3D (Secoto_fr_3D)
+DESCRIPTION:Andy part en colonie de vacances et laisse ses jouets à la maison. Les choses se gâtent quand le collectionneur Al McWhiggin kidnappe Woody. Dans l’appartement d’Al\, Woody découvre qu’il est un objet
+LOCATION:MAJESTIC ! from discord bigscreenFR
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-95@dreadlocktopus_bot_v5
-DTSTAMP:20260708T073759Z
+DTSTAMP:20260708T074148Z
 DTSTART:20260708T184000Z
 DTEND:20260708T204000Z
 SUMMARY:Toy Story — 3D (Secoto_fr_3D)
