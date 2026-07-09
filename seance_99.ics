@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-99@dreadlocktopus_bot_v5
+DTSTAMP:20260709T083323Z
+DTSTART:20260709T090000Z
+DTEND:20260709T110000Z
+SUMMARY:Morbius — 3D (KornFlex)
+DESCRIPTION:Gravement atteint d’une rare maladie sanguine\, et déterminé à sauver toutes les victimes de cette pathologie\, le Dr Morbius tente un pari désespéré. Mais ce qui semble à première vue être un succès 
+LOCATION:Morbius 3D BigScreenFR
+END:VEVENT
+END:VCALENDAR
