@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-98@dreadlocktopus_bot_v5
-DTSTAMP:20260708T074501Z
+DTSTAMP:20260709T083316Z
 DTSTART:20260717T184500Z
 DTEND:20260717T204500Z
 SUMMARY:Toy Story 4 — 3D (Secoto_fr_3D)
@@ -16,7 +16,7 @@ LOCATION:MAJESTIC ! from discord BigscreenFR
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-97@dreadlocktopus_bot_v5
-DTSTAMP:20260708T074501Z
+DTSTAMP:20260709T083316Z
 DTSTART:20260716T185000Z
 DTEND:20260716T205000Z
 SUMMARY:Toy Story 3 — 3D (Secoto_fr_3D)
@@ -25,7 +25,7 @@ LOCATION:MAJESTIC ! from discord bigscreenFR
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-96@dreadlocktopus_bot_v5
-DTSTAMP:20260708T074501Z
+DTSTAMP:20260709T083316Z
 DTSTART:20260715T190000Z
 DTEND:20260715T210000Z
 SUMMARY:Toy Story 2 — 3D (Secoto_fr_3D)
@@ -33,12 +33,12 @@ DESCRIPTION:Andy part en colonie de vacances et laisse ses jouets à la maison. 
 LOCATION:MAJESTIC ! from discord bigscreenFR
 END:VEVENT
 BEGIN:VEVENT
-UID:seance-95@dreadlocktopus_bot_v5
-DTSTAMP:20260708T074501Z
-DTSTART:20260708T184000Z
-DTEND:20260708T204000Z
-SUMMARY:Toy Story — 3D (Secoto_fr_3D)
-DESCRIPTION:Dans un monde où les jouets vivent leur vie quand les humains ne sont pas présents\, Toy Story emmène les spectateurs dans un voyage fantastique vu principalement par les yeux de deux rivaux : Woody\,
-LOCATION:MAJESTIC !
+UID:seance-99@dreadlocktopus_bot_v5
+DTSTAMP:20260709T083316Z
+DTSTART:20260709T090000Z
+DTEND:20260709T110000Z
+SUMMARY:Morbius — 3D (KornFlex)
+DESCRIPTION:Gravement atteint d’une rare maladie sanguine\, et déterminé à sauver toutes les victimes de cette pathologie\, le Dr Morbius tente un pari désespéré. Mais ce qui semble à première vue être un succès 
+LOCATION:Morbius 3D BigScreenFR
 END:VEVENT
 END:VCALENDAR
