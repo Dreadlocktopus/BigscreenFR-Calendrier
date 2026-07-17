@@ -5,13 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
-BEGIN:VEVENT
-UID:seance-98@dreadlocktopus_bot_v5
-DTSTAMP:20260716T191051Z
-DTSTART:20260717T184500Z
-DTEND:20260717T204500Z
-SUMMARY:Toy Story 4 — 3D (Secoto_fr_3D)
-DESCRIPTION:Woody a toujours privilégié la joie et le bien‐être de ses jeunes propriétaires – Andy puis Bonnie – et de ses compagnons\, n’hésitant pas à prendre tous les risques pour eux\, aussi inconsidérés soie
-LOCATION:MAJESTIC ! from discord BigscreenFR
-END:VEVENT
 END:VCALENDAR
