@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-101@dreadlocktopus_bot_v5
+DTSTAMP:20260721T164315Z
+DTSTART:20260722T185000Z
+DTEND:20260722T205000Z
+SUMMARY:Disclosure Day — 3D (Secoto_fr_3D)
+DESCRIPTION:Si vous découvriez que nous ne sommes pas seuls\, si quelqu'un vous le montrait\, vous le prouvait\, cela vous effraierait-il ?
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-100@dreadlocktopus_bot_v5
-DTSTAMP:20260721T163419Z
+DTSTAMP:20260721T164315Z
 DTSTART:20260721T185000Z
 DTEND:20260721T205000Z
 SUMMARY:The Mandalorian and Grogu — 3D (Secoto_fr_3D)
