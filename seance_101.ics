@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-101@dreadlocktopus_bot_v5
+DTSTAMP:20260721T164316Z
+DTSTART:20260722T185000Z
+DTEND:20260722T205000Z
+SUMMARY:Disclosure Day — 3D (Secoto_fr_3D)
+DESCRIPTION:Si vous découvriez que nous ne sommes pas seuls\, si quelqu'un vous le montrait\, vous le prouvait\, cela vous effraierait-il ?
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
