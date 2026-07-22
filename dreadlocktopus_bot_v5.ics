@@ -6,21 +6,21 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-102@dreadlocktopus_bot_v5
+DTSTAMP:20260722T175130Z
+DTSTART:20260723T185000Z
+DTEND:20260723T205000Z
+SUMMARY:Scary Movie — 3D (Secoto_fr_3D)
+DESCRIPTION:Vingt-six ans après avoir échappé à un tueur masqué étrangement familier\, les héros emblématiques de la saga sont de nouveau dans la ligne de mire du meurtrier\, et aucune franchise de film d’horreur
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-101@dreadlocktopus_bot_v5
-DTSTAMP:20260721T164315Z
+DTSTAMP:20260722T175130Z
 DTSTART:20260722T185000Z
 DTEND:20260722T205000Z
 SUMMARY:Disclosure Day — 3D (Secoto_fr_3D)
 DESCRIPTION:Si vous découvriez que nous ne sommes pas seuls\, si quelqu'un vous le montrait\, vous le prouvait\, cela vous effraierait-il ?
-LOCATION:MAJESTIC !
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-100@dreadlocktopus_bot_v5
-DTSTAMP:20260721T164315Z
-DTSTART:20260721T185000Z
-DTEND:20260721T205000Z
-SUMMARY:The Mandalorian and Grogu — 3D (Secoto_fr_3D)
-DESCRIPTION:L'Empire maléfique est tombé et les seigneurs de guerre impériaux restent dispersés dans toute la galaxie. Alors que la nouvelle République naissante travaille pour protéger tout ce que la rébellion s
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
