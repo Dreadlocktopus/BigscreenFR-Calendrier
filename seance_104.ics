@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-104@dreadlocktopus_bot_v5
+DTSTAMP:20260724T074055Z
+DTSTART:20260729T185000Z
+DTEND:20260729T205000Z
+SUMMARY:Le colosse de Hong Kong — 3D (Secoto_fr_3D)
+DESCRIPTION:L'explorateur Johnny est chargé par l'homme d'affaires Lu d'aller capturer un colosse se trouvant dans une jungle en Inde. Là il repère une jolie fille nommée Samantha\, amie avec le colosse\, qui s'a
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
