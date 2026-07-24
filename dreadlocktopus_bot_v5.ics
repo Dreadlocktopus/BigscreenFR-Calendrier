@@ -6,21 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-102@dreadlocktopus_bot_v5
-DTSTAMP:20260722T175130Z
-DTSTART:20260723T185000Z
-DTEND:20260723T205000Z
-SUMMARY:Scary Movie — 3D (Secoto_fr_3D)
-DESCRIPTION:Vingt-six ans après avoir échappé à un tueur masqué étrangement familier\, les héros emblématiques de la saga sont de nouveau dans la ligne de mire du meurtrier\, et aucune franchise de film d’horreur
-LOCATION:MAJESTIC !
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-101@dreadlocktopus_bot_v5
-DTSTAMP:20260722T175130Z
-DTSTART:20260722T185000Z
-DTEND:20260722T205000Z
-SUMMARY:Disclosure Day — 3D (Secoto_fr_3D)
-DESCRIPTION:Si vous découvriez que nous ne sommes pas seuls\, si quelqu'un vous le montrait\, vous le prouvait\, cela vous effraierait-il ?
+UID:seance-103@dreadlocktopus_bot_v5
+DTSTAMP:20260724T073832Z
+DTSTART:20260727T185000Z
+DTEND:20260727T205000Z
+SUMMARY:Jurassic Park III — 3D (Secoto_fr_3D)
+DESCRIPTION:Huit ans après la débâcle d'Ingen\, le célèbre paléontologue Alan Grant peine à trouver les fonds nécessaires pour financer ses recherches sur les dinosaures. Paul Kirby et sa femme Amanda\, se disent
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
