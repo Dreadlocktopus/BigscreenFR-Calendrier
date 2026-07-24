@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-103@dreadlocktopus_bot_v5
+DTSTAMP:20260724T073833Z
+DTSTART:20260727T185000Z
+DTEND:20260727T205000Z
+SUMMARY:Jurassic Park III — 3D (Secoto_fr_3D)
+DESCRIPTION:Huit ans après la débâcle d'Ingen\, le célèbre paléontologue Alan Grant peine à trouver les fonds nécessaires pour financer ses recherches sur les dinosaures. Paul Kirby et sa femme Amanda\, se disent
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
