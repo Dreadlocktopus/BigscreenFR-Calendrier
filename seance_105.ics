@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-105@dreadlocktopus_bot_v5
+DTSTAMP:20260725T100553Z
+DTSTART:20260725T185000Z
+DTEND:20260725T205000Z
+SUMMARY:Sunshine — 3D (Kornflex)
+DESCRIPTION:En cette année 2057\, le soleil se meurt\, entraînant dans son déclin l’extinction de l’espèce humaine. Le vaisseau spatial Icarus II avec à son bord un équipage de 7 hommes et femmes dirigé par le Ca
+LOCATION:Sunshine 3D BigScreenFR
+END:VEVENT
+END:VCALENDAR
