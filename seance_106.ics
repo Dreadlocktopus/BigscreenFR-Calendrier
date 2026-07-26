@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-106@dreadlocktopus_bot_v5
+DTSTAMP:20260726T204346Z
+DTSTART:20260728T185000Z
+DTEND:20260728T205000Z
+SUMMARY:Equilibrium — 3D (KornFlex)
+DESCRIPTION:Dans les années 2070\, dans la citadelle de Libria\, les émotions n'existent plus\, supprimées par l'absorption quotidienne de Prozium. Cette drogue anti-anxiété rend les gens plus heureux et plus pro
+LOCATION:Equilibrium 3D BigScreenFR
+END:VEVENT
+END:VCALENDAR
