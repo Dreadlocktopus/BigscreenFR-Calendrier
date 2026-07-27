@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-104@dreadlocktopus_bot_v5
-DTSTAMP:20260726T204343Z
+DTSTAMP:20260727T160929Z
 DTSTART:20260729T185000Z
 DTEND:20260729T205000Z
 SUMMARY:Le colosse de Hong Kong — 3D (Secoto_fr_3D)
@@ -16,7 +16,7 @@ LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-106@dreadlocktopus_bot_v5
-DTSTAMP:20260726T204343Z
+DTSTAMP:20260727T160929Z
 DTSTART:20260728T185000Z
 DTEND:20260728T205000Z
 SUMMARY:Equilibrium — 3D (KornFlex)
@@ -24,8 +24,17 @@ DESCRIPTION:Dans les années 2070\, dans la citadelle de Libria\, les émotions 
 LOCATION:Equilibrium 3D BigScreenFR
 END:VEVENT
 BEGIN:VEVENT
+UID:seance-107@dreadlocktopus_bot_v5
+DTSTAMP:20260727T160929Z
+DTSTART:20260728T185000Z
+DTEND:20260728T205000Z
+SUMMARY:Supergirl — 3D (Secoto_fr_3D)
+DESCRIPTION:Lorsqu’un ennemi inattendu et impitoyable surgit\, Kara Zor-El est forcée\, malgré elle\, de faire équipe avec un compagnon improbable. Ensemble\, ils se lancent dans une épopée cosmique où la vengean
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-103@dreadlocktopus_bot_v5
-DTSTAMP:20260726T204343Z
+DTSTAMP:20260727T160929Z
 DTSTART:20260727T185000Z
 DTEND:20260727T205000Z
 SUMMARY:Jurassic Park III — 3D (Secoto_fr_3D)
