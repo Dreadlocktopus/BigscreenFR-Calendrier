@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-107@dreadlocktopus_bot_v5
+DTSTAMP:20260727T160933Z
+DTSTART:20260728T185000Z
+DTEND:20260728T205000Z
+SUMMARY:Supergirl — 3D (Secoto_fr_3D)
+DESCRIPTION:Lorsqu’un ennemi inattendu et impitoyable surgit\, Kara Zor-El est forcée\, malgré elle\, de faire équipe avec un compagnon improbable. Ensemble\, ils se lancent dans une épopée cosmique où la vengean
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
