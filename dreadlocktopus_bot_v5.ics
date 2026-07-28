@@ -7,7 +7,7 @@ X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
 UID:seance-104@dreadlocktopus_bot_v5
-DTSTAMP:20260727T160929Z
+DTSTAMP:20260728T101512Z
 DTSTART:20260729T185000Z
 DTEND:20260729T205000Z
 SUMMARY:Le colosse de Hong Kong — 3D (Secoto_fr_3D)
@@ -15,30 +15,12 @@ DESCRIPTION:L'explorateur Johnny est chargé par l'homme d'affaires Lu d'aller c
 LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
-UID:seance-106@dreadlocktopus_bot_v5
-DTSTAMP:20260727T160929Z
-DTSTART:20260728T185000Z
-DTEND:20260728T205000Z
-SUMMARY:Equilibrium — 3D (KornFlex)
-DESCRIPTION:Dans les années 2070\, dans la citadelle de Libria\, les émotions n'existent plus\, supprimées par l'absorption quotidienne de Prozium. Cette drogue anti-anxiété rend les gens plus heureux et plus pro
-LOCATION:Equilibrium 3D BigScreenFR
-END:VEVENT
-BEGIN:VEVENT
 UID:seance-107@dreadlocktopus_bot_v5
-DTSTAMP:20260727T160929Z
+DTSTAMP:20260728T101512Z
 DTSTART:20260728T185000Z
 DTEND:20260728T205000Z
 SUMMARY:Supergirl — 3D (Secoto_fr_3D)
 DESCRIPTION:Lorsqu’un ennemi inattendu et impitoyable surgit\, Kara Zor-El est forcée\, malgré elle\, de faire équipe avec un compagnon improbable. Ensemble\, ils se lancent dans une épopée cosmique où la vengean
-LOCATION:MAJESTIC !
-END:VEVENT
-BEGIN:VEVENT
-UID:seance-103@dreadlocktopus_bot_v5
-DTSTAMP:20260727T160929Z
-DTSTART:20260727T185000Z
-DTEND:20260727T205000Z
-SUMMARY:Jurassic Park III — 3D (Secoto_fr_3D)
-DESCRIPTION:Huit ans après la débâcle d'Ingen\, le célèbre paléontologue Alan Grant peine à trouver les fonds nécessaires pour financer ses recherches sur les dinosaures. Paul Kirby et sa femme Amanda\, se disent
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
