@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-109@dreadlocktopus_bot_v5
+DTSTAMP:20260728T134850Z
+DTSTART:20260731T185000Z
+DTEND:20260731T205000Z
+SUMMARY:Mississippi Burning — 3D (Secoto_fr_3D)
+DESCRIPTION:Alors qu'ils roulent sur une autoroute déserte\, 3 activistes des Droits Civiques aperçoivent\, dans leur rétroviseurs\, des phares qui se rapprochent dangereusement. À cet instant\, ils ignorent enco
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
