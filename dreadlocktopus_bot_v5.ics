@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-112@dreadlocktopus_bot_v5
+DTSTAMP:20260811T170939Z
+DTSTART:20260812T185500Z
+DTEND:20260812T205500Z
+SUMMARY:L'Invitation — 3D (Secoto_fr_3D)
+DESCRIPTION:Le mariage de Joe et Angela ne tient plus qu’à un fil. Lorsqu’ils invitent leurs énigmatiques voisins à souper\, la soirée prend une tournure inattendue. Est-ce que ce sera l’étincelle qui ravivera la
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-111@dreadlocktopus_bot_v5
-DTSTAMP:20260811T151220Z
+DTSTAMP:20260811T170939Z
 DTSTART:20260811T184500Z
 DTEND:20260811T204500Z
 SUMMARY:Iron Man — 3D (Secoto_Fr_3d)
