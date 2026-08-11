@@ -6,8 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
+UID:seance-113@dreadlocktopus_bot_v5
+DTSTAMP:20260811T171401Z
+DTSTART:20260813T185000Z
+DTEND:20260813T205000Z
+SUMMARY:Nid de guêpes — 3D (Secoto_fr_3D)
+DESCRIPTION:Les alliances changent lorsqu'une voiture blindée avec un chef de la mafia albanaise prisonnier échappe à une armée mafieuse en roulant dans un entrepôt\, qui est en train d'être dévalisé par un gang 
+LOCATION:MAJESTIC !
+END:VEVENT
+BEGIN:VEVENT
 UID:seance-112@dreadlocktopus_bot_v5
-DTSTAMP:20260811T170939Z
+DTSTAMP:20260811T171401Z
 DTSTART:20260812T185500Z
 DTEND:20260812T205500Z
 SUMMARY:L'Invitation — 3D (Secoto_fr_3D)
@@ -16,7 +25,7 @@ LOCATION:MAJESTIC !
 END:VEVENT
 BEGIN:VEVENT
 UID:seance-111@dreadlocktopus_bot_v5
-DTSTAMP:20260811T170939Z
+DTSTAMP:20260811T171401Z
 DTSTART:20260811T184500Z
 DTEND:20260811T204500Z
 SUMMARY:Iron Man — 3D (Secoto_Fr_3d)
