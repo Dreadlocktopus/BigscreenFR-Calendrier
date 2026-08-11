@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-113@dreadlocktopus_bot_v5
+DTSTAMP:20260811T171403Z
+DTSTART:20260813T185000Z
+DTEND:20260813T205000Z
+SUMMARY:Nid de guêpes — 3D (Secoto_fr_3D)
+DESCRIPTION:Les alliances changent lorsqu'une voiture blindée avec un chef de la mafia albanaise prisonnier échappe à une armée mafieuse en roulant dans un entrepôt\, qui est en train d'être dévalisé par un gang 
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
