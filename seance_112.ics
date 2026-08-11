@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-112@dreadlocktopus_bot_v5
+DTSTAMP:20260811T170940Z
+DTSTART:20260812T185500Z
+DTEND:20260812T205500Z
+SUMMARY:L'Invitation — 3D (Secoto_fr_3D)
+DESCRIPTION:Le mariage de Joe et Angela ne tient plus qu’à un fil. Lorsqu’ils invitent leurs énigmatiques voisins à souper\, la soirée prend une tournure inattendue. Est-ce que ce sera l’étincelle qui ravivera la
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
