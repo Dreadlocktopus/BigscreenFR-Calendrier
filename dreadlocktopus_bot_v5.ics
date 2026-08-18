@@ -5,13 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
-BEGIN:VEVENT
-UID:seance-114@dreadlocktopus_bot_v5
-DTSTAMP:20260814T061421Z
-DTSTART:20260814T185000Z
-DTEND:20260814T205000Z
-SUMMARY:Iron Man 2 — 3D (Secoto_fr_3D)
-DESCRIPTION:Le monde sait désormais que l'inventeur milliardaire Tony Stark et le super-héros Iron Man ne font qu'un. Malgré la pression du gouvernement\, de la presse et du public pour qu'il partage sa technolog
-LOCATION:MAJESTIC !
-END:VEVENT
 END:VCALENDAR
