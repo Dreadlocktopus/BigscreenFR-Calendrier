@@ -5,13 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
-BEGIN:VEVENT
-UID:seance-115@dreadlocktopus_bot_v5
-DTSTAMP:20260818T104250Z
-DTSTART:20260818T184500Z
-DTEND:20260818T204500Z
-SUMMARY:Toy Story 5 — 3D (Secoto_fr_3D)
-DESCRIPTION:Les jouets sont de retour dans “Toy Story 5“ et\, cette fois\, c’est les jouets contre la technologie. Woody\, Buzz\, Jessie et compagnie vont faire face à Lilypad\, une toute nouvelle tablette persua
-LOCATION:MAJESTIC !
-END:VEVENT
 END:VCALENDAR
