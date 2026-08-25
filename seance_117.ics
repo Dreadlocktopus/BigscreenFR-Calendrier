@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-117@dreadlocktopus_bot_v5
+DTSTAMP:20260825T115345Z
+DTSTART:20260825T120000Z
+DTEND:20260825T140000Z
+SUMMARY:Creed : L'héritage de Rocky Balboa — 3D (Secoto_fr_3D)
+DESCRIPTION:Adonis Johnson n’a jamais connu son père\, le célèbre champion du monde poids lourd Apollo Creed\, décédé avant sa naissance. Malgré tout\, il a de toute évidence la boxe dans le sang et il se rend do
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
