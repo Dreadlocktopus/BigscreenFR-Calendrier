@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-116@dreadlocktopus_bot_v5
-DTSTAMP:20260823T102732Z
-DTSTART:20260823T130000Z
-DTEND:20260823T150000Z
-SUMMARY:Il faut sauver le soldat Ryan — 3D (Secoto_fr_3D)
-DESCRIPTION:Vue à travers le regard d’une escouade de soldats américains\, l’histoire débute le jour du Débarquement au cours de la 2ème Guerre Mondiale\, le long des plages de Normandie. Le capitaine John Miller
+UID:seance-117@dreadlocktopus_bot_v5
+DTSTAMP:20260825T115344Z
+DTSTART:20260825T120000Z
+DTEND:20260825T140000Z
+SUMMARY:Creed : L'héritage de Rocky Balboa — 3D (Secoto_fr_3D)
+DESCRIPTION:Adonis Johnson n’a jamais connu son père\, le célèbre champion du monde poids lourd Apollo Creed\, décédé avant sa naissance. Malgré tout\, il a de toute évidence la boxe dans le sang et il se rend do
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
