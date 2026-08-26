@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-117@dreadlocktopus_bot_v5
-DTSTAMP:20260825T115344Z
-DTSTART:20260825T120000Z
-DTEND:20260825T140000Z
-SUMMARY:Creed : L'héritage de Rocky Balboa — 3D (Secoto_fr_3D)
-DESCRIPTION:Adonis Johnson n’a jamais connu son père\, le célèbre champion du monde poids lourd Apollo Creed\, décédé avant sa naissance. Malgré tout\, il a de toute évidence la boxe dans le sang et il se rend do
+UID:seance-118@dreadlocktopus_bot_v5
+DTSTAMP:20260826T154759Z
+DTSTART:20260826T183000Z
+DTEND:20260826T203000Z
+SUMMARY:Destination Finale : Bloodlines — 3D (Secoto_fr_3D)
+DESCRIPTION:Hantée par un cauchemar terrifiant qui revient sans cesse\, Stefanie\, étudiante à l’université\, rentre chez elle pour retrouver la trace de la seule personne susceptible d’enrayer ce cycle infernal 
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
