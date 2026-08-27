@@ -5,13 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
-BEGIN:VEVENT
-UID:seance-118@dreadlocktopus_bot_v5
-DTSTAMP:20260826T154759Z
-DTSTART:20260826T183000Z
-DTEND:20260826T203000Z
-SUMMARY:Destination Finale : Bloodlines — 3D (Secoto_fr_3D)
-DESCRIPTION:Hantée par un cauchemar terrifiant qui revient sans cesse\, Stefanie\, étudiante à l’université\, rentre chez elle pour retrouver la trace de la seule personne susceptible d’enrayer ce cycle infernal 
-LOCATION:MAJESTIC !
-END:VEVENT
 END:VCALENDAR
