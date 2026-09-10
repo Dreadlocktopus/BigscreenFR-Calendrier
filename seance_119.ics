@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-119@dreadlocktopus_bot_v5
+DTSTAMP:20260910T141739Z
+DTSTART:20260910T183000Z
+DTEND:20260910T203000Z
+SUMMARY:Pour le plaisir — 3D (Secoto_fr_3D)
+DESCRIPTION:Et si on vous racontait l’invention du siècle ? Un couple\, une vérité qui explose. Fanny et Tom sont mariés et heureux depuis 20 ans. Mais un jour un secret éclate : Fanny n’a jamais eu d’orgasme. To
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
