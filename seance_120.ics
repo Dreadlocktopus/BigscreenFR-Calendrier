@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-120@dreadlocktopus_bot_v5
+DTSTAMP:20260911T172849Z
+DTSTART:20260911T174500Z
+DTEND:20260911T194500Z
+SUMMARY:USS Alabama — 3D (!Secoto_fr_3D)
+DESCRIPTION:Au cours d'une crise politique mondiale\, le sous-marin américain USS Alabama reçoit l'ordre non confirmé de lancer des missiles nucléaires\, ce qui entraînerait certainement une Troisième Guerre mond
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
