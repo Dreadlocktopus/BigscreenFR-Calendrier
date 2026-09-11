@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-119@dreadlocktopus_bot_v5
-DTSTAMP:20260910T141737Z
-DTSTART:20260910T183000Z
-DTEND:20260910T203000Z
-SUMMARY:Pour le plaisir — 3D (Secoto_fr_3D)
-DESCRIPTION:Et si on vous racontait l’invention du siècle ? Un couple\, une vérité qui explose. Fanny et Tom sont mariés et heureux depuis 20 ans. Mais un jour un secret éclate : Fanny n’a jamais eu d’orgasme. To
+UID:seance-120@dreadlocktopus_bot_v5
+DTSTAMP:20260911T172848Z
+DTSTART:20260911T174500Z
+DTEND:20260911T194500Z
+SUMMARY:USS Alabama — 3D (!Secoto_fr_3D)
+DESCRIPTION:Au cours d'une crise politique mondiale\, le sous-marin américain USS Alabama reçoit l'ordre non confirmé de lancer des missiles nucléaires\, ce qui entraînerait certainement une Troisième Guerre mond
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
