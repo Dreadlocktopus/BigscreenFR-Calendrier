@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-121@dreadlocktopus_bot_v5
+DTSTAMP:20260912T151622Z
+DTSTART:20260912T183000Z
+DTEND:20260912T203000Z
+SUMMARY:Les Moutons détectives — 3D (Secoto_fr_3D)
+DESCRIPTION:Lorsque son fermier bien-aimé est retrouvé mort dans des circonstances mystérieuses\, un troupeau de moutons conclut qu'il devra résoudre le meurtre lui-même. Cette quête l'oblige à quitter son pâtura
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
