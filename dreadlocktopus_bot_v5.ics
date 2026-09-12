@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-120@dreadlocktopus_bot_v5
-DTSTAMP:20260911T172848Z
-DTSTART:20260911T174500Z
-DTEND:20260911T194500Z
-SUMMARY:USS Alabama — 3D (!Secoto_fr_3D)
-DESCRIPTION:Au cours d'une crise politique mondiale\, le sous-marin américain USS Alabama reçoit l'ordre non confirmé de lancer des missiles nucléaires\, ce qui entraînerait certainement une Troisième Guerre mond
+UID:seance-121@dreadlocktopus_bot_v5
+DTSTAMP:20260912T151621Z
+DTSTART:20260912T183000Z
+DTEND:20260912T203000Z
+SUMMARY:Les Moutons détectives — 3D (Secoto_fr_3D)
+DESCRIPTION:Lorsque son fermier bien-aimé est retrouvé mort dans des circonstances mystérieuses\, un troupeau de moutons conclut qu'il devra résoudre le meurtre lui-même. Cette quête l'oblige à quitter son pâtura
 LOCATION:MAJESTIC !
 END:VEVENT
 END:VCALENDAR
