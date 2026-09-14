@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-122@dreadlocktopus_bot_v5
+DTSTAMP:20260914T073040Z
+DTSTART:20260914T184500Z
+DTEND:20260914T204500Z
+SUMMARY:La Fin d'Oak Street — 3D (Secoto_fr_3D)
+DESCRIPTION:Lorsqu’un mystérieux événement cosmique arrache Oak Street à sa paisible banlieue et la transporte vers un lieu inconnu\, la famille Platt\, désorientée dans ce nouvel environnement hostile\, comprend
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
