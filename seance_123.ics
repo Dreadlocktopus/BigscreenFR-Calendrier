@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-123@dreadlocktopus_bot_v5
+DTSTAMP:20260915T150950Z
+DTSTART:20260915T183000Z
+DTEND:20260915T203000Z
+SUMMARY:Tucker & Dale fightent le mal — 3D (Secoto_fr_3D)
+DESCRIPTION:Tucker\, Dale\, deux braves types venus se ressourcer en forêt\, se préparent à passer du bon temps. Mais leurs vacances vont être compromises lorsqu'une bande d'étudiants débarquent dans leur coin de
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
