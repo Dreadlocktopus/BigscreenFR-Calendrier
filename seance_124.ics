@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-124@dreadlocktopus_bot_v5
+DTSTAMP:20260924T131407Z
+DTSTART:20260924T190000Z
+DTEND:20260924T210000Z
+SUMMARY:Borderlands — 3D (KornFlex)
+DESCRIPTION:Lilith\, une chasseuse de primes au passé trouble\, revient à contrecœur sur sa planète natale\, Pandore\, la planète la plus chaotique de la galaxie… Sa mission est de retrouver la fille disparue d'A
+LOCATION:La salle de Kornouche 3D
+END:VEVENT
+END:VCALENDAR
