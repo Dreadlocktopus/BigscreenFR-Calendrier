@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-125@dreadlocktopus_bot_v5
+DTSTAMP:20261003T063348Z
+DTSTART:20261003T190000Z
+DTEND:20261003T210000Z
+SUMMARY:Fous d'Irène — 3D (kornflexrex)
+DESCRIPTION:Charlie Baileygates est un policier souffrant de troubles de la personnalité. Après avoir suivi un traitement médical\, il se voit confier la mission d'escorter Irène Waters dans un autre État\, où el
+LOCATION:La salle de Kornouche
+END:VEVENT
+END:VCALENDAR
