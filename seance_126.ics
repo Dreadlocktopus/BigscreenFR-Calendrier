@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-126@dreadlocktopus_bot_v5
+DTSTAMP:20261003T151012Z
+DTSTART:20261003T153000Z
+DTEND:20261003T173000Z
+SUMMARY:Coyote vs. Acme — 3D (Secoto_fr_3D)
+DESCRIPTION:Après des décennies à être réduit en miettes par des bombes\, pulvérisé à la dynamite\, déchiqueté par des aimants\, assommé par des rochers\, écrasé par des trains\, piégé par des tunnels\, projeté p
+LOCATION:MAJESTIC !
+END:VEVENT
+END:VCALENDAR
