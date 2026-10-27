@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-127@dreadlocktopus_bot_v5
+DTSTAMP:20261027T193849Z
+DTSTART:20261028T200000Z
+DTEND:20261028T220000Z
+SUMMARY:Les Trois Frères — 3D (Kornflex)
+DESCRIPTION:Trois frères qui s’ignorent héritent d’une fabuleuse fortune de 3 millions de francs. Cependant\, en revenant chez le notaire quelques jours plus tard\, tout s’effondre : ils découvrent que le délai p
+LOCATION:Les 3 frères 3D
+END:VEVENT
+END:VCALENDAR
