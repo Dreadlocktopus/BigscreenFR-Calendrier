@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-128@dreadlocktopus_bot_v5
+DTSTAMP:20261101T114333Z
+DTSTART:20261101T180000Z
+DTEND:20261101T200000Z
+SUMMARY:Human Traffic — 3D (Kornflex)
+DESCRIPTION:Cinq copains de Cardiff\, dont la vie revêt le plus souvent des teintes grisâtres\, ont pris l'habitude chaque vendredi soir d'aller en boite pour s'amuser. Pour Jip\, Koop\, Nina\, Lulu et Moff\, tou
+LOCATION:Human Traffic
+END:VEVENT
+END:VCALENDAR
