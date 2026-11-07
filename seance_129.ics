@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-129@dreadlocktopus_bot_v5
+DTSTAMP:20261107T111750Z
+DTSTART:20261107T200000Z
+DTEND:20261107T220000Z
+SUMMARY:Le Cinquième Élément — 3D (Kornflex)
+DESCRIPTION:New York\, XXIIIe siècle. Une boule de feu fonce sur la Terre. Pour l'arrêter il faut retrouver le Cinquième Élément\, l'être suprême\, qui\, associé aux quatre éléments vitaux - l'air\, l'eau\, le fe
+LOCATION:Le 5eme élément 3D
+END:VEVENT
+END:VCALENDAR
