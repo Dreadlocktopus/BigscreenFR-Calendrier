@@ -6,12 +6,12 @@ METHOD:PUBLISH
 X-WR-CALNAME:BigscreenFR Programmation
 X-WR-TIMEZONE:Europe/Paris
 BEGIN:VEVENT
-UID:seance-128@dreadlocktopus_bot_v5
-DTSTAMP:20261101T114332Z
-DTSTART:20261101T180000Z
-DTEND:20261101T200000Z
-SUMMARY:Human Traffic — 3D (Kornflex)
-DESCRIPTION:Cinq copains de Cardiff\, dont la vie revêt le plus souvent des teintes grisâtres\, ont pris l'habitude chaque vendredi soir d'aller en boite pour s'amuser. Pour Jip\, Koop\, Nina\, Lulu et Moff\, tou
-LOCATION:Human Traffic
+UID:seance-129@dreadlocktopus_bot_v5
+DTSTAMP:20261107T111748Z
+DTSTART:20261107T200000Z
+DTEND:20261107T220000Z
+SUMMARY:Le Cinquième Élément — 3D (Kornflex)
+DESCRIPTION:New York\, XXIIIe siècle. Une boule de feu fonce sur la Terre. Pour l'arrêter il faut retrouver le Cinquième Élément\, l'être suprême\, qui\, associé aux quatre éléments vitaux - l'air\, l'eau\, le fe
+LOCATION:Le 5eme élément 3D
 END:VEVENT
 END:VCALENDAR
