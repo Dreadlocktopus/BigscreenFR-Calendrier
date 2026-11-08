@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-130@dreadlocktopus_bot_v5
+DTSTAMP:20261108T220953Z
+DTSTART:20261109T203000Z
+DTEND:20261109T223000Z
+SUMMARY:L'Odyssée — 2D (ATY)
+DESCRIPTION:Ulysse\, roi d'Ithaque\, entreprend un périple périlleux pour regagner son royaume après la guerre de Troie. Alors qu'ils traversent la Méditerranée avec ses soldats\, ils se retrouvent bientôt à lutt
+LOCATION:l'odyssée
+END:VEVENT
+END:VCALENDAR
