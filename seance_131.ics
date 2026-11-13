@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BigscreenFR//Dreadlocktopus_Bot V7//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seance-131@dreadlocktopus_bot_v5
+DTSTAMP:20261113T152343Z
+DTSTART:20261113T200000Z
+DTEND:20261113T220000Z
+SUMMARY:Le Seigneur des anneaux : La Communauté de l'anneau — 3D (Kornflex)
+DESCRIPTION:Le jeune hobbit Frodon Sacquet hérite d'un anneau. Il s'agit de l'Anneau Unique\, instrument de pouvoir absolu qui permettrait à Sauron\, de régner sur la Terre du Milieu et de réduire en esclavage se
+LOCATION:La communauté de l'anneau
+END:VEVENT
+END:VCALENDAR
